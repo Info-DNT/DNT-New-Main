@@ -1,0 +1,461 @@
+/* ITR PREMIUM LIGHT REFINEMENTS - GLOBAL OVERRIDE */
+/* This mirrors the exact variables and styling rules of the itr-filing.html <style> block */
+
+:root {
+  --bg-page: #FFFFFF;
+  --bg-section: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text-heading: #0F172A; /* Slate */
+  --text-body: #0F172A; /* Matches ITR base text */
+  --text-muted: #64748B;
+  --accent-gold: #f59e0b;
+  --beige-gold: #FBF8F3;
+  --border-subtle: #E2E8F0;
+  
+  --link-color: #050811;
+  --link-hover: #f59e0b;
+}
+
+body {
+  background-color: var(--bg-page) !important;
+  color: var(--text-body) !important;
+}
+
+/* Base Sections */
+.bg-white, section {
+  background-color: var(--bg-page) !important;
+}
+.bg-light, .page-hero, section[style*="background:var(--navy)"], section[style*="background: var(--navy)"] {
+  background-color: var(--bg-section) !important;
+}
+.page-hero {
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 60%), var(--bg-section) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+/* Cards & Components */
+.card, .flip-card-front, .flip-card-back, .process-step, .pricing-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Specific component inline overrides */
+div[style*="rgba(0,0,0,0.03)"],
+div[style*="rgba(0,0,0,0.05)"],
+div[style*="rgba(255,255,255,.08)"] {
+  background: var(--bg-card) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Hardcoded colored cards mapping to light mode equivalents */
+div[style*="linear-gradient(135deg,#1a73e8,#0d47a1)"],
+div[style*="linear-gradient(135deg,#1877F2,#42b72a)"],
+div[style*="linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"],
+div[style*="background:#1877F2"],
+div[style*="background:#0077B5"],
+div[style*="background:#FF0000"] {
+  background: var(--bg-card) !important;
+  border-color: var(--border-subtle) !important;
+}
+div[style*="linear-gradient"] h3, div[style*="linear-gradient"] li, div[style*="linear-gradient"] p, div[style*="linear-gradient"] div:first-child {
+  color: var(--text-body) !important;
+}
+
+/* Pricing / Popular Cards explicitly mimic ITR Beige Pivot */
+.popular, .best-value, .pricing-card.popular {
+  background-color: var(--beige-gold) !important;
+  border-color: #E5E0D5 !important;
+}
+
+/* Headings & Text */
+h1, h2, h3, h4, h5, h6, .section-title, .card-title, .font-heading, .pricing-badge, .nav-logo-name, .page-hero h1, .page-hero h2, .page-hero h3 {
+  color: var(--text-heading) !important;
+}
+p, span, li, .card-text, .section-subtitle, .footer-desc, .page-hero p, .page-hero .hero-sub {
+  color: var(--text-body) !important;
+}
+.flip-card-hint, .overline, .text-small, .card-text span, .nav-logo-sub {
+  color: var(--text-muted) !important;
+}
+
+/* Accent texts */
+.text-gold, .overline {
+  color: var(--accent-gold) !important;
+}
+
+/* Structural Components */
+hr, .divider, .section-border {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Icons */
+.card-icon {
+  background: rgba(245, 158, 11, 0.05) !important; /* Soft gold tint */
+}
+svg.table-yes, .card-icon svg {
+  stroke: var(--accent-gold) !important;
+}
+
+/* Buttons */
+.btn-primary, .btn-gold, .btn-success, .btn-blue, .nav-cta-btn, .mobile-cta-btn {
+  background: var(--accent-gold) !important;
+  color: #000 !important;
+  border: none !important;
+}
+.btn-outline {
+  border: 1px solid var(--accent-gold) !important;
+  color: var(--accent-gold) !important;
+}
+.btn-navy {
+  background: var(--text-heading) !important;
+  color: #FFF !important;
+}
+div[style*="linear-gradient"] .btn {
+  background: var(--accent-gold) !important;
+  color: #000 !important;
+  border: none !important;
+}
+
+/* Accordion Specific */
+.accordion-item {
+  background: var(--bg-card) !important;
+  border-color: var(--border-subtle) !important;
+}
+.accordion-trigger {
+  color: var(--text-heading) !important;
+}
+.accordion-body-inner {
+  color: var(--text-body) !important;
+}
+
+/* Navigation Overrides */
+#main-nav {
+  background: var(--bg-page) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+#main-nav:not(.scrolled) .nav-link, 
+#main-nav:not(.scrolled) .nav-services-btn,
+#main-nav:not(.scrolled) .mobile-nav-link,
+#main-nav:not(.scrolled) .mobile-services-btn,
+#main-nav.scrolled .nav-link, 
+#main-nav.scrolled .nav-services-btn,
+#main-nav.scrolled .mobile-nav-link,
+#main-nav.scrolled .mobile-services-btn {
+  color: var(--text-heading) !important;
+}
+#main-nav:not(.scrolled) .nav-link.active,
+#main-nav:not(.scrolled) .nav-services-btn.active,
+#main-nav:not(.scrolled) .mobile-nav-link.active,
+#main-nav.scrolled .nav-link.active,
+#main-nav.scrolled .nav-services-btn.active,
+#main-nav.scrolled .mobile-nav-link.active {
+  color: var(--accent-gold) !important;
+}
+#main-nav .mobile-menu-btn svg {
+  stroke: var(--text-heading) !important;
+}
+
+/* Footer & Dropdown remain dark as per style.css */
+
+/* =============================================
+   EXTENDED DESIGN SYSTEM — DNT GLOBAL TOKENS
+   ============================================= */
+
+:root {
+  /* Spacing System */
+  --form-grid-gap: 1.25rem;
+  --card-padding: 2.5rem;
+  --section-spacing: 5rem;
+
+  /* Input System */
+  --input-height: 52px;
+  --input-radius: 12px;
+  --input-border: #d1d5db;
+  --input-focus-ring: #f59e0b;
+  --input-bg: #ffffff;
+  --input-text: #0f172a;
+  --input-placeholder: #9ca3af;
+  --input-icon-color: #6b7280;
+  --input-error-color: #ef4444;
+  --input-success-color: #10b981;
+
+  /* Glass Card */
+  --glass-card-bg: linear-gradient(145deg, rgba(255,255,255,0.92), rgba(248,250,252,0.97));
+  --glass-card-border: rgba(245, 158, 11, 0.25);
+  --glass-card-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 4px 16px rgba(245,158,11,0.06);
+  --glass-card-blur: blur(12px);
+
+  /* Button System */
+  --btn-primary-bg: linear-gradient(135deg, #f59e0b, #d97706);
+  --btn-primary-text: #050811;
+  --btn-primary-shadow: 0 4px 20px rgba(245,158,11,0.35);
+  --btn-radius: 12px;
+  --btn-padding: 0.85rem 2rem;
+  --btn-font-size: 0.95rem;
+}
+
+/* =============================================
+   GLASS-MORPHISM CARD SYSTEM
+   ============================================= */
+.glass-card {
+  background: var(--glass-card-bg) !important;
+  border: 1.5px solid var(--glass-card-border) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--glass-card-shadow) !important;
+  backdrop-filter: var(--glass-card-blur) !important;
+  -webkit-backdrop-filter: var(--glass-card-blur) !important;
+}
+
+/* =============================================
+   BUTTON HIERARCHY
+   ============================================= */
+.btn-dnt-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+  border: none !important;
+  border-radius: var(--btn-radius) !important;
+  padding: var(--btn-padding) !important;
+  font-size: var(--btn-font-size) !important;
+  font-weight: 700 !important;
+  font-family: 'Outfit', sans-serif !important;
+  box-shadow: var(--btn-primary-shadow) !important;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s !important;
+  min-height: 44px;
+  text-decoration: none;
+}
+.btn-dnt-primary:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 30px rgba(245,158,11,0.45) !important; }
+.btn-dnt-primary:active { transform: translateY(0) !important; }
+.btn-dnt-primary:disabled, .btn-dnt-primary.loading { opacity: 0.7 !important; cursor: not-allowed !important; transform: none !important; }
+
+.btn-dnt-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent !important;
+  color: #0f172a !important;
+  border: 2px solid #0f172a !important;
+  border-radius: var(--btn-radius) !important;
+  padding: var(--btn-padding) !important;
+  font-size: var(--btn-font-size) !important;
+  font-weight: 600 !important;
+  font-family: 'Outfit', sans-serif !important;
+  cursor: pointer;
+  transition: all 0.2s !important;
+  min-height: 44px;
+  text-decoration: none;
+}
+.btn-dnt-secondary:hover { background: #0f172a !important; color: #fff !important; }
+
+.btn-dnt-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent !important;
+  color: var(--accent-gold) !important;
+  border: none !important;
+  padding: 0.5rem 0 !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: gap 0.2s !important;
+  text-decoration: none;
+}
+.btn-dnt-ghost:hover { gap: 0.85rem !important; }
+
+/* =============================================
+   FORM COMPONENT SYSTEM
+   ============================================= */
+
+/* Form row grid */
+.dnt-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--form-grid-gap);
+  margin-bottom: var(--form-grid-gap);
+}
+.dnt-form-row.full { grid-template-columns: 1fr; }
+
+/* Floating Label Input Group */
+.dnt-field {
+  position: relative;
+}
+.dnt-field-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dnt-field-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--input-icon-color);
+  pointer-events: none;
+  z-index: 2;
+  transition: color 0.2s;
+  display: flex;
+}
+.dnt-field input,
+.dnt-field select,
+.dnt-field textarea {
+  width: 100%;
+  min-height: var(--input-height);
+  padding: 1.5rem 1rem 0.5rem 2.9rem;
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--input-radius);
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-size: 0.95rem;
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.dnt-field textarea {
+  min-height: 130px;
+  padding-top: 1.75rem;
+  resize: vertical;
+}
+.dnt-field select { cursor: pointer; }
+
+/* Floating Label */
+.dnt-label {
+  position: absolute;
+  left: 2.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.92rem;
+  color: var(--input-placeholder);
+  font-family: 'Outfit', sans-serif;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 2;
+  background: transparent;
+}
+.dnt-field textarea ~ .dnt-label { top: 1.1rem; transform: none; }
+
+/* Floated state */
+.dnt-field input:focus ~ .dnt-label,
+.dnt-field input:not(:placeholder-shown) ~ .dnt-label,
+.dnt-field select:focus ~ .dnt-label,
+.dnt-field select.has-value ~ .dnt-label,
+.dnt-field textarea:focus ~ .dnt-label,
+.dnt-field textarea:not(:placeholder-shown) ~ .dnt-label {
+  top: 0.45rem;
+  transform: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+.dnt-field textarea:focus ~ .dnt-label,
+.dnt-field textarea:not(:placeholder-shown) ~ .dnt-label { top: 0.4rem; }
+
+/* Focus ring */
+.dnt-field input:focus,
+.dnt-field select:focus,
+.dnt-field textarea:focus {
+  border-color: var(--input-focus-ring) !important;
+  box-shadow: 0 0 0 3px rgba(245,158,11,0.15) !important;
+}
+.dnt-field:focus-within .dnt-field-icon { color: var(--accent-gold); }
+
+/* Select arrow */
+.dnt-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 0; height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--input-icon-color);
+}
+
+/* Error state */
+.dnt-field.has-error input,
+.dnt-field.has-error select,
+.dnt-field.has-error textarea {
+  border-color: var(--input-error-color) !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.1) !important;
+}
+.dnt-field.has-error .dnt-field-icon { color: var(--input-error-color); }
+.dnt-error-msg {
+  display: none;
+  font-size: 0.78rem;
+  color: var(--input-error-color);
+  margin-top: 0.35rem;
+  padding-left: 0.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+.dnt-field.has-error .dnt-error-msg { display: block; }
+
+/* Valid state */
+.dnt-field.is-valid input,
+.dnt-field.is-valid select,
+.dnt-field.is-valid textarea {
+  border-color: var(--input-success-color) !important;
+}
+
+/* Character counter */
+.dnt-char-counter {
+  font-size: 0.75rem;
+  color: var(--input-placeholder);
+  text-align: right;
+  margin-top: 0.3rem;
+  font-family: 'Outfit', sans-serif;
+  transition: color 0.2s;
+}
+.dnt-char-counter.over { color: var(--input-error-color); }
+
+/* =============================================
+   ANIMATION UTILITIES
+   ============================================= */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-up.delay-1 { transition-delay: 0.1s; }
+.reveal-up.delay-2 { transition-delay: 0.2s; }
+.reveal-up.delay-3 { transition-delay: 0.3s; }
+.reveal-up.delay-4 { transition-delay: 0.4s; }
+
+/* Card hover lift */
+.hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease !important; }
+.hover-lift:hover { transform: translateY(-5px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; }
+
+/* Spinner for loading buttons */
+@keyframes dnt-spin { to { transform: rotate(360deg); } }
+.dnt-spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(5,8,17,0.25);
+  border-top-color: #050811;
+  border-radius: 50%;
+  animation: dnt-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* =============================================
+   MOBILE RESPONSIVENESS
+   ============================================= */
+@media (max-width: 768px) {
+  :root {
+    --card-padding: 1.5rem;
+    --form-grid-gap: 1rem;
+  }
+  .dnt-form-row { grid-template-columns: 1fr !important; }
+  .glass-card { border-radius: 16px !important; }
+}

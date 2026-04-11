@@ -779,6 +779,332 @@
       }
     }
   </style>
+
+  <!-- ===== TAX CALCULATOR MODAL STYLES ===== -->
+  <style>
+    /* Overlay */
+    .calc-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 99999;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+
+    .calc-overlay.calc-open {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    body.calc-noscroll {
+      overflow: hidden;
+    }
+
+    /* Modal Box */
+    .calc-modal {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 940px;
+      margin: auto;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+    }
+
+    /* Header */
+    .calc-header {
+      background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .calc-header h2 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .calc-close-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .calc-close-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Body */
+    .calc-body {
+      padding: 1.5rem 1.75rem;
+    }
+
+    /* Grid rows */
+    .calc-row {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .calc-row.calc-col-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .calc-row.calc-col-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .calc-field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.35rem;
+    }
+
+    .calc-field label span.calc-req {
+      color: #e53935;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      padding: 0.55rem 0.85rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #fafafa;
+      color: #111;
+      box-sizing: border-box;
+    }
+
+    .calc-field input:focus,
+    .calc-field select:focus {
+      border-color: #1976d2;
+      background: #fff;
+    }
+
+    .calc-field input[readonly] {
+      background: #f0f4ff;
+      color: #374151;
+      cursor: not-allowed;
+    }
+
+    /* Rupee prefix wrapper */
+    .calc-rupee-wrap {
+      position: relative;
+    }
+
+    .calc-rupee-wrap::before {
+      content: '₹';
+      position: absolute;
+      left: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6b7280;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .calc-rupee-wrap input {
+      padding-left: 1.6rem;
+    }
+
+    /* Info icon */
+    .calc-info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #1976d2;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      cursor: help;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    /* Age Buttons */
+    .calc-age-group {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .calc-age-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.55rem 0.75rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      background: #f9fafb;
+      color: #374151;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .calc-age-btn.calc-selected {
+      border-color: #1976d2;
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    /* Divider */
+    .calc-divider {
+      border: none;
+      border-top: 1.5px solid #e5e7eb;
+      margin: 1.25rem 0;
+    }
+
+    /* Note box */
+    .calc-note {
+      background: #e3f2fd;
+      border-left: 4px solid #1976d2;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #1565c0;
+      margin: 1rem 0;
+    }
+
+    /* Results */
+    .calc-results-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1976d2;
+      border-top: 2px solid #1976d2;
+      padding-top: 0.85rem;
+      margin: 1.25rem 0 0.85rem;
+    }
+
+    .calc-results-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 0.82rem;
+    }
+
+    .calc-res-header {
+      background: #1976d2;
+      color: #fff;
+      font-weight: 700;
+      padding: 0.6rem 0.85rem;
+    }
+
+    .calc-res-cell {
+      padding: 0.55rem 0.85rem;
+      border-bottom: 1px solid #f0f0f0;
+      color: #374151;
+    }
+
+    .calc-res-row:nth-child(even) .calc-res-cell {
+      background: #f8fafc;
+    }
+
+    .calc-res-total .calc-res-cell {
+      font-weight: 700;
+      color: #111;
+      background: #fffbeb;
+      border-top: 2px solid #f59e0b;
+    }
+
+    .calc-res-recommend {
+      grid-column: 1 / -1;
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .calc-res-recommend.calc-new-better {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .calc-res-recommend.calc-old-better {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    /* Footer */
+    .calc-footer {
+      background: #f8fafc;
+      padding: 1rem 1.75rem;
+      display: flex;
+      justify-content: flex-end;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .calc-submit-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .calc-submit-btn:hover {
+      background: #1565c0;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .calc-row.calc-col-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-results-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        font-size: 0.75rem;
+      }
+
+      .calc-overlay {
+        padding: 0;
+      }
+
+      .calc-modal {
+        border-radius: 0;
+        min-height: 100dvh;
+      }
+    }
+  </style>
 </head>
 
 <body class="light-page">
@@ -901,12 +1227,13 @@
       <div class="hero-text reveal">
         <span class="overline">Income Tax Return Filing Services</span>
         <h1>Accurate & Secure <span class="text-gold">ITR Filing Online</span> For Income Tax Return.</h1>
-        <p class="section-subtitle">Expert CA-led ITR Return Filing in 48 hours. Professional Tax Preparation and Tax
+        <p class="section-subtitle">Expert CA-led ITR Filing in 48 hours. Professional Tax Preparation and Tax
           Planning services to maximize your refunds. Stay 100% compliant with the latest AY 2025-26 Income Tax Online
           regulations through our secure ITR Online platform.</p>
 
         <div class="hero-features">
-          <div class="hero-feature-item"><i class="fas fa-check-circle text-gold"></i> Fast ITR Return Processing</div>
+          <div class="hero-feature-item"><i class="fas fa-check-circle text-gold"></i> Fast Income Tax Return Processing
+          </div>
           <div class="hero-feature-item"><i class="fas fa-check-circle text-gold"></i> 100% Secure Tax Filing</div>
           <div class="hero-feature-item"><i class="fas fa-check-circle text-gold"></i> Maximum Tax Savings</div>
           <div class="hero-feature-item"><i class="fas fa-check-circle text-gold"></i> Zero Penalty Guarantee</div>
@@ -934,11 +1261,10 @@
             </div>
           </div>
 
-          <a href="https://eportal.incometax.gov.in/iec/foservices/#/TaxCalc/calculator" target="_blank" rel="noopener"
-            class="btn-shine btn-magnetic"
-            style="padding: 0.8rem 1.5rem; background: transparent; color: #000; border: 1.5px solid #000; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.85rem; font-family: 'Plus Jakarta Sans', sans-serif;">
-            Official Income Tax Calculator →
-          </a>
+          <button onclick="openTaxCalculator()" class="btn-shine btn-magnetic"
+            style="padding: 0.8rem 1.5rem; background: transparent; color: #000; border: 1.5px solid #000; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 0.85rem; font-family: 'Plus Jakarta Sans', sans-serif;">
+            Income Tax Calculator →
+          </button>
         </div>
 
         <div class="hero-right-content reveal-delay-1">
@@ -1774,6 +2100,343 @@
       btns.forEach(b => b.classList.remove('active'));
       document.getElementById(tabName).classList.add('active');
       evt.currentTarget.classList.add('active');
+    }
+  </script>
+
+  <!-- ===== TAX CALCULATOR MODAL HTML ===== -->
+  <div class="calc-overlay" id="calcOverlay" onclick="calcOverlayClick(event)">
+    <div class="calc-modal" id="calcModal">
+      <div class="calc-header">
+        <h2> Income Tax Calculator — AY 2026-27</h2>
+        <button class="calc-close-btn" onclick="closeTaxCalculator()" aria-label="Close">✕</button>
+      </div>
+      <div class="calc-body">
+        <!-- Row 1: PAN + Name -->
+        <div class="calc-row calc-col-2">
+          <div class="calc-field">
+            <label>PAN</label>
+            <input type="text" id="calcPan" placeholder="e.g. ABCDE1234F" maxlength="10"
+              style="text-transform:uppercase">
+          </div>
+          <div class="calc-field">
+            <label>Name of Taxpayer</label>
+            <input type="text" id="calcName" placeholder="Full Name">
+          </div>
+        </div>
+        <!-- Row 2: AY + Category -->
+        <div class="calc-row calc-col-2">
+          <div class="calc-field">
+            <label>Assessment Year <span class="calc-req">*</span></label>
+            <select id="calcAY">
+              <option value="2026-27" selected>2026-27</option>
+              <option value="2025-26">2025-26</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Taxpayer Category <span class="calc-req">*</span></label>
+            <select id="calcCategory">
+              <option value="individual" selected>Individual</option>
+              <option value="huf">HUF</option>
+            </select>
+          </div>
+        </div>
+        <!-- Row 3: Residential Status -->
+        <div class="calc-row calc-col-2">
+          <div class="calc-field">
+            <label>Residential Status <span class="calc-req">*</span></label>
+            <select id="calcResStatus">
+              <option value="RES" selected>Resident (RES)</option>
+              <option value="NRES">Non-Resident (NRES)</option>
+              <option value="RNOR">RNOR</option>
+            </select>
+          </div>
+        </div>
+        <!-- Row 4: Age -->
+        <div class="calc-field" style="margin-bottom:1rem">
+          <label>Your Age <span class="calc-req">*</span></label>
+          <div class="calc-age-group">
+            <button class="calc-age-btn calc-selected" id="calcAgeBelow60" onclick="selectCalcAge('below60')">Below 60
+              years<br><small style="font-weight:400">(Regular Citizen)</small></button>
+            <button class="calc-age-btn" id="calcAge6079" onclick="selectCalcAge('60to79')">Between 60–79<br><small
+                style="font-weight:400">(Senior Citizen)</small></button>
+            <button class="calc-age-btn" id="calcAge80plus" onclick="selectCalcAge('80plus')">80 and above<br><small
+                style="font-weight:400">(Super Senior)</small></button>
+          </div>
+        </div>
+
+        <hr class="calc-divider">
+
+        <!-- Income Inputs -->
+        <div class="calc-row calc-col-2">
+          <div class="calc-field">
+            <label>Total Taxable Income — New Regime <span class="calc-req">*</span> <span class="calc-info-icon"
+                title="Enter your gross total income before standard deduction under New Tax Regime">i</span></label>
+            <div class="calc-rupee-wrap">
+              <input type="number" id="calcNewIncome" placeholder="0" min="0" oninput="calcAutoUpdate()">
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Allowances / Exemptions (Old Regime only) <span class="calc-info-icon"
+                title="HRA, LTA, other exempt allowances allowed only under Old Regime">i</span></label>
+            <div class="calc-rupee-wrap">
+              <input type="number" id="calcExemptions" placeholder="0" min="0" oninput="calcAutoUpdate()">
+            </div>
+          </div>
+        </div>
+        <div class="calc-row calc-col-2">
+          <div class="calc-field">
+            <label>VIA Deductions (Old Regime only) <span class="calc-info-icon"
+                title="80C, 80D, 80G etc. — deductions available only under Old Regime">i</span></label>
+            <div class="calc-rupee-wrap">
+              <input type="number" id="calcDeductions" placeholder="0" min="0" oninput="calcAutoUpdate()">
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Total Taxable Income — Old Regime <span class="calc-info-icon"
+                title="Auto-calculated: New Income − Exemptions − VIA Deductions">i</span></label>
+            <div class="calc-rupee-wrap">
+              <input type="number" id="calcOldIncome" readonly placeholder="Auto-calculated">
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-note">
+          <strong>Note:</strong> To see the effect of marginal relief, please use the advance tax calculator or login
+          to use Income &amp; Tax Estimator. Standard Deduction of ₹75,000 (New) / ₹50,000 (Old) is applied
+          automatically.
+        </div>
+
+        <!-- Results -->
+        <div id="calcResultsSection" style="display:none">
+          <div class="calc-results-title"> Tax Computation Results</div>
+          <div class="calc-results-grid">
+            <div class="calc-res-header">Description</div>
+            <div class="calc-res-header" style="text-align:right">New Regime</div>
+            <div class="calc-res-header" style="text-align:right">Old Regime</div>
+
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Gross Income</div>
+              <div class="calc-res-cell" id="rGrossNew" style="text-align:right">—</div>
+              <div class="calc-res-cell" id="rGrossOld" style="text-align:right">—</div>
+            </div>
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Standard Deduction</div>
+              <div class="calc-res-cell" style="text-align:right">₹75,000</div>
+              <div class="calc-res-cell" style="text-align:right">₹50,000</div>
+            </div>
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Taxable Income</div>
+              <div class="calc-res-cell" id="rTaxableNew" style="text-align:right">—</div>
+              <div class="calc-res-cell" id="rTaxableOld" style="text-align:right">—</div>
+            </div>
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Income Tax</div>
+              <div class="calc-res-cell" id="rTaxNew" style="text-align:right">—</div>
+              <div class="calc-res-cell" id="rTaxOld" style="text-align:right">—</div>
+            </div>
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Rebate u/s 87A</div>
+              <div class="calc-res-cell" id="rRebateNew" style="text-align:right">—</div>
+              <div class="calc-res-cell" id="rRebateOld" style="text-align:right">—</div>
+            </div>
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Surcharge</div>
+              <div class="calc-res-cell" id="rSurchargeNew" style="text-align:right">—</div>
+              <div class="calc-res-cell" id="rSurchargeOld" style="text-align:right">—</div>
+            </div>
+            <div class="calc-res-row" style="display:contents">
+              <div class="calc-res-cell">Health &amp; Education Cess @4%</div>
+              <div class="calc-res-cell" id="rCessNew" style="text-align:right">—</div>
+              <div class="calc-res-cell" id="rCessOld" style="text-align:right">—</div>
+            </div>
+            <div class="calc-res-row calc-res-total" style="display:contents">
+              <div class="calc-res-cell"> Total Tax Liability</div>
+              <div class="calc-res-cell" id="rTotalNew" style="text-align:right;color:#1565c0">—</div>
+              <div class="calc-res-cell" id="rTotalOld" style="text-align:right;color:#2e7d32">—</div>
+            </div>
+            <div class="calc-res-recommend" id="rRecommend" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-footer">
+        <button class="calc-submit-btn" onclick="calculateTax()">Calculate Tax →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAX CALCULATOR JAVASCRIPT ===== -->
+  <script>
+    /* ---- State ---- */
+    var calcCurrentAge = 'below60';
+
+    /* ---- Open / Close ---- */
+    function openTaxCalculator() {
+      document.getElementById('calcOverlay').classList.add('calc-open');
+      document.body.classList.add('calc-noscroll');
+    }
+    function closeTaxCalculator() {
+      document.getElementById('calcOverlay').classList.remove('calc-open');
+      document.body.classList.remove('calc-noscroll');
+    }
+    function calcOverlayClick(e) {
+      if (e.target === document.getElementById('calcOverlay')) closeTaxCalculator();
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeTaxCalculator();
+    });
+
+    /* ---- Age Selection ---- */
+    function selectCalcAge(age) {
+      calcCurrentAge = age;
+      ['calcAgeBelow60', 'calcAge6079', 'calcAge80plus'].forEach(function (id) {
+        document.getElementById(id).classList.remove('calc-selected');
+      });
+      var map = { 'below60': 'calcAgeBelow60', '60to79': 'calcAge6079', '80plus': 'calcAge80plus' };
+      document.getElementById(map[age]).classList.add('calc-selected');
+      calcAutoUpdate();
+    }
+
+    /* ---- Auto-update old income ---- */
+    function calcAutoUpdate() {
+      var ni = parseFloat(document.getElementById('calcNewIncome').value) || 0;
+      var ex = parseFloat(document.getElementById('calcExemptions').value) || 0;
+      var ded = parseFloat(document.getElementById('calcDeductions').value) || 0;
+      var oldInc = Math.max(0, ni - ex - ded);
+      document.getElementById('calcOldIncome').value = oldInc > 0 ? oldInc : '';
+    }
+
+    /* ---- Indian number format ---- */
+    function formatNumber(num) {
+      if (isNaN(num) || num === null) return '0';
+      num = Math.round(num);
+      var s = num.toString();
+      if (s.length <= 3) return s;
+      var last3 = s.slice(-3);
+      var rest = s.slice(0, s.length - 3);
+      rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+      return rest + ',' + last3;
+    }
+    function formatCurrency(num) { return '₹' + formatNumber(num); }
+
+    /* ---- Slab tax calculation ---- */
+    function calculateTaxForRegime(grossIncome, age, isNewRegime) {
+      var stdDed = isNewRegime ? 75000 : 50000;
+      var taxableIncome = Math.max(0, grossIncome - stdDed);
+
+      var tax = 0;
+      if (isNewRegime) {
+        /* AY 2026-27 NEW REGIME slabs */
+        var slabs = [
+          { from: 0, to: 400000, rate: 0 },
+          { from: 400000, to: 800000, rate: 0.05 },
+          { from: 800000, to: 1200000, rate: 0.10 },
+          { from: 1200000, to: 1600000, rate: 0.15 },
+          { from: 1600000, to: 2000000, rate: 0.20 },
+          { from: 2000000, to: 2400000, rate: 0.25 },
+          { from: 2400000, to: Infinity, rate: 0.30 }
+        ];
+        slabs.forEach(function (s) {
+          if (taxableIncome > s.from) {
+            tax += (Math.min(taxableIncome, s.to) - s.from) * s.rate;
+          }
+        });
+      } else {
+        /* OLD REGIME slabs (age-based basic exemption) */
+        var basicExempt = age === '80plus' ? 500000 : age === '60to79' ? 300000 : 250000;
+        var oldSlabs = [
+          { from: 0, to: basicExempt, rate: 0 },
+          { from: basicExempt, to: 500000, rate: 0.05 },
+          { from: 500000, to: 1000000, rate: 0.20 },
+          { from: 1000000, to: Infinity, rate: 0.30 }
+        ];
+        oldSlabs.forEach(function (s) {
+          if (taxableIncome > s.from) {
+            tax += (Math.min(taxableIncome, s.to) - s.from) * s.rate;
+          }
+        });
+      }
+
+      /* Rebate u/s 87A */
+      var rebate = 0;
+      if (isNewRegime) {
+        if (taxableIncome <= 1200000) rebate = Math.min(tax, 60000);
+      } else {
+        if (taxableIncome <= 500000) rebate = Math.min(tax, 12500);
+      }
+      var taxAfterRebate = Math.max(0, tax - rebate);
+
+      /* Surcharge (on income, not taxable) */
+      var surchargeRate = 0;
+      if (grossIncome > 50000000) surchargeRate = 0.37;
+      else if (grossIncome > 20000000) surchargeRate = 0.25;
+      else if (grossIncome > 10000000) surchargeRate = 0.15;
+      else if (grossIncome > 5000000) surchargeRate = 0.10;
+      var surcharge = taxAfterRebate * surchargeRate;
+
+      /* Cess @4% */
+      var cess = (taxAfterRebate + surcharge) * 0.04;
+
+      var totalLiability = Math.round(taxAfterRebate + surcharge + cess);
+
+      return {
+        gross: grossIncome,
+        taxable: taxableIncome,
+        tax: Math.round(tax),
+        rebate: Math.round(rebate),
+        surcharge: Math.round(surcharge),
+        cess: Math.round(cess),
+        total: totalLiability
+      };
+    }
+
+    /* ---- Main calculate ---- */
+    function calculateTax() {
+      var newIncome = parseFloat(document.getElementById('calcNewIncome').value) || 0;
+      var exemptions = parseFloat(document.getElementById('calcExemptions').value) || 0;
+      var deductions = parseFloat(document.getElementById('calcDeductions').value) || 0;
+      var oldIncome = Math.max(0, newIncome - exemptions - deductions);
+      document.getElementById('calcOldIncome').value = oldIncome;
+
+      if (newIncome <= 0) {
+        alert('Please enter your Total Taxable Income under New Regime to proceed.');
+        return;
+      }
+
+      var newRes = calculateTaxForRegime(newIncome, calcCurrentAge, true);
+      var oldRes = calculateTaxForRegime(oldIncome, calcCurrentAge, false);
+
+      /* Populate grid */
+      document.getElementById('rGrossNew').textContent = formatCurrency(newRes.gross);
+      document.getElementById('rGrossOld').textContent = formatCurrency(oldRes.gross);
+      document.getElementById('rTaxableNew').textContent = formatCurrency(newRes.taxable);
+      document.getElementById('rTaxableOld').textContent = formatCurrency(oldRes.taxable);
+      document.getElementById('rTaxNew').textContent = formatCurrency(newRes.tax);
+      document.getElementById('rTaxOld').textContent = formatCurrency(oldRes.tax);
+      document.getElementById('rRebateNew').textContent = newRes.rebate > 0 ? '(−' + formatCurrency(newRes.rebate) + ')' : '₹0';
+      document.getElementById('rRebateOld').textContent = oldRes.rebate > 0 ? '(−' + formatCurrency(oldRes.rebate) + ')' : '₹0';
+      document.getElementById('rSurchargeNew').textContent = formatCurrency(newRes.surcharge);
+      document.getElementById('rSurchargeOld').textContent = formatCurrency(oldRes.surcharge);
+      document.getElementById('rCessNew').textContent = formatCurrency(newRes.cess);
+      document.getElementById('rCessOld').textContent = formatCurrency(oldRes.cess);
+      document.getElementById('rTotalNew').textContent = formatCurrency(newRes.total);
+      document.getElementById('rTotalOld').textContent = formatCurrency(oldRes.total);
+
+      /* Recommendation */
+      var rec = document.getElementById('rRecommend');
+      rec.style.display = 'block';
+      rec.className = 'calc-res-recommend';
+      if (newRes.total <= oldRes.total) {
+        var saving = oldRes.total - newRes.total;
+        rec.classList.add('calc-new-better');
+        rec.innerHTML = ' In  Tax New Tax Regime  You save <strong>' + formatCurrency(saving) + '</strong> by choosing the New Regime.';
+      } else {
+        var saving2 = newRes.total - oldRes.total;
+        rec.classList.add('calc-old-better');
+        rec.innerHTML = ' Old Tax Regime is better! You save <strong>' + formatCurrency(saving2) + '</strong> by choosing the Old Regime.';
+      }
+
+      document.getElementById('calcResultsSection').style.display = 'block';
+      document.getElementById('calcResultsSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   </script>
 </body>

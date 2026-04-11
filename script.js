@@ -459,3 +459,179 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ==============================================
+   DNT FORM UTILITIES — reusable across all pages
+   ============================================== */
+
+/**
+ * Validate a single field and toggle error state.
+ * @param {string} fieldId   - wrapper div id (e.g. "field-name")
+ * @param {*}      value     - current field value
+ * @param {string} type      - "required" | "email" | "phone" | "maxlen"
+ * @param {number} [maxlen]  - only for type "maxlen"
+ * @returns {boolean} true if valid
+ */
+function dntValidateField(fieldId, value, type, maxlen) {
+  const fieldEl = document.getElementById(fieldId);
+  if (!fieldEl) return true;
+
+  let valid = true;
+  const v = String(value).trim();
+
+  switch (type) {
+    case 'required': valid = v.length > 0; break;
+    case 'email':    valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); break;
+    case 'phone':    valid = /^[6-9]\d{9}$/.test(v.replace(/\D/g, '')); break;
+    case 'maxlen':   valid = v.length <= (maxlen || 999); break;
+    default:         valid = true;
+  }
+
+  if (valid) {
+    fieldEl.classList.remove('has-error');
+    fieldEl.classList.add('is-valid');
+    const input = fieldEl.querySelector('input, select, textarea');
+    if (input) { input.setAttribute('aria-invalid', 'false'); }
+  } else {
+    fieldEl.classList.add('has-error');
+    fieldEl.classList.remove('is-valid');
+    const input = fieldEl.querySelector('input, select, textarea');
+    if (input) { input.setAttribute('aria-invalid', 'true'); }
+  }
+  return valid;
+}
+
+/**
+ * Character counter utility — attach to any textarea.
+ * @param {HTMLElement} textarea  - the textarea element
+ * @param {string}      counterId - id of counter display element
+ * @param {number}      maxLen    - character limit
+ */
+function dntCharCounter(textarea, counterId, maxLen) {
+  const counter = document.getElementById(counterId);
+  if (!counter) return;
+  const len = textarea.value.length;
+  counter.textContent = len + ' / ' + maxLen;
+  counter.classList.toggle('over', len > maxLen);
+}
+
+/**
+ * Set button to loading state.
+ * @param {string}  btnId     - button element id
+ * @param {boolean} isLoading - true = show spinner, false = restore
+ * @param {string}  [label]   - button text when restored
+ */
+function dntSetBtnLoading(btnId, isLoading, label) {
+  const btn = document.getElementById(btnId);
+  if (!btn) return;
+  if (isLoading) {
+    btn.disabled = true;
+    btn.classList.add('loading');
+    const textEl = btn.querySelector('span') || btn;
+    textEl.textContent = 'Sending…';
+    const iconEl = btn.querySelector('svg');
+    if (iconEl) iconEl.style.display = 'none';
+    const spinner = document.createElement('span');
+    spinner.className = 'dnt-spinner';
+    spinner.id = btnId + '-spinner';
+    btn.appendChild(spinner);
+  } else {
+    btn.disabled = false;
+    btn.classList.remove('loading');
+    const textEl = btn.querySelector('span:not(.dnt-spinner)') || btn;
+    textEl.textContent = label || 'Submit';
+    const iconEl = btn.querySelector('svg');
+    if (iconEl) iconEl.style.display = '';
+    const spinner = document.getElementById(btnId + '-spinner');
+    if (spinner) spinner.remove();
+  }
+}
+
+/**
+ * Sync floating labels for pre-filled or auto-filled inputs.
+ * Call once on DOMContentLoaded for pages using .dnt-field.
+ */
+function dntSyncFloatingLabels() {
+  document.querySelectorAll('.dnt-field input, .dnt-field select, .dnt-field textarea').forEach(function(el) {
+    if (el.value && el.value.trim() !== '') {
+      el.dispatchEvent(new Event('input'));
+    }
+    if (el.tagName === 'SELECT' && el.value !== '') {
+      el.classList.add('has-value');
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', dntSyncFloatingLabels);
+
+/**
+ * Contact form submit handler with full validation + loading state.
+ */
+function dntHandleContactSubmit(e) {
+  e.preventDefault();
+
+  const name    = document.getElementById('inp-name');
+  const phone   = document.getElementById('inp-phone');
+  const email   = document.getElementById('inp-email');
+  const service = document.getElementById('inp-service');
+  const message = document.getElementById('inp-message');
+
+  if (!name) return; // Not on contact page
+
+  let ok = true;
+  ok = dntValidateField('field-name',    name.value,    'required') && ok;
+  ok = dntValidateField('field-phone',   phone.value,   'phone')    && ok;
+  ok = dntValidateField('field-email',   email.value,   'email')    && ok;
+  ok = dntValidateField('field-service', service.value, 'required') && ok;
+  if (message && message.value.length > 500) {
+    ok = dntValidateField('field-message', message.value, 'maxlen', 500) && ok;
+  }
+
+  if (!ok) {
+    // Focus first error field
+    const firstErr = document.querySelector('.dnt-field.has-error input, .dnt-field.has-error select, .dnt-field.has-error textarea');
+    if (firstErr) firstErr.focus();
+    return;
+  }
+
+  // Show loading state
+  dntSetBtnLoading('contactSubmitBtn', true);
+
+  // Simulate async submission (replace with actual fetch/FormData in production)
+  setTimeout(function() {
+    dntSetBtnLoading('contactSubmitBtn', false, 'Send Message');
+
+    // Success banner
+    const alerts = document.getElementById('formAlerts');
+    if (alerts) {
+      alerts.innerHTML = '<div role="alert" style="background:#ecfdf5;border:1.5px solid #10b981;border-radius:10px;padding:0.85rem 1.1rem;font-size:0.88rem;color:#065f46;display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Message sent! We\'ll get back to you within 24 hours.</div>';
+    }
+
+    // Reset form
+    document.getElementById('contactForm').reset();
+    document.querySelectorAll('.dnt-field').forEach(function(f) {
+      f.classList.remove('is-valid', 'has-error');
+    });
+    const counter = document.getElementById('msg-counter');
+    if (counter) counter.textContent = '0 / 500';
+  }, 1800);
+}
+
+// Real-time validation on blur
+document.addEventListener('DOMContentLoaded', function() {
+  const validators = {
+    'inp-name':    { field: 'field-name',    type: 'required' },
+    'inp-phone':   { field: 'field-phone',   type: 'phone' },
+    'inp-email':   { field: 'field-email',   type: 'email' },
+    'inp-service': { field: 'field-service', type: 'required' }
+  };
+  Object.keys(validators).forEach(function(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('blur', function() {
+        if (el.value.trim()) {
+          dntValidateField(validators[id].field, el.value, validators[id].type);
+        }
+      });
+    }
+  });
+});

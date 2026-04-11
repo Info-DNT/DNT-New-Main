@@ -1,302 +1,1302 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | DNT Compliance – Free Consultation</title>
-  <meta name="description" content="Contact Digital Next Consultancy for company registration, GST filing and digital services. Get a free 30-minute consultation with our CA + IT team." />
+  <meta name="description"
+    content="Contact Digital Next Consultancy for company registration, GST filing and digital services. Get a free 30-minute consultation with our CA + IT team." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="global-theme-override.css" />
+  <style>
+    /* ===== CONTACT PAGE — SCOPED STYLES (v2: compact, zero blue) ===== */
+
+    /* ---- Form Card: Deep Warm Dark (gold-toned, not cold) ---- */
+    #info .glass-card {
+      background: linear-gradient(145deg, #1e1b14 0%, #12100b 100%) !important;
+      border: 1px solid rgba(245, 158, 11, 0.22) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 0 0 0.5px rgba(245, 158, 11, 0.06) !important;
+      backdrop-filter: blur(12px) !important;
+      padding: 2rem !important;
+    }
+
+    #info .glass-card h2 {
+      color: #fff !important;
+      font-size: 1.25rem !important;
+      margin-bottom: 0.25rem !important;
+    }
+
+    #info .glass-card>p {
+      color: rgba(255, 255, 255, 0.45) !important;
+      font-size: 0.82rem !important;
+      margin-bottom: 1.25rem !important;
+    }
+
+    /* ---- Form grid tighter ---- */
+    #info .glass-card .dnt-form-row {
+      gap: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    /* ---- Dark Inputs — compact 48px ---- */
+    .dnt-field input,
+    .dnt-field select,
+    .dnt-field textarea {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      color: #fff !important;
+      font-size: 0.9rem !important;
+      min-height: 48px !important;
+      padding-top: 1.25rem !important;
+      padding-bottom: 0.45rem !important;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease !important;
+    }
+
+    .dnt-field textarea {
+      min-height: 110px !important;
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.75rem !important;
+    }
+
+    .dnt-field input::placeholder,
+    .dnt-field textarea::placeholder {
+      color: transparent !important;
+    }
+
+    .dnt-field select option {
+      background: #ae9b6e;
+      color: #fff;
+    }
+
+    /* Gold focus — zero blue */
+    .dnt-field input:focus,
+    .dnt-field select:focus,
+    .dnt-field textarea:focus {
+      background: rgba(255, 255, 255, 0.07) !important;
+      border-color: #f59e0b !important;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15), inset 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* Input icons — 16px */
+    #info .glass-card .dnt-field-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+
+    #info .glass-card .dnt-field-icon {
+      color: rgba(255, 255, 255, 0.3) !important;
+      transition: color 0.3s ease !important;
+    }
+
+    #info .glass-card .dnt-field:focus-within .dnt-field-icon {
+      color: #f59e0b !important;
+    }
+
+    /* Select arrow (dark) */
+    .dnt-select-wrap::after {
+      border-top-color: rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .dnt-field:focus-within .dnt-select-wrap::after {
+      border-top-color: #f59e0b !important;
+    }
+
+    /* Floating label — 14px, smooth */
+    .dnt-label {
+      color: rgba(255, 255, 255, 0.38) !important;
+      font-size: 0.875rem !important;
+      transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease !important;
+    }
+
+    .dnt-field input:focus~.dnt-label,
+    .dnt-field input:not(:placeholder-shown)~.dnt-label,
+    .dnt-field select:focus~.dnt-label,
+    .dnt-field select.has-value~.dnt-label,
+    .dnt-field textarea:focus~.dnt-label,
+    .dnt-field textarea:not(:placeholder-shown)~.dnt-label {
+      color: #f59e0b !important;
+      font-size: 0.68rem !important;
+    }
+
+    /* ---- Validation icon slots ---- */
+    .dnt-field-inner {
+      position: relative;
+    }
+
+    .dnt-valid-icon,
+    .dnt-invalid-icon {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .dnt-field.is-valid .dnt-valid-icon {
+      display: flex;
+    }
+
+    .dnt-field.has-error .dnt-invalid-icon {
+      display: flex;
+    }
+
+    #field-message .dnt-valid-icon,
+    #field-message .dnt-invalid-icon {
+      top: 1.2rem;
+      transform: none;
+    }
+
+    /* Error state */
+    .dnt-field.has-error input,
+    .dnt-field.has-error select,
+    .dnt-field.has-error textarea {
+      border-color: #f87171 !important;
+      box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.12) !important;
+    }
+
+    .dnt-field.has-error .dnt-field-icon {
+      color: #f87171 !important;
+    }
+
+    .dnt-error-msg {
+      color: #fca5a5 !important;
+      font-size: 0.75rem !important;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease, opacity 0.25s ease !important;
+      opacity: 0;
+      display: flex !important;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .dnt-field.has-error .dnt-error-msg {
+      max-height: 1.5rem;
+      opacity: 1;
+    }
+
+    /* ---- Character counter — inside textarea ---- */
+    .dnt-char-counter {
+      position: absolute;
+      bottom: 0.45rem;
+      right: 0.65rem;
+      font-size: 0.68rem !important;
+      color: rgba(255, 255, 255, 0.25) !important;
+      pointer-events: none;
+      z-index: 3;
+      display: none;
+    }
+
+    #field-message {
+      position: relative;
+    }
+
+    #field-message .dnt-field-inner {
+      display: block;
+    }
+
+    #inp-message:not(:placeholder-shown)~.dnt-char-counter,
+    #inp-message:focus~.dnt-char-counter {
+      display: block !important;
+    }
+
+    .dnt-char-counter.warn {
+      color: #fcd34d !important;
+    }
+
+    .dnt-char-counter.over {
+      color: #f87171 !important;
+    }
+
+    /* ---- Submit Button — compact 48px ---- */
+    #info .btn-dnt-primary {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      min-height: 48px !important;
+      font-size: 0.95rem !important;
+      letter-spacing: 0.01em;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0.25rem;
+    }
+
+    #info .btn-dnt-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    #info .btn-dnt-primary:hover::before {
+      opacity: 1;
+    }
+
+    #info .btn-dnt-primary:hover #submitBtnIcon {
+      transform: translateX(4px);
+    }
+
+    #submitBtnIcon {
+      transition: transform 0.25s ease;
+    }
+
+    /* Security note */
+    #info .glass-card>form>p {
+      color: rgba(255, 255, 255, 0.28) !important;
+      font-size: 0.72rem !important;
+      margin-top: 0.65rem !important;
+    }
+
+    /* ---- Field stagger animation ---- */
+    @keyframes cFieldIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dnt-form-row {
+      animation: cFieldIn 0.5s ease both;
+    }
+
+    .dnt-form-row:nth-child(2) {
+      animation-delay: 0.07s;
+    }
+
+    .dnt-form-row:nth-child(3) {
+      animation-delay: 0.14s;
+    }
+
+    .dnt-form-row:nth-child(4) {
+      animation-delay: 0.21s;
+    }
+
+    .dnt-form-row:nth-child(5) {
+      animation-delay: 0.28s;
+    }
+
+    #contactSubmitBtn {
+      animation: cFieldIn 0.5s ease 0.35s both;
+    }
+
+    /* ---- Success Screen ---- */
+    #contactSuccessScreen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: cFieldIn 0.4s ease;
+    }
+
+    #contactSuccessScreen.visible {
+      display: flex;
+    }
+
+    .c-success-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.12);
+      border: 2px solid #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      animation: cSuccessIn 0.45s ease 0.1s both;
+    }
+
+    @keyframes cSuccessIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .c-success-heading {
+      color: #fff !important;
+      font-size: 1.25rem !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .c-success-sub {
+      color: rgba(255, 255, 255, 0.45) !important;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .c-reset-btn {
+      background: transparent !important;
+      color: #f59e0b !important;
+      border: 1.5px solid rgba(245, 158, 11, 0.35) !important;
+      border-radius: 8px;
+      padding: 0.55rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .c-reset-btn:hover {
+      background: rgba(245, 158, 11, 0.1) !important;
+    }
+
+    /* ---- Contact Info Cards — compact ---- */
+    .contact-info-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem !important;
+    }
+
+    .contact-info-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem !important;
+      padding: 1rem !important;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .contact-info-icon {
+      transition: background 0.3s ease !important;
+      width: 40px !important;
+      height: 40px !important;
+      flex-shrink: 0;
+    }
+
+    .contact-info-card:hover .contact-info-icon {
+      background: #f59e0b !important;
+    }
+
+    .contact-info-card:hover .contact-info-icon svg {
+      stroke: #050811 !important;
+    }
+
+    .contact-info-card h4 {
+      font-size: 0.9rem !important;
+    }
+
+    .contact-info-card p {
+      font-size: 0.8rem !important;
+    }
+
+    /* Call Us card compact */
+    #info .card .card-body {
+      padding: 1rem !important;
+    }
+
+    #info .card .card-icon {
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    #info .card h3.card-title {
+      font-size: 0.9rem !important;
+      margin: 0.5rem 0 0.25rem !important;
+    }
+
+    #info .card .card-text {
+      font-size: 0.82rem !important;
+    }
+
+    /* ---- WhatsApp Card — compact ---- */
+    .c-whatsapp-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #075e54, #25d366) !important;
+      border-radius: 12px;
+      padding: 1rem;
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .c-whatsapp-card:hover {
+      transform: scale(1.015);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .c-wa-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    @keyframes waPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    .c-wa-icon-wrap {
+      animation: waPulse 2.2s ease infinite;
+    }
+
+    .c-whatsapp-card h4 {
+      font-size: 0.9rem !important;
+    }
+
+    .c-whatsapp-card p {
+      font-size: 0.78rem !important;
+    }
+
+    /* ---- Why Contact Us — compact beige ---- */
+    .c-why-card {
+      background: #FBF8F3;
+      border: 1px solid #E5E0D5;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .c-why-card h4 {
+      color: #050811 !important;
+      margin-bottom: 0.65rem;
+      font-size: 1rem !important;
+    }
+
+    .c-why-card ul {
+      gap: 0.5rem !important;
+    }
+
+    .c-why-card li {
+      color: #374151 !important;
+      display: flex;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+    }
+
+    .c-why-card li span {
+      color: #f59e0b;
+      font-size: 0.82rem;
+    }
+
+    /* ---- Map section — light, 160px ---- */
+    #contact-map-section .map-placeholder {
+      background: linear-gradient(135deg, #FBF8F3, #f0ebe0) !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 160px;
+    }
+
+    #contact-map-section .map-link {
+      color: #050811;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s, color 0.2s;
+    }
+
+    #contact-map-section .map-link:hover {
+      gap: 0.65rem;
+      color: #f59e0b;
+    }
+
+    #contact-map-section .map-loc-icon {
+      stroke: #f59e0b;
+      opacity: 0.75;
+    }
+
+    #contact-map-section .map-city {
+      color: #050811 !important;
+      font-size: 0.88rem !important;
+      margin-bottom: 0.35rem !important;
+    }
+
+    /* ---- Bottom CTA ---- */
+    #contact-bottom-cta {
+      background: #f8fafc !important;
+    }
+
+    #contact-bottom-cta h2 {
+      color: #0f172a !important;
+      font-size: 1.25rem !important;
+    }
+
+    #contact-bottom-cta p {
+      color: #64748b !important;
+      font-size: 0.88rem !important;
+    }
+
+    .c-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #050811;
+      border: none;
+      border-radius: 10px;
+      padding: 0.75rem 1.75rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .c-cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(245, 158, 11, 0.4);
+    }
+
+    .c-cta-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: #050811;
+      border: 1.5px solid rgba(245, 158, 11, 0.4);
+      border-radius: 10px;
+      padding: 0.75rem 1.75rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .c-cta-outline:hover {
+      background: #f59e0b;
+      border-color: #f59e0b;
+    }
+
+    /* ---- Focus rings (gold, not blue) ---- */
+    .dnt-field input:focus-visible,
+    .dnt-field select:focus-visible,
+    .dnt-field textarea:focus-visible,
+    #contactSubmitBtn:focus-visible,
+    .c-cta-primary:focus-visible,
+    .c-cta-outline:focus-visible {
+      outline: 2px solid #f59e0b !important;
+      outline-offset: 2px !important;
+    }
+
+    /* ---- Info section layout — tighter gap ---- */
+    #info .grid-half {
+      gap: 2rem !important;
+    }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 768px) {
+      #info .glass-card {
+        padding: 1.25rem !important;
+        border-radius: 16px !important;
+      }
+
+      #info .glass-card h2 {
+        font-size: 1.1rem !important;
+      }
+
+      #contactSubmitBtn {
+        min-height: 48px !important;
+      }
+
+      .dnt-field input,
+      .dnt-field select {
+        min-height: 44px !important;
+      }
+
+      .c-whatsapp-card {
+        padding: 0.85rem;
+      }
+
+      #contact-bottom-cta .btns-wrap {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .c-cta-primary,
+      .c-cta-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .contact-info-sidebar {
+        gap: 0.6rem !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div id="scroll-progress"></div>
-<nav id="main-nav" aria-label="Main Navigation">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon"><img src="assets/logo.svg" alt="DNT Logo"></div>
-        <div class="nav-logo-text">
-          <span class="nav-logo-name">Digital Next</span>
-          <span class="nav-logo-sub">Consultancy</span>
-        </div>
-      </a>
+  <div id="scroll-progress"></div>
+  <nav id="main-nav" aria-label="Main Navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon"><img src="assets/logo.svg" alt="DNT Logo"></div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Digital Next</span>
+            <span class="nav-logo-sub">Consultancy</span>
+          </div>
+        </a>
 
-      <div class="nav-links">
-        <a href="index.html" class="nav-link" data-path="/index.html">Home</a>
-        <div class="nav-services-wrap">
-          <button class="nav-services-btn">
-            Services
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="services-dropdown">
-            <div class="services-dropdown-grid">
-              <div class="services-col gold">
-                <a href="services/compliance.html" class="services-col-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  Statutory & Compliance
-                </a>
-                <ul>
-                  <li><a href="services/compliance.html#formation">Company Formation</a></li>
-                  <li><a href="services/compliance.html#gst">GST Registration & Filing</a></li>
-                  <li><a href="services/itr-filing.html">ITR Filing</a></li>
-                  <li><a href="services/compliance.html#tds">TDS/TCS Filing</a></li>
-                  <li><a href="services/compliance.html#roc">ROC/MCA Filings</a></li>
-                </ul>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link" data-path="/index.html">Home</a>
+          <div class="nav-services-wrap">
+            <button class="nav-services-btn">
+              Services
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="services-dropdown">
+              <div class="services-dropdown-grid">
+                <div class="services-col gold">
+                  <a href="services/compliance.html" class="services-col-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    Statutory & Compliance
+                  </a>
+                  <ul>
+                    <li><a href="services/compliance.html#formation">Company Formation</a></li>
+                    <li><a href="services/compliance.html#gst">GST Registration & Filing</a></li>
+                    <li><a href="services/itr-filing.html">ITR Filing</a></li>
+                    <li><a href="services/compliance.html#tds">TDS/TCS Filing</a></li>
+                    <li><a href="services/compliance.html#roc">ROC/MCA Filings</a></li>
+                  </ul>
+                </div>
+                <div class="services-col blue">
+                  <a href="services/digital-marketing.html" class="services-col-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="20" x2="18" y2="10" />
+                      <line x1="12" y1="20" x2="12" y2="4" />
+                      <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    Digital Marketing
+                  </a>
+                  <ul>
+                    <li><a href="services/digital-marketing.html#web">Website Development</a></li>
+                    <li><a href="services/digital-marketing.html#seo">SEO Services</a></li>
+                    <li><a href="services/digital-marketing.html#ads">Paid Advertising</a></li>
+                    <li><a href="services/digital-marketing.html#smm">Social Media Marketing</a></li>
+                    <li><a href="services/digital-marketing.html#content">Content Marketing</a></li>
+                  </ul>
+                </div>
+                <div class="services-col green">
+                  <a href="services/technology.html" class="services-col-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <rect x="9" y="9" width="6" height="6" />
+                      <line x1="9" y1="2" x2="9" y2="4" />
+                      <line x1="15" y1="2" x2="15" y2="4" />
+                      <line x1="9" y1="20" x2="9" y2="22" />
+                      <line x1="15" y1="20" x2="15" y2="22" />
+                      <line x1="20" y1="9" x2="22" y2="9" />
+                      <line x1="20" y1="14" x2="22" y2="14" />
+                      <line x1="2" y1="9" x2="4" y2="9" />
+                      <line x1="2" y1="14" x2="4" y2="14" />
+                    </svg>
+                    IT & Technology
+                  </a>
+                  <ul>
+                    <li><a href="services/technology.html#erp">ERP Implementation</a></li>
+                    <li><a href="services/technology.html#crm">CRM Integration</a></li>
+                    <li><a href="services/technology.html#automation">Process Automation</a></li>
+                    <li><a href="services/technology.html#dashboard">AI Compliance Dashboard</a></li>
+                    <li><a href="services/technology.html#cloud">Cloud Migration</a></li>
+                  </ul>
+                </div>
               </div>
-              <div class="services-col blue">
-                <a href="services/digital-marketing.html" class="services-col-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                  Digital Marketing
-                </a>
-                <ul>
-                  <li><a href="services/digital-marketing.html#web">Website Development</a></li>
-                  <li><a href="services/digital-marketing.html#seo">SEO Services</a></li>
-                  <li><a href="services/digital-marketing.html#ads">Paid Advertising</a></li>
-                  <li><a href="services/digital-marketing.html#smm">Social Media Marketing</a></li>
-                  <li><a href="services/digital-marketing.html#content">Content Marketing</a></li>
-                </ul>
+              <div class="services-dropdown-footer">
+                <a href="dashboard.html">Explore Our AI Compliance Dashboard</a>
+                <span>→</span>
               </div>
-              <div class="services-col green">
-                <a href="services/technology.html" class="services-col-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg>
-                  IT & Technology
-                </a>
-                <ul>
-                  <li><a href="services/technology.html#erp">ERP Implementation</a></li>
-                  <li><a href="services/technology.html#crm">CRM Integration</a></li>
-                  <li><a href="services/technology.html#automation">Process Automation</a></li>
-                  <li><a href="services/technology.html#dashboard">AI Compliance Dashboard</a></li>
-                  <li><a href="services/technology.html#cloud">Cloud Migration</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="services-dropdown-footer">
-              <a href="dashboard.html">Explore Our AI Compliance Dashboard</a>
-              <span>→</span>
             </div>
           </div>
+          <a href="about.html" class="nav-link" data-path="/about.html">About Us</a>
+          <a href="packages.html" class="nav-link" data-path="/packages.html">Packages</a>
+          <a href="blog.html" class="nav-link" data-path="/blog.html">Blog</a>
+          <a href="contact.html" class="nav-link" data-path="/contact.html">Contact</a>
         </div>
-        <a href="about.html" class="nav-link" data-path="/about.html">About Us</a>
-        <a href="packages.html" class="nav-link" data-path="/packages.html">Packages</a>
-        <a href="blog.html" class="nav-link" data-path="/blog.html">Blog</a>
-        <a href="contact.html" class="nav-link" data-path="/contact.html">Contact</a>
-        </div>
 
-      <a href="contact.html" class="nav-cta-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        Free Consultation
-      </a>
+        <a href="contact.html" class="nav-cta-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          Free Consultation
+        </a>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-        <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <svg id="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobile-menu">
-    <a href="index.html" class="mobile-nav-link">Home</a>
-    <button class="mobile-services-btn" id="mobile-services-btn">
-      Services
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="mobile-services-sub">
-      <a href="services/compliance.html" class="mobile-sub-link">Statutory & Compliance</a>
-      <a href="services/digital-marketing.html" class="mobile-sub-link">Digital Marketing</a>
-      <a href="services/technology.html" class="mobile-sub-link">IT & Technology</a>
-    </div>
-    <a href="about.html" class="mobile-nav-link">About Us</a>
-    <a href="packages.html" class="mobile-nav-link">Packages</a>
-    <a href="blog.html" class="mobile-nav-link">Blog</a>
-    <a href="contact.html" class="mobile-nav-link">Contact</a>
-    <a href="contact.html" class="mobile-cta-btn">Get Free Consultation</a>
-  </div>
-</nav>
-
-<section class="page-hero">
-  <div class="silk-overlay"></div>
-  <div class="container relative z-3">
-    <div class="section-heading reveal">
-      <span class="overline">Contact Us</span>
-      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem);margin-top:.5rem">Let's Build Your Success Story</h1>
-      <p class="section-subtitle">Have a question about compliance, digital growth, or custom automation? Our experts are here to help.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT INFO -->
-<section class="section bg-white" id="info">
-  <div class="container">
-    <div class="grid-half bg-light" style="gap:4rem;margin-top:4rem;padding:4rem;border-radius:24px">
-      <div class="reveal">
-        <h2 class="card-title" style="font-size:1.8rem;margin-bottom:1.5rem">Send a Message</h2>
-        <form class="contact-form" id="contactForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="card-text">Full Name</label>
-              <input type="text" placeholder="e.g. Rahul Sharma" required />
-            </div>
-            <div class="form-group">
-              <label class="card-text">Phone Number</label>
-              <input type="tel" placeholder="+91 XXXXXXXXXX" required />
-            </div>
-            <div class="form-group">
-              <label class="card-text">Email Address</label>
-              <input type="email" placeholder="john@company.com" required />
-            </div>
-            <div class="form-group">
-              <label class="card-text">Business Name</label>
-              <input type="text" placeholder="Your Company Pvt. Ltd." />
-            </div>
-            <div class="form-group">
-              <label class="card-text">Service Interested In</label>
-              <select required>
-                <option value="">Select a service</option>
-                <option>Company Registration</option>
-                <option>GST Registration &amp; Filing</option>
-                <option>ITR Filing</option>
-                <option>Website Development</option>
-                <option>SEO Services</option>
-                <option>Digital Marketing</option>
-                <option>ERP Implementation</option>
-                <option>CRM Setup</option>
-                <option>Full Compliance Package</option>
-                <option>Custom Solution</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="card-text">Message</label>
-              <textarea placeholder="Tell us about your requirements..." rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-navy">Send Message</button>
-          </div>
-        </form>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg id="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" class="hidden">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
       </div>
+    </div>
 
-      <!-- CONTACT INFO -->
-      <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:1rem">
-        <div class="card reveal reveal-delay-1">
-          <div class="card-body">
-            <div class="card-icon card-icon-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <h3 class="font-heading card-title" style="font-size:1.15rem;margin:.75rem 0 .4rem">Call Us</h3>
-            <p class="card-text" style="font-weight:600;font-size:1.2rem;color:var(--blue)">+91 81300 35039</p>
-            <p class="card-text">Mon-Sat, 10 AM - 7 PM IST</p>
+    <div id="mobile-menu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <button class="mobile-services-btn" id="mobile-services-btn">
+        Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div id="mobile-services-sub">
+        <a href="services/compliance.html" class="mobile-sub-link">Statutory & Compliance</a>
+        <a href="services/digital-marketing.html" class="mobile-sub-link">Digital Marketing</a>
+        <a href="services/technology.html" class="mobile-sub-link">IT & Technology</a>
+      </div>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="packages.html" class="mobile-nav-link">Packages</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="silk-overlay"></div>
+    <div class="container relative z-3">
+      <div class="section-heading reveal">
+        <span class="overline">Contact Us</span>
+        <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem);margin-top:.5rem">Let's Build Your Success
+          Story</h1>
+        <p class="section-subtitle">Have a question about compliance, digital growth, or custom automation? Our experts
+          are here to help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO -->
+  <section class="section bg-white" id="info">
+    <div class="container">
+      <div class="grid-half" style="gap:3rem;margin-top:2rem;align-items:start">
+
+        <!-- FORM CARD -->
+        <div class="glass-card reveal" style="padding:var(--card-padding)">
+          <h2 class="card-title" style="font-size:1.6rem;margin-bottom:0.4rem">Send a Message</h2>
+          <p class="card-text" style="margin-bottom:1.75rem;font-size:0.9rem">We'll get back to you within 24 hours.</p>
+
+          <form id="contactForm" novalidate aria-label="Contact form">
+            <div aria-live="polite" id="formAlerts"></div>
+
+            <!-- Row 1: Name + Phone -->
+            <div class="dnt-form-row">
+              <div class="dnt-field" id="field-name">
+                <div class="dnt-field-inner">
+                  <span class="dnt-field-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </span>
+                  <input type="text" id="inp-name" name="name" placeholder=" " required aria-label="Full Name"
+                    aria-required="true" aria-describedby="err-name" autocomplete="name">
+                  <label class="dnt-label" for="inp-name">Full Name <span style="color:#ef4444">*</span></label>
+                </div>
+                <span class="dnt-error-msg" id="err-name" role="alert">Please enter your full name.</span>
+              </div>
+              <div class="dnt-field" id="field-phone">
+                <div class="dnt-field-inner">
+                  <span class="dnt-field-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                  </span>
+                  <input type="tel" id="inp-phone" name="phone" placeholder=" " required aria-label="Phone Number"
+                    aria-required="true" aria-describedby="err-phone" autocomplete="tel">
+                  <label class="dnt-label" for="inp-phone">Phone Number <span style="color:#ef4444">*</span></label>
+                </div>
+                <span class="dnt-error-msg" id="err-phone" role="alert">Enter a valid 10-digit phone number.</span>
+              </div>
+            </div>
+
+            <!-- Row 2: Email + Company -->
+            <div class="dnt-form-row">
+              <div class="dnt-field" id="field-email">
+                <div class="dnt-field-inner">
+                  <span class="dnt-field-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </span>
+                  <input type="email" id="inp-email" name="email" placeholder=" " required aria-label="Email Address"
+                    aria-required="true" aria-describedby="err-email" autocomplete="email">
+                  <label class="dnt-label" for="inp-email">Email Address <span style="color:#ef4444">*</span></label>
+                </div>
+                <span class="dnt-error-msg" id="err-email" role="alert">Enter a valid email address.</span>
+              </div>
+              <div class="dnt-field" id="field-company">
+                <div class="dnt-field-inner">
+                  <span class="dnt-field-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="7" width="20" height="14" rx="2" />
+                      <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+                    </svg>
+                  </span>
+                  <input type="text" id="inp-company" name="company" placeholder=" " aria-label="Business Name"
+                    autocomplete="organization">
+                  <label class="dnt-label" for="inp-company">Business Name</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: Service (full width) -->
+            <div class="dnt-form-row full">
+              <div class="dnt-field dnt-select-wrap" id="field-service">
+                <div class="dnt-field-inner">
+                  <span class="dnt-field-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </span>
+                  <select id="inp-service" name="service" required aria-label="Service Interested In"
+                    aria-required="true" aria-describedby="err-service"
+                    onchange="this.classList.toggle('has-value', this.value !== '')">
+                    <option value=""> </option>
+                    <option value="Company Registration">Company Registration</option>
+                    <option value="GST Registration & Filing">GST Registration &amp; Filing</option>
+                    <option value="ITR Filing">ITR Filing</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="SEO Services">SEO Services</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="ERP Implementation">ERP Implementation</option>
+                    <option value="CRM Setup">CRM Setup</option>
+                    <option value="Full Compliance Package">Full Compliance Package</option>
+                    <option value="Custom Solution">Custom Solution</option>
+                  </select>
+                  <label class="dnt-label" for="inp-service">Service Interested In <span
+                      style="color:#ef4444">*</span></label>
+                </div>
+                <span class="dnt-error-msg" id="err-service" role="alert">Please select a service.</span>
+              </div>
+            </div>
+
+            <!-- Row 4: Message (full width) -->
+            <div class="dnt-form-row full">
+              <div class="dnt-field" id="field-message">
+                <div class="dnt-field-inner" style="align-items:flex-start">
+                  <span class="dnt-field-icon" style="top:1.25rem;transform:none" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                  </span>
+                  <textarea id="inp-message" name="message" placeholder=" " rows="5" maxlength="500"
+                    aria-label="Your Message" aria-describedby="err-message msg-counter"
+                    oninput="dntCharCounter(this, 'msg-counter', 500)"></textarea>
+                  <label class="dnt-label" for="inp-message">Your Message</label>
+                </div>
+                <span class="dnt-error-msg" id="err-message" role="alert">Message cannot exceed 500 characters.</span>
+                <div class="dnt-char-counter" id="msg-counter" aria-live="polite">0 / 500</div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="contactSubmitBtn" class="btn-dnt-primary"
+              style="width:100%;justify-content:center" onclick="dntHandleContactSubmit(event)">
+              <span id="submitBtnText">Send Message</span>
+              <svg id="submitBtnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+
+            <!-- Security note -->
+            <p
+              style="text-align:center;margin-top:0.85rem;font-size:0.78rem;color:#6b7280;display:flex;align-items:center;justify-content:center;gap:0.4rem">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+              Your information is secure and encrypted.
+            </p>
+          </form>
+
+          <!-- Success Screen (shown after submit) -->
+          <div id="contactSuccessScreen" aria-live="polite">
+            <div class="c-success-circle">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"
+                aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3 class="font-heading c-success-heading">Message Sent! 🎉</h3>
+            <p class="c-success-sub">We'll get back to you within 24 hours.<br>Our team is ready to help you grow.</p>
+            <button class="c-reset-btn" onclick="cResetForm()">
+              ↩ Send Another Message
+            </button>
           </div>
         </div>
-        <a href="mailto:hello@dntconsultancy.in" class="contact-info-card">
-          <div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><h4 class="font-heading">Email</h4><p style="color:var(--blue);font-weight:500">hello@dntconsultancy.in</p><p style="font-size:.82rem;color:rgba(255,255,255,0.5)">We reply within 24 hours</p></div>
-        </a>
-        <div class="contact-info-card" style="cursor:default">
-          <div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><h4 class="font-heading">Address</h4><p style="color:var(--blue);font-weight:500">New Delhi, India</p><p style="font-size:.82rem;color:rgba(255,255,255,0.5)">Corporate Office</p></div>
+
+        <!-- CONTACT INFO SIDEBAR -->
+        <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:1rem">
+          <div class="card hover-lift reveal reveal-delay-1">
+            <div class="card-body">
+              <div class="card-icon card-icon-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                </svg></div>
+              <h3 class="font-heading card-title" style="font-size:1.15rem;margin:.75rem 0 .4rem">Call Us</h3>
+              <p class="card-text" style="font-weight:600;font-size:1.2rem;color:var(--blue)">+91 81300 35039</p>
+              <p class="card-text">Mon-Sat, 10 AM - 7 PM IST</p>
+            </div>
+          </div>
+          <a href="mailto:hello@dntconsultancy.in" class="contact-info-card hover-lift">
+            <div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg></div>
+            <div>
+              <h4 class="font-heading">Email</h4>
+              <p style="color:var(--blue);font-weight:500">hello@dntconsultancy.in</p>
+              <p style="font-size:.82rem;color:rgba(255,255,255,0.5)">We reply within 24 hours</p>
+            </div>
+          </a>
+          <div class="contact-info-card" style="cursor:default">
+            <div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></div>
+            <div>
+              <h4 class="font-heading">Address</h4>
+              <p style="color:var(--blue);font-weight:500">New Delhi, India</p>
+              <p style="font-size:.82rem;color:rgba(255,255,255,0.5)">Corporate Office</p>
+            </div>
+          </div>
+          <div class="contact-info-card" style="cursor:default">
+            <div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg></div>
+            <div>
+              <h4 class="font-heading">Working Hours</h4>
+              <p style="color:var(--blue);font-weight:500">Mon - Sat: 9AM - 6PM</p>
+              <p style="font-size:.82rem;color:rgba(255,255,255,0.5)">Sunday: Closed</p>
+            </div>
+          </div>
+          <a href="https://wa.me/918130035039?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+            target="_blank" rel="noopener" class="c-whatsapp-card">
+            <div class="c-wa-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg></div>
+            <div style="flex:1">
+              <h4 class="font-heading" style="font-size:1rem;color:#fff">Chat on WhatsApp</h4>
+              <p style="font-size:.85rem;opacity:.85;color:#fff">Get instant response</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <div class="c-why-card">
+            <h4 class="font-heading">Why Contact Us?</h4>
+            <ul style="display:flex;flex-direction:column;gap:.75rem">
+              <li><span>✓</span>Free 30-minute consultation</li>
+              <li><span>✓</span>Expert CA + IT team</li>
+              <li><span>✓</span>Customized solutions</li>
+              <li><span>✓</span>Quick response within 24hrs</li>
+            </ul>
+          </div>
         </div>
-        <div class="contact-info-card" style="cursor:default">
-          <div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><h4 class="font-heading">Working Hours</h4><p style="color:var(--blue);font-weight:500">Mon - Sat: 9AM - 6PM</p><p style="font-size:.82rem;color:rgba(255,255,255,0.5)">Sunday: Closed</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section-sm" id="contact-map-section">
+    <div class="container">
+      <div class="card" style="overflow:hidden;border:1px solid #e5e7eb">
+        <div class="map-placeholder">
+          <div style="text-align:center">
+            <svg class="map-loc-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="1.5"
+              style="margin:0 auto .75rem;display:block">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <p class="map-city" style="font-weight:600;font-family:'Outfit',sans-serif;margin-bottom:.5rem">New Delhi,
+              India</p>
+            <a href="https://maps.google.com/?q=New+Delhi,+India" target="_blank" rel="noopener" class="map-link">View
+              on Google Maps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></a>
+          </div>
         </div>
-        <a href="https://wa.me/918130035039?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;background:var(--success);border-radius:12px;padding:1.25rem;color:#fff;text-decoration:none;transition:opacity .2s">
-          <div style="width:46px;height:46px;border-radius:10px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-          <div style="flex:1"><h4 class="font-heading" style="font-size:1rem">Chat on WhatsApp</h4><p style="font-size:.85rem;opacity:.85">Get instant response</p></div>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <div style="background:var(--navy);border-radius:12px;padding:1.5rem;color:#fff">
-          <h4 class="font-heading" style="margin-bottom:1rem;color:var(--text-primary)">Why Contact Us?</h4>
-          <ul style="display:flex;flex-direction:column;gap:.75rem;color:rgba(255,255,255,.8);font-size:.9rem">
-            <li style="display:flex;gap:.5rem"><span style="color:var(--gold)">✓</span>Free 30-minute consultation</li>
-            <li style="display:flex;gap:.5rem"><span style="color:var(--gold)">✓</span>Expert CA + IT team</li>
-            <li style="display:flex;gap:.5rem"><span style="color:var(--gold)">✓</span>Customized solutions</li>
-            <li style="display:flex;gap:.5rem"><span style="color:var(--gold)">✓</span>Quick response within 24hrs</li>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="section" id="contact-bottom-cta" style="text-align:center">
+    <div class="container reveal" style="max-width:600px">
+      <h2 class="font-heading" style="font-size:1.5rem;margin-bottom:1rem">Prefer to Explore First?</h2>
+      <p style="margin-bottom:1.75rem">Check our packages page for detailed service information and pricing.</p>
+      <div class="btns-wrap" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem">
+        <a href="packages.html" class="c-cta-primary">View Packages <svg width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg></a>
+        <a href="dashboard.html" class="c-cta-outline">Explore Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo-icon"><img src="assets/logo.svg" alt="DNT Logo"></div>
+          <div
+            style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.2rem;color:var(--text-primary)">
+            Digital Next</div>
+          <div
+            style="font-family:'Outfit',sans-serif;font-weight:500;font-size:0.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem">
+            Consultancy Pvt. Ltd.</div>
+          <p class="footer-desc">Where Compliance Meets Digital Excellence. India's first CA + IT single platform for
+            complete business growth.</p>
+          <a href="tel:+918130035039" class="footer-contact-item">+91 8130035039</a>
+          <a href="mailto:hello@dntconsultancy.in" class="footer-contact-item">hello@dntconsultancy.in</a>
+        </div>
+        <div>
+          <h4 class="footer-col-title gold">Compliance</h4>
+          <ul class="footer-links">
+            <li><a href="services/compliance.html#formation">Company Formation</a></li>
+            <li><a href="services/compliance.html#gst">GST Registration</a></li>
+            <li><a href="services/compliance.html#itr">ITR Filing</a></li>
+            <li><a href="services/compliance.html#roc">ROC Filings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title blue">Digital &amp; IT</h4>
+          <ul class="footer-links blue">
+            <li><a href="services/digital-marketing.html#web">Website Development</a></li>
+            <li><a href="services/digital-marketing.html#seo">SEO Services</a></li>
+            <li><a href="services/technology.html#erp">ERP Implementation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title green">Company</h4>
+          <ul class="footer-links green">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- MAP -->
-<section class="section-sm" class="bg-light">
-  <div class="container">
-    <div class="card" style="overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border)">
-      <div style="height:220px;background:linear-gradient(135deg,rgba(13,27,62,0.8),rgba(10,20,40,0.9));display:flex;align-items:center;justify-content:center">
-        <div style="text-align:center">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="opacity:.6;margin:0 auto .75rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <p style="color:var(--text-primary);font-weight:500;font-family:'Outfit',sans-serif">New Delhi, India</p>
-          <a href="https://maps.google.com/?q=New+Delhi,+India" target="_blank" rel="noopener" style="color:var(--gold);font-size:.9rem;margin-top:.5rem;display:inline-flex;align-items:center;gap:.3rem;text-decoration:none">View on Google Maps →</a>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Digital Next Consultancy Pvt. Ltd. All Rights Reserved. | <a href="privacy.html"
+            style="color:inherit;text-decoration:underline">Privacy Policy</a> | <a href="terms.html"
+            style="color:inherit;text-decoration:underline">Terms of Service</a></p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><svg
+              width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg
+              width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg
+              width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube"><svg
+              width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+            </svg></a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- BOTTOM CTA -->
-<section class="section" style="background:rgba(255,255,255,0.02);text-align:center">
-  <div class="container reveal" style="max-width:600px">
-    <h2 class="font-heading" style="font-size:1.5rem;color:var(--text-primary);margin-bottom:1rem">Prefer to Explore First?</h2>
-    <p style="color:rgba(255,255,255,0.6);margin-bottom:1.75rem">Check our packages page for detailed service information and pricing.</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem">
-      <a href="packages.html" class="btn btn-gold">View Packages →</a>
-      <a href="dashboard.html" class="btn btn-outline" style="color:var(--text-primary);border-color:rgba(255,255,255,0.2)">Explore Dashboard</a>
+  <a id="whatsapp-btn" href="https://wa.me/918130035039" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+      width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></a>
+  <div id="cookie-consent" role="alert">
+    <div class="cookie-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+        stroke-width="2">
+        <circle cx="12" cy="12" r="10" />
+      </svg></div>
+    <div>
+      <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;margin-bottom:.4rem">We value your
+        privacy</p>
+      <p style="font-size:.82rem;color:var(--text-muted)">We use cookies to enhance your experience.</p>
+      <div class="cookie-btns"><button class="cookie-accept" id="cookie-accept">Accept All</button><button
+          class="cookie-decline" id="cookie-decline">Decline</button></div>
     </div>
   </div>
-</section>
+  <script src="script.js"></script>
+  <script>
+    /* === Contact page: add validation icons to all dnt-fields === */
+    document.addEventListener('DOMContentLoaded', function () {
+      var iconFields = ['field-name', 'field-phone', 'field-email', 'field-service', 'field-message'];
+      iconFields.forEach(function (id) {
+        var field = document.getElementById(id);
+        if (!field) return;
+        var inner = field.querySelector('.dnt-field-inner');
+        if (!inner) return;
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo-icon"><img src="assets/logo.svg" alt="DNT Logo"></div>
-        <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.2rem;color:var(--text-primary)">Digital Next</div>
-        <div style="font-family:'Outfit',sans-serif;font-weight:500;font-size:0.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem">Consultancy Pvt. Ltd.</div>
-        <p class="footer-desc">Where Compliance Meets Digital Excellence. India's first CA + IT single platform for complete business growth.</p>
-        <a href="tel:+918130035039" class="footer-contact-item">+91 8130035039</a>
-        <a href="mailto:hello@dntconsultancy.in" class="footer-contact-item">hello@dntconsultancy.in</a>
-      </div>
-      <div>
-        <h4 class="footer-col-title gold">Compliance</h4>
-        <ul class="footer-links">
-          <li><a href="services/compliance.html#formation">Company Formation</a></li>
-          <li><a href="services/compliance.html#gst">GST Registration</a></li>
-          <li><a href="services/compliance.html#itr">ITR Filing</a></li>
-          <li><a href="services/compliance.html#roc">ROC Filings</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-col-title blue">Digital &amp; IT</h4>
-        <ul class="footer-links blue">
-          <li><a href="services/digital-marketing.html#web">Website Development</a></li>
-          <li><a href="services/digital-marketing.html#seo">SEO Services</a></li>
-          <li><a href="services/technology.html#erp">ERP Implementation</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-col-title green">Company</h4>
-        <ul class="footer-links green">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="packages.html">Packages</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Digital Next Consultancy Pvt. Ltd. All Rights Reserved. | <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> | <a href="terms.html" style="color:inherit;text-decoration:underline">Terms of Service</a></p>
-      <div class="footer-socials">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
-      </div>
-    </div>
-  </div>
-</footer>
+        /* Valid icon (green check) */
+        var vi = document.createElement('span');
+        vi.className = 'dnt-valid-icon';
+        vi.setAttribute('aria-hidden', 'true');
+        vi.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
+        inner.appendChild(vi);
 
-<a id="whatsapp-btn" href="https://wa.me/918130035039" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<div id="cookie-consent" role="alert"><div class="cookie-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div><p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;margin-bottom:.4rem">We value your privacy</p><p style="font-size:.82rem;color:var(--text-muted)">We use cookies to enhance your experience.</p><div class="cookie-btns"><button class="cookie-accept" id="cookie-accept">Accept All</button><button class="cookie-decline" id="cookie-decline">Decline</button></div></div></div>
-<script src="script.js"></script>
+        /* Invalid icon (red exclamation) */
+        var ii = document.createElement('span');
+        ii.className = 'dnt-invalid-icon';
+        ii.setAttribute('aria-hidden', 'true');
+        ii.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+        inner.appendChild(ii);
+      });
+
+      /* === Real-time validation as user types === */
+      var rt = {
+        'inp-name': function (v) { return v.trim().length >= 2; },
+        'inp-phone': function (v) { return /^[6-9]\d{9}$/.test(v.replace(/\D/g, '')); },
+        'inp-email': function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); },
+        'inp-service': function (v) { return v.trim() !== ''; }
+      };
+      var fieldMap = { 'inp-name': 'field-name', 'inp-phone': 'field-phone', 'inp-email': 'field-email', 'inp-service': 'field-service' };
+      Object.keys(rt).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var ev = el.tagName === 'SELECT' ? 'change' : 'input';
+        el.addEventListener(ev, function () {
+          var fieldEl = document.getElementById(fieldMap[id]);
+          if (!fieldEl) return;
+          if (this.value.trim() === '') {
+            fieldEl.classList.remove('is-valid', 'has-error'); return;
+          }
+          var ok = rt[id](this.value);
+          fieldEl.classList.toggle('is-valid', ok);
+          fieldEl.classList.toggle('has-error', !ok);
+        });
+      });
+
+      /* === Character counter warn state === */
+      var msgEl = document.getElementById('inp-message');
+      var ctrEl = document.getElementById('msg-counter');
+      if (msgEl && ctrEl) {
+        msgEl.addEventListener('input', function () {
+          var len = this.value.length;
+          ctrEl.textContent = len + ' / 500';
+          ctrEl.className = 'dnt-char-counter';
+          if (len > 500) ctrEl.classList.add('over');
+          else if (len >= 400) ctrEl.classList.add('warn');
+        });
+      }
+    });
+
+    /* === Override dntHandleContactSubmit for success screen === */
+    function dntHandleContactSubmit(e) {
+      e.preventDefault();
+      var name = document.getElementById('inp-name');
+      var phone = document.getElementById('inp-phone');
+      var email = document.getElementById('inp-email');
+      var service = document.getElementById('inp-service');
+      var message = document.getElementById('inp-message');
+      if (!name) return;
+      var ok = true;
+      ok = dntValidateField('field-name', name.value, 'required') && ok;
+      ok = dntValidateField('field-phone', phone.value, 'phone') && ok;
+      ok = dntValidateField('field-email', email.value, 'email') && ok;
+      ok = dntValidateField('field-service', service.value, 'required') && ok;
+      if (message && message.value.length > 500) {
+        ok = dntValidateField('field-message', message.value, 'maxlen', 500) && ok;
+      }
+      if (!ok) {
+        var firstErr = document.querySelector('.dnt-field.has-error input, .dnt-field.has-error select, .dnt-field.has-error textarea');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+      dntSetBtnLoading('contactSubmitBtn', true);
+      setTimeout(function () {
+        dntSetBtnLoading('contactSubmitBtn', false, 'Send Message');
+        /* Show success screen, hide form */
+        var form = document.getElementById('contactForm');
+        var successScreen = document.getElementById('contactSuccessScreen');
+        if (form && successScreen) {
+          form.style.display = 'none';
+          successScreen.classList.add('visible');
+          successScreen.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 1800);
+    }
+
+    /* === Reset form from success screen === */
+    function cResetForm() {
+      var form = document.getElementById('contactForm');
+      var successScreen = document.getElementById('contactSuccessScreen');
+      if (form) { form.reset(); form.style.display = ''; }
+      if (successScreen) successScreen.classList.remove('visible');
+      document.querySelectorAll('.dnt-field').forEach(function (f) {
+        f.classList.remove('is-valid', 'has-error');
+      });
+      var ctr = document.getElementById('msg-counter');
+      if (ctr) { ctr.textContent = '0 / 500'; ctr.className = 'dnt-char-counter'; }
+    }
+  </script>
 </body>
+
 </html>
-
-
-
-
