@@ -209,6 +209,13 @@
         height: 410px !important;
       }
     }
+
+    /* Globe Mobile Optimization */
+    @media (max-width: 768px) {
+      #globe-container {
+        display: none !important;
+      }
+    }
   </style>
 
   <!-- Schema.org Structured Data -->
@@ -599,17 +606,9 @@
         </a>
 
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-          <svg id="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" class="hidden">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
         </button>
       </div>
     </div>

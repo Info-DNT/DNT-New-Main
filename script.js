@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const fov = 600;
 
     const dots = [];
-    const numDots = 1200;
+    const isMobile = window.innerWidth < 768;
+    const numDots = isMobile ? 700 : 1200;
     const goldenRatio = (1 + Math.sqrt(5)) / 2;
     for (let i = 0; i < numDots; i++) {
       const theta = (2 * Math.PI * i) / goldenRatio;
@@ -101,7 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     resize();
 
     const draw = () => {
-      if (!isDragging) {
+      // Auto-rotation (always on mobile, or when not dragging on desktop)
+      if (!isDragging || isMobile) {
         rotY += 0.005; 
         rotX += Math.sin(time * 0.5) * 0.0015; 
       }
@@ -186,6 +188,26 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('pointerup', () => isDragging = false);
   };
   initGlobe();
+
+  /* ---- Mobile Menu Toggle ---- */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('is-active');
+      mobileMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('is-active');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
 
   /* ---- Theme Toggle Restore ---- */
   const themeToggle = document.getElementById('theme-toggle-btn');
