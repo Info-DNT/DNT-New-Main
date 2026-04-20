@@ -207,6 +207,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('menu-open');
       });
     });
+
+    // Auto-close menu on scroll
+    window.addEventListener('scroll', () => {
+      if (document.body.classList.contains('menu-open')) {
+        mobileMenuBtn.classList.remove('is-active');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      }
+    }, { passive: true });
   }
 
   /* ---- Theme Toggle Restore ---- */
