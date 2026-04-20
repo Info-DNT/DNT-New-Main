@@ -222,6 +222,164 @@
         display: none !important;
       }
     }
+
+    /* Logo Carousel Refinements */
+    .logo-track {
+      animation: logo-scroll-optimized 18s linear infinite !important;
+      /* Increased speed */
+      width: max-content !important;
+      display: flex !important;
+    }
+
+    .logo-item {
+      width: 160px !important;
+      /* Reduced space between them */
+      padding: 0 1.5rem !important;
+      flex-shrink: 0 !important;
+    }
+
+    .logo-item img {
+      filter: none !important;
+      /* Colorful by default */
+      opacity: 1 !important;
+      /* No fade by default */
+      max-width: 110px !important;
+      height: auto !important;
+      transition: transform 0.3s ease !important;
+    }
+
+    .logo-item:hover img {
+      transform: scale(1.1) !important;
+    }
+
+    .logo-track:hover {
+      animation-play-state: running !important;
+    }
+
+    @keyframes logo-scroll-optimized {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-160px * 4));
+      }
+
+      /* Move by 4 unique logos */
+    }
+
+    /* Text Spacing & Alignment Fix (Removing Justify) */
+    .hero-sub,
+    .section-subtitle,
+    .card-text,
+    .testi-quote,
+    .footer-desc,
+    .accordion-body-inner,
+    p {
+      text-align: left !important;
+      text-justify: none !important;
+      word-spacing: normal !important;
+    }
+
+    /* Center section headings and subtitles globally on the index page for symmetry */
+    #expert-solutions .section-heading,
+    #gst-services .section-heading,
+    #legal-compliance .section-heading,
+    #pricing .section-heading,
+    #testimonials .section-heading,
+    #faq .section-heading,
+    .section-heading {
+      text-align: center !important;
+    }
+
+    .section-subtitle {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-width: 800px !important;
+    }
+
+    /* Icon Alignment Fix - Applied Both Desktop & Mobile */
+    .btn svg {
+      transform: translateY(3.5px) !important;
+      /* Pull icon down to match text baseline */
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-sub,
+      .section-subtitle,
+      .card-text,
+      p {
+        text-align: left !important;
+      }
+
+      /* Center section headers on mobile for balance */
+      .section-heading {
+        text-align: center !important;
+      }
+
+      .section-subtitle {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Stats Bar Mobile Optimization */
+      .stats-bar-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2.5rem 1rem !important;
+      }
+
+      .stat-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      .stat-num {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.2rem !important;
+      }
+
+      .stat-label {
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+        opacity: 0.9;
+        max-width: 140px;
+      }
+
+      /* Hero Buttons Mobile Alignment - REVERTED TO PREVIOUS SIZE */
+      .hero-btns {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: flex-start !important;
+        /* Revert to left aligned */
+      }
+
+      .hero-btns .btn {
+        width: auto !important;
+        /* Revert from 100% */
+        justify-content: flex-start !important;
+      }
+
+      /* Bring phone icon down to align with text baseline ("t" of Talk) */
+      .btn svg {
+        transform: translateY(3.5px) !important;
+        /* Pull icon down further for better alignment */
+      }
+    }
+
+    /* FAQ Alignment Fix (Reinforced) */
+    .accordion-body-inner,
+    .accordion-body,
+    .accordion-body p {
+      text-align: left !important;
+      text-justify: none !important;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+    }
   </style>
 
   <!-- Schema.org Structured Data -->
@@ -1084,13 +1242,17 @@
       <div class="logo-track logo-items">
         <!-- Duplicate set for infinite scroll -->
         <div class="logo-item"><img src="assets\Ayushkama Logo 2000-1000 PNG.png" alt="Ayushkama"></div>
+        <div class="logo-item"><img src="assets\URO logo.png" alt="UCO"></div>
         <div class="logo-item"><img src="assets\STYLAND Logo  PNG.png" alt="Styland"></div>
         <div class="logo-item"><img src="assets\Moolah.png" alt="Moolah for Women"></div>
         <div class="logo-item"><img src="assets\WMC PNG.png" alt="WMC"></div>
+        <div class="logo-item"><img src="assets\URO logo.png" alt="UCO"></div>
         <div class="logo-item"><img src="assets\Ayushkama Logo 2000-1000 PNG.png" alt="Ayushkama"></div>
         <div class="logo-item"><img src="assets\STYLAND Logo  PNG.png" alt="Styland"></div>
+        <div class="logo-item"><img src="assets\URO logo.png" alt="UCO"></div>
         <div class="logo-item"><img src="assets\Moolah.png" alt="Moolah for Women"></div>
         <div class="logo-item"><img src="assets\WMC PNG.png" alt="WMC"></div>
+        <div class="logo-item"><img src="assets\URO logo.png" alt="UCO"></div>
       </div>
     </div>
   </section>
