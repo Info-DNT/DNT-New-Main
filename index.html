@@ -67,9 +67,8 @@
 
     .hero-title {
       font-weight: 800 !important;
-      line-height: 1.15 !important;
+      line-height: 1.4 !important; /* Increased to prevent clipping of descenders like 'gy' */
       font-size: clamp(2rem, 4.5vw, 2.9rem) !important;
-      /* Scaled down slightly */
     }
 
     .section-title {
@@ -182,19 +181,7 @@
       font-weight: 700 !important;
     }
 
-    /* Section Specific Styles */
-    #expert-solutions {
-      background: #0f172a !important;
-      color: #fff !important;
-    }
-
-    #expert-solutions .section-title {
-      color: #fff !important;
-    }
-
-    #expert-solutions .section-subtitle {
-      color: rgba(255, 255, 255, 0.7) !important;
-    }
+    /* Section Specific Styles Removed to allow global theme control */
 
     @media (max-width: 768px) {
       html {
@@ -808,9 +795,8 @@
         <div class="hero-text-col">
           <div class="hero-content">
             <h1 class="hero-title reveal">
-              <span class="hero-gradient-text">Your Unified Partner for</span> <br>
-              <span class="hero-gradient-text">Compliance, Growth &</span>
-              <span class="hero-gradient-text">Technology</span>
+              Your Unified Partner for <br>
+              <span class="hero-gradient-text">Compliance, Growth & Technology</span>
             </h1>
             <p class="hero-sub reveal">From Income Tax Filing to Digital Marketing Strategy, we provide the integrated
               CA and tech infrastructure modern brands need to dominate India.</p>
