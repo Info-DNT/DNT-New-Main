@@ -226,45 +226,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---- Desktop Services Dropdown ---- */
-  const servicesWrap = document.querySelector('.nav-services-wrap');
-  const servicesBtn  = servicesWrap ? servicesWrap.querySelector('.nav-services-btn') : null;
-  if (servicesWrap && servicesBtn) {
-    // Click toggles pinned state
-    servicesBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      servicesWrap.classList.toggle('pinned');
-    });
-
-    // Clicking a link inside the dropdown closes the pin
-    servicesWrap.querySelectorAll('.services-dropdown a').forEach(link => {
+  /* ---- Generic Desktop Dropdown Pinned State ---- */
+  document.querySelectorAll('.nav-dropdown-wrap').forEach(wrap => {
+    const btn = wrap.querySelector('.nav-dropdown-btn');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Close others
+        document.querySelectorAll('.nav-dropdown-wrap.pinned').forEach(other => {
+          if (other !== wrap) other.classList.remove('pinned');
+        });
+        wrap.classList.toggle('pinned');
+      });
+    }
+    
+    wrap.querySelectorAll('.nav-dropdown-content a').forEach(link => {
       link.addEventListener('click', () => {
-        servicesWrap.classList.remove('pinned');
+        wrap.classList.remove('pinned');
       });
     });
+  });
 
-    // Click outside the wrap → remove pin
-    document.addEventListener('click', (e) => {
-      if (!servicesWrap.contains(e.target)) {
-        servicesWrap.classList.remove('pinned');
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-dropdown-wrap.pinned').forEach(wrap => {
+      if (!wrap.contains(e.target)) {
+        wrap.classList.remove('pinned');
       }
     });
+  });
 
-    // Escape key → remove pin
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') servicesWrap.classList.remove('pinned');
-    });
-  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-dropdown-wrap.pinned').forEach(wrap => {
+        wrap.classList.remove('pinned');
+      });
+    }
+  });
 
-  /* ---- Mobile Services Sub-menu ---- */
-  const mobileServicesBtn = document.getElementById('mobile-services-btn');
-  const mobileServicesSub = document.getElementById('mobile-services-sub');
-  if (mobileServicesBtn && mobileServicesSub) {
-    mobileServicesBtn.addEventListener('click', () => {
-      mobileServicesBtn.classList.toggle('open');
-      mobileServicesSub.classList.toggle('open');
+  /* ---- Mobile Sub-menus Toggle ---- */
+  document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sub = btn.nextElementSibling;
+      if (sub && sub.classList.contains('mobile-sub-menu')) {
+        // Toggle current
+        const isOpen = btn.classList.contains('open');
+        
+        // Close others in mobile menu
+        btn.closest('#mobile-menu').querySelectorAll('.mobile-dropdown-btn.open').forEach(otherBtn => {
+          if (otherBtn !== btn) {
+            otherBtn.classList.remove('open');
+            otherBtn.nextElementSibling.classList.remove('open');
+          }
+        });
+
+        btn.classList.toggle('open', !isOpen);
+        sub.classList.toggle('open', !isOpen);
+      }
     });
-  }
+  });
 
   /* ---- Accordion / FAQ ---- */
   document.querySelectorAll('.accordion-trigger').forEach(trigger => {
