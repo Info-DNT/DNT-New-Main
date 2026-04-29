@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Navbar Scroll Effect ---- */
   const nav = document.getElementById('main-nav');
   const onScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 50 || nav.classList.contains('always-scrolled')) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');

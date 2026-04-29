@@ -3,7 +3,7 @@
    ============================================= */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
 
 /* ---- CSS Variables (Light Mode Only) ---- */
 :root {
@@ -99,11 +99,11 @@ select {
 
 /* ---- Typography ---- */
 .font-display {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .font-heading {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .font-body {
@@ -113,9 +113,9 @@ select {
 h1,
 h2,
 h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   line-height: 1.2;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
 }
 
 h4,
@@ -310,17 +310,12 @@ h6 {
   background: transparent;
 }
 
-#main-nav.scrolled {
-  background: rgba(255, 255, 255, 0.96) !important;
-  backdrop-filter: blur(25px) saturate(200%);
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-#main-nav.scrolled {
+#main-nav.scrolled,
+#main-nav.light-page {
   background: rgba(255, 255, 255, 0.95) !important;
   border-bottom: 1px solid #E2E8F0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(25px) saturate(200%);
 }
 
 .hero-gradient-text {
@@ -1268,12 +1263,13 @@ h6 {
   padding-left: 1.3rem;
 }
 
-/* Mega Menu Style */
+/* Mega Menu Style (Default: 4 Columns) */
 .nav-dropdown-content.mega-menu {
   width: 820px;
+  max-width: 95vw;
   left: -100px;
   transform: rotateX(-15deg) translateY(8px) scale(0.98);
-  padding: 1.25rem;
+  padding: 1.2rem;
 }
 
 .nav-dropdown-wrap:hover .nav-dropdown-content.mega-menu,
@@ -1281,15 +1277,27 @@ h6 {
   transform: rotateX(0deg) translateY(0) scale(1);
 }
 
+/* Specific Override for 5-Column Compliances Menu */
+.nav-dropdown-content.mega-menu.mega-menu-compliances {
+  width: 880px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(-15deg) translateY(8px) scale(0.98);
+}
+
+.nav-dropdown-wrap:hover .nav-dropdown-content.mega-menu.mega-menu-compliances,
+.nav-dropdown-wrap.pinned .nav-dropdown-content.mega-menu.mega-menu-compliances {
+  transform: translateX(-50%) rotateX(0deg) translateY(0) scale(1);
+}
+
 .mega-menu-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.6rem;
 }
 
 .mega-menu-grid>div {
   border-right: 1px solid rgba(0, 0, 0, 0.04);
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 
 .mega-menu-grid>div:last-child {
@@ -1304,19 +1312,19 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #0F172A;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   display: block;
   border-bottom: 2px solid var(--gold);
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.3rem;
   width: fit-content;
 }
 
 .mega-menu-grid ul li a {
-  padding: 0.2rem 0;
+  padding: 0.18rem 0;
   font-size: 0.8rem;
   color: #475569;
   border-bottom: none;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .mega-menu-grid ul li a:hover {

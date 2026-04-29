@@ -1,5 +1,38 @@
-/* ITR PREMIUM LIGHT REFINEMENTS - GLOBAL OVERRIDE */
-/* This mirrors the exact variables and styling rules of the itr-filing.html <style> block */
+/* This mirrors the exact variables and styling rules of the index.html Elite refinements */
+
+/* Elite Navigation Refinements */
+html {
+  font-size: 88% !important;
+}
+
+.nav-logo-name {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  letter-spacing: -0.035em !important;
+  font-weight: 700 !important;
+}
+
+.nav-link, .nav-dropdown-btn {
+  letter-spacing: -0.011em !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  padding: 0.5rem 0.8rem !important;
+}
+
+.nav-links {
+  margin-left: auto !important;
+  margin-right: 1.5rem !important;
+  gap: 0.15rem !important;
+}
+
+.nav-inner {
+  height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.nav-cta-btn svg {
+  transform: translateY(1px) !important;
+}
 
 :root {
   --bg-page: #FFFFFF;
