@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Return Filing | Monthly & Quarterly Returns | DNC</title>
+  <meta name="description"
+    content="Accurate and timely GST Return Filing services. Ensure 100% compliance and avoid late fees with Digital Next Consultancy's expert tax assistance.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/global-theme-override.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+        /* ======================== ITR PREMIUM CORE ======================== */
+        :root {
+            --itr-gold: #F59E0B;
+            --itr-navy: #050811;
+            --itr-bg-light: #FBF8F3;
+            --itr-text: #0F172A;
+            --itr-muted: #64748B;
+            --itr-border: #E2E8F0;
+            --itr-white: #FFFFFF;
+            --itr-blue: #1565C0;
+            --card-radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--itr-text);
+            background-color: var(--itr-white);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Sections --- */
+        .s-padding { padding: 44px 0; }
+        .bg-light { background: var(--itr-bg-light); }
+        
+        .section-heading { margin-bottom: 2.2rem; }
+        .section-heading.text-center { text-align: center; }
+        .overline {
+            display: block;
+            color: var(--itr-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Hero Section --- */
+        .itr-hero {
+            padding: 95px 0 60px;
+            background: radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+                        var(--itr-bg-light);
+            border-bottom: 1px solid var(--itr-border);
+        }
+
+        .hero-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            .hero-split-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .hero-left-content { order: 2; }
+            .hero-right-content { order: 1; }
+        }
+
+        .hero-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--itr-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .text-gold { color: var(--itr-gold); }
+
+        .hero-feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        /* --- Elite Lead Form --- */
+        .itr-lead-card {
+            background: #FFF;
+            padding: 2.5rem;
+            border-radius: 32px;
+            border: 1px solid var(--itr-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .itr-lead-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--itr-gold), #FCD34D);
+        }
+
+        .itr-form-group { margin-bottom: 1rem; }
+        .itr-form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .itr-form-input:focus {
+            outline: none;
+            border-color: var(--itr-gold);
+            background: #FFF;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+        }
+
+        /* --- Mandatory Cards (Section 2) --- */
+        .mandatory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .mandatory-card {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: var(--card-radius);
+            border: 1px solid var(--itr-border);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mandatory-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--itr-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .m-icon {
+            width: 50px; height: 50px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .itr-tag {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 0.65rem; font-weight: 800; letter-spacing: 1px;
+            background: var(--itr-bg-light); color: var(--itr-gold);
+        }
+
+        /* --- Process (Section 4) --- */
+        .p-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        /* Connection Line with Animation */
+        .p-flow::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: repeating-linear-gradient(to right, var(--itr-border) 0%, var(--itr-border) 50%, transparent 50%, transparent 100%);
+            background-size: 20px 100%;
+            z-index: 0;
+            animation: flowLine 1.5s linear infinite;
+        }
+
+        @keyframes flowLine {
+            from { background-position: 0 0; }
+            to { background-position: 20px 0; }
+        }
+
+        .p-step { position: relative; text-align: center; z-index: 1; }
+        .p-num {
+            width: 70px; height: 70px;
+            background: var(--itr-navy);
+            color: var(--itr-gold);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 800;
+            margin: 0 auto 1.5rem;
+            border: 5px solid #FFF;
+            box-shadow: 0 0 0 1px var(--itr-border);
+            transition: var(--transition);
+        }
+
+        .p-step:hover .p-num {
+            transform: scale(1.1);
+            background: var(--itr-gold);
+            color: var(--itr-navy);
+        }
+
+        /* --- FAQ (Section 6) --- */
+        .faq-v2-item {
+            background: #FFF;
+            border: 1px solid var(--itr-border);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-v2-btn {
+            width: 100%;
+            padding: 1.5rem;
+            display: flex; align-items: center; justify-content: space-between;
+            background: none; border: none; cursor: pointer;
+            font-family: inherit; font-size: 1.05rem; font-weight: 700;
+            color: var(--itr-navy); text-align: left;
+        }
+
+        /* Button Shine */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+            background: var(--itr-navy);
+            color: #FFF;
+            padding: 18px 32px;
+            border-radius: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-shine:hover {
+            background: var(--itr-gold);
+            color: var(--itr-navy);
+            transform: translateY(-2px);
+        }
+
+        /* Review Carousel */
+        .reviews-marquee {
+            overflow: hidden;
+            padding: 2rem 0;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .reviews-track {
+            display: inline-flex;
+            gap: 2rem;
+            animation: scrollMarquee 40s linear infinite;
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .review-card-v2 {
+            display: inline-block;
+            min-width: 350px;
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--itr-border);
+            white-space: normal;
+            transition: var(--transition);
+        }
+
+        .review-card-v2:hover {
+            border-color: var(--itr-gold);
+            transform: translateY(-5px);
+        }
+
+        .r-stars { color: var(--itr-gold); font-size: 0.8rem; margin-bottom: 1rem; }
+        .r-text { font-size: 0.95rem; font-weight: 600; line-height: 1.5; margin-bottom: 1.5rem; color: var(--itr-navy); }
+        .r-author { font-size: 0.9rem; font-weight: 800; color: var(--itr-navy); }
+        .r-desig { font-size: 0.75rem; color: var(--itr-muted); }
+
+        .faq-v2-item.open .faq-ans { display: block !important; }
+        .faq-v2-item.open .fa-chevron-down { transform: rotate(180deg); color: var(--itr-gold); }
+
+        @media (max-width: 768px) {
+            .info-split, .p-flow { grid-template-columns: 1fr; }
+            .p-flow::after { display: none; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <nav id="main-nav" class="light-page" aria-label="Main Navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+          <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNC Logo"></div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Digital Next</span>
+            <span class="nav-logo-sub">Consultancy</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../../index.html" class="nav-link">Home</a>
+
+          <!-- Company Registration Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              Company Registration
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content mega-menu">
+              <div class="mega-menu-grid">
+                <div>
+                  <span class="mega-menu-col-title">For Indian Owners</span>
+                  <ul>
+                    <li><a href="../company-registration/proprietorship.html">Proprietorship Firm</a></li>
+                    <li><a href="../company-registration/partnership.html">Partnership Firm</a></li>
+                    <li><a href="../company-registration/llp.html">Limited Liability Partnership</a></li>
+                    <li><a href="../company-registration/opc.html">One Person Company</a></li>
+                    <li><a href="../company-registration/pvt-ltd.html">Private Limited Company</a></li>
+                    <li><a href="../company-registration/public-ltd.html">Public Limited Company</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Special Entities</span>
+                  <ul>
+                    <li><a href="../company-registration/nidhi.html">Nidhi Company</a></li>
+                    <li><a href="../company-registration/fpo.html">Farmer Producer Organisation (FPO)</a></li>
+                    <li><a href="../company-registration/section-8.html">Section 8 Company</a></li>
+                    <li><a href="../company-registration/trust.html">Trust</a></li>
+                    <li><a href="../company-registration/society.html">Society</a></li>
+                    <li><a href="../company-registration/msme.html">MSME | SSI Registration</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Licenses</span>
+                  <ul>
+                    <li><a href="../company-registration/fssai.html">FSSAI License</a></li>
+                    <li><a href="../company-registration/iec.html">Import Export Code</a></li>
+                    <li><a href="../company-registration/esi.html">ESI Registration</a></li>
+                    <li><a href="../company-registration/pf.html">PF Registration</a></li>
+                    <li><a href="../company-registration/barcode.html">Barcode Registration</a></li>
+                    <li><a href="../company-registration/rera.html">RERA Registration</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Digital Signature (DSC)</span>
+                  <ul>
+                    <li><a href="../company-registration/dsc.html">DSC</a></li>
+                    <li><a href="../company-registration/class3-dsc.html">Class-3 DSC</a></li>
+                    <li><a href="../company-registration/dgft-dsc.html">DGFT-DSC</a></li>
+                    <li><a href="../company-registration/din.html">DIN</a></li>
+                    <li><a href="../company-registration/apeda.html">APEDA</a></li>
+                    <li><a href="../company-registration/change-address.html">Change in office address</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ISO Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              ISO
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../iso/iso-9001.html">ISO 9001:2015</a></li>
+                <li><a href="../iso/halal.html">Halal Certification</a></li>
+                <li><a href="../iso/who-gmp.html">WHO - GMP Certification</a></li>
+                <li><a href="../iso/gdp.html">GDP Certification</a></li>
+                <li><a href="../iso/iso-14001.html">ISO 14001 Certification</a></li>
+                <li><a href="../iso/iso-45001.html">ISO 45001 Certification</a></li>
+                <li><a href="../iso/iso-22000.html">ISO 22000 Certification</a></li>
+                <li><a href="../iso/iso-27001.html">ISO 27001 Certification</a></li>
+                <li><a href="../iso/ce-mark.html">CE Mark Certification</a></li>
+                <li><a href="../iso/haccp.html">HACCP Certification</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- IPR Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              IPR
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../ipr/trademark-registration.html">Trademark Registration</a></li>
+                <li><a href="../ipr/trademark-objection.html">Trademark Objection</a></li>
+                <li><a href="../ipr/trademark-renewal.html">Trademark Renewal</a></li>
+                <li><a href="../ipr/copyright-registration.html">Copyright Registration</a></li>
+                <li><a href="../ipr/patent-registration.html">Patent Registration</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Compliances Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              Compliances
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content mega-menu mega-menu-compliances">
+              <div class="mega-menu-grid">
+                <div>
+                  <span class="mega-menu-col-title">GST Compliances</span>
+                  <ul>
+                    <li><a href="gst-registration.html">GST Registration</a></li>
+                    <li><a href="gst-return-filing.html">GST Return Filing</a></li>
+                    <li><a href="gst-annual-filing.html">GST Annual Filing</a></li>
+                    <li><a href="gst-notice-advisory.html">GST Notice &amp; Advisory</a></li>
+                    <li><a href="gst-special-cases.html">GST for Special Cases</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Income Tax</span>
+                  <ul>
+                    <li><a href="advance-tax-filing.html">Income Tax Return Filing</a></li>
+                    <li><a href="advance-tax-filing.html">Advance Tax Filing</a></li>
+                    <li><a href="tax-notices-assessment.html">Tax Notices &amp; Assessment</a></li>
+                    <li><a href="tds-filing.html">TDS Filing</a></li>
+                    <li><a href="professional-tax.html">Professional Tax</a></li>
+                    <li><a href="pan-tan-application.html">PAN / TAN Application</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Corporate Filings</span>
+                  <ul>
+                    <li><a href="company-annual-filing.html">Company Annual Filing</a></li>
+                    <li><a href="llp-annual-filing.html">LLP Annual Filing</a></li>
+                    <li><a href="director-kyc.html">Director KYC</a></li>
+                    <li><a href="roc-filings.html">ROC Filings</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Accounting</span>
+                  <ul>
+                    <li><a href="monthly-bookkeeping.html">Monthly Bookkeeping</a></li>
+                    <li><a href="financial-statements.html">Financial Statements</a></li>
+                    <li><a href="mis-reporting.html">MIS Reporting</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Other Compliances</span>
+                  <ul>
+                    <li><a href="compliance-advisory.html">Compliance Advisory</a></li>
+                    <li><a href="closing-llp.html">Closing LLP</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Growth Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              Business Growth
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../digital-marketing.html#web">Website Development</a></li>
+                <li><a href="../digital-marketing.html#seo">SEO Services &amp; Strategy</a></li>
+                <li><a href="../digital-marketing.html#ads">Google Ads &amp; Paid Advertising</a></li>
+                <li><a href="../digital-marketing.html#smm">Social Media Marketing</a></li>
+                <li><a href="../digital-marketing.html#smm">Content Marketing</a></li>
+                <li><a href="../whatsappMarketing.html">WhatsApp Marketing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Solutions Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              AI Solutions
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../technology.html#automation">AI Automation Services</a></li>
+                <li><a href="../technology.html#automation">AI Integration &amp; Workflow Automation</a></li>
+                <li><a href="../technology.html#automation">Process Automation &amp; Digital Workflow</a></li>
+                <li><a href="../technology.html#automation">AI Compliance Dashboard</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="../../contact.html" class="nav-cta-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          Free Consultation
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu">
+      <a href="../../index.html" class="mobile-nav-link">Home</a>
+
+      <!-- Company Registration -->
+      <button class="mobile-dropdown-btn">
+        Company Registration
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../company-registration/proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
+        <a href="../company-registration/partnership.html" class="mobile-sub-link">Partnership Firm</a>
+        <a href="../company-registration/llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
+        <a href="../company-registration/opc.html" class="mobile-sub-link">One Person Company</a>
+        <a href="../company-registration/pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
+        <a href="../company-registration/public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
+        <a href="../company-registration/nidhi.html" class="mobile-sub-link">Nidhi Company</a>
+        <a href="../company-registration/fpo.html" class="mobile-sub-link">FPO Registration</a>
+        <a href="../company-registration/section-8.html" class="mobile-sub-link">Section 8 Company</a>
+        <a href="../company-registration/trust.html" class="mobile-sub-link">Trust</a>
+        <a href="../company-registration/society.html" class="mobile-sub-link">Society</a>
+        <a href="../company-registration/msme.html" class="mobile-sub-link">MSME Registration</a>
+        <a href="../company-registration/fssai.html" class="mobile-sub-link">FSSAI License</a>
+        <a href="../company-registration/iec.html" class="mobile-sub-link">Import Export Code</a>
+      </div>
+
+      <!-- ISO -->
+      <button class="mobile-dropdown-btn">
+        ISO
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../iso/iso-9001.html" class="mobile-sub-link">ISO 9001:2015</a>
+        <a href="../iso/halal.html" class="mobile-sub-link">Halal Certification</a>
+        <a href="../iso/who-gmp.html" class="mobile-sub-link">WHO - GMP</a>
+        <a href="../iso/gdp.html" class="mobile-sub-link">GDP Certification</a>
+        <a href="../iso/iso-14001.html" class="mobile-sub-link">ISO 14001</a>
+        <a href="../iso/iso-45001.html" class="mobile-sub-link">ISO 45001</a>
+        <a href="../iso/iso-22000.html" class="mobile-sub-link">ISO 22000</a>
+        <a href="../iso/iso-27001.html" class="mobile-sub-link">ISO 27001</a>
+        <a href="../iso/ce-mark.html" class="mobile-sub-link">CE Mark</a>
+        <a href="../iso/haccp.html" class="mobile-sub-link">HACCP Certification</a>
+      </div>
+
+      <!-- Compliances -->
+      <button class="mobile-dropdown-btn">
+        Compliances
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="gst-registration.html" class="mobile-sub-link">GST Registration</a>
+        <a href="gst-return-filing.html" class="mobile-sub-link">GST Return Filing</a>
+        <a href="advance-tax-filing.html" class="mobile-sub-link">Income Tax Return</a>
+        <a href="tds-filing.html" class="mobile-sub-link">TDS Filing</a>
+        <a href="company-annual-filing.html" class="mobile-sub-link">Company Annual Filing</a>
+        <a href="llp-annual-filing.html" class="mobile-sub-link">LLP Annual Filing</a>
+        <a href="monthly-bookkeeping.html" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
+      </div>
+
+      <!-- IPR -->
+      <button class="mobile-dropdown-btn">
+        IPR
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../ipr/trademark-registration.html" class="mobile-sub-link">Trademark Registration</a>
+        <a href="../ipr/trademark-objection.html" class="mobile-sub-link">Trademark Objection</a>
+        <a href="../ipr/trademark-renewal.html" class="mobile-sub-link">Trademark Renewal</a>
+        <a href="../ipr/copyright-registration.html" class="mobile-sub-link">Copyright Registration</a>
+        <a href="../ipr/patent-registration.html" class="mobile-sub-link">Patent Registration</a>
+      </div>
+
+      <!-- Business Growth -->
+      <button class="mobile-dropdown-btn">
+        Business Growth
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
+        <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
+        <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
+      </div>
+
+      <!-- AI Solutions -->
+      <button class="mobile-dropdown-btn">
+        AI Solutions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
+        <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
+      </div>
+
+      <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    </div>
+
+      <!-- ISO -->
+      <button class="mobile-dropdown-btn">
+        ISO
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../iso/iso-9001.html" class="mobile-sub-link">ISO 9001:2015</a>
+        <a href="../iso/halal.html" class="mobile-sub-link">Halal Certification</a>
+        <a href="../iso/who-gmp.html" class="mobile-sub-link">WHO - GMP</a>
+        <a href="../iso/iso-27001.html" class="mobile-sub-link">ISO 27001</a>
+      </div>
+
+      <!-- IPR -->
+      <button class="mobile-dropdown-btn">
+        IPR
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../ipr/trademark-registration.html" class="mobile-sub-link">Trademark Registration</a>
+        <a href="../ipr/trademark-objection.html" class="mobile-sub-link">Trademark Objection</a>
+        <a href="../ipr/trademark-renewal.html" class="mobile-sub-link">Trademark Renewal</a>
+        <a href="../ipr/copyright-registration.html" class="mobile-sub-link">Copyright Registration</a>
+        <a href="../ipr/patent-registration.html" class="mobile-sub-link">Patent Registration</a>
+      </div>
+
+      <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    </div>
+  </nav>
+
+    <!-- Section 1: Hero -->
+    <header class="itr-hero">
+        <div class="container">
+            <div class="hero-split-grid">
+                <div class="hero-left-content">
+                    <span class="overline">Periodic Tax Compliance</span>
+                    <h1 class="hero-title">GST <span class="text-gold">Return Filing</span> Services</h1>
+                    <p style="font-size: 1.15rem; color: var(--itr-muted); margin-bottom: 2rem;">Ensure 100% accuracy in your monthly and quarterly GST returns. Our experts handle GSTR-1, GSTR-3B, and IFF filing while you focus on growing your business.</p>
+                    
+                    <div class="hero-feature-list">
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Accurate ITC Reconciliation (2A/2B)</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Zero Penalty Guarantee on Timely Data</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Professional Tax Advisory Included</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="#details" class="btn-shine">
+                            START FILING TODAY →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right-content">
+                    <div class="itr-lead-card">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">File Your Returns</h3>
+                        <p style="color: var(--itr-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Secure, fast, and compliant filing by chartered accountants.</p>
+                        
+                        <form id="gstReturnLeadForm">
+                            <div class="itr-form-group">
+                                <input type="text" placeholder="GSTIN Number *" class="itr-form-input" required>
+                            </div>
+                            <div class="itr-form-group">
+                                <input type="tel" placeholder="Mobile Number *" class="itr-form-input" required>
+                            </div>
+                            <div class="itr-form-group">
+                                <input type="email" placeholder="Email Address" class="itr-form-input">
+                            </div>
+                            <div class="itr-form-group" style="margin-bottom: 1.5rem;">
+                                <select class="itr-form-input" required>
+                                    <option value="" disabled selected>Filing Frequency</option>
+                                    <option value="Monthly">Monthly Filing</option>
+                                    <option value="Quarterly">Quarterly (QRMP)</option>
+                                    <option value="Composite">Composition Scheme</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-shine" style="width: 100%;">
+                                GET EXPERT ASSISTANCE →
+                            </button>
+                            <p style="text-align: center; font-size: 0.75rem; color: var(--itr-muted); margin-top: 1rem;">
+                                Guaranteed Compliance Excellence
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 2: Overview -->
+    <section class="s-padding" id="details">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">— TAX MAINTENANCE —</span>
+                <h2>Stay Compliant, <span class="text-gold">Stay Secure</span></h2>
+                <p style="color: var(--itr-muted); max-width: 800px; margin: 0 auto;">Filing GST returns is a mandatory requirement for all registered taxpayers. Timely filing ensures that your Input Tax Credit flows seamlessly to your customers.</p>
+            </div>
+
+            <div class="mandatory-grid" style="margin-top: 4rem;">
+                <div class="mandatory-card">
+                    <div class="m-icon" style="background: #F0F9FF; color: #0EA5E9;"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>GSTR-1 Filing</h3>
+                    <p>Reporting of all outward supplies of goods and services. Mandatory for all regular taxpayers.</p>
+                    <span class="itr-tag">SALES DATA</span>
+                </div>
+                <div class="mandatory-card">
+                    <div class="m-icon" style="background: #FFF7ED; color: #F97316;"><i class="fas fa-calculator"></i></div>
+                    <h3>GSTR-3B Filing</h3>
+                    <p>Self-declaration of summary returns and payment of tax. Crucial for maintaining GST active status.</p>
+                    <span class="itr-tag">TAX SUMMARY</span>
+                </div>
+                <div class="mandatory-card">
+                    <div class="m-icon" style="background: #F0FDF4; color: #10B981;"><i class="fas fa-sync"></i></div>
+                    <h3>ITC Reconciliation</h3>
+                    <p>Matching your purchase invoices with GSTR-2A/2B to ensure maximum tax credit claims.</p>
+                    <span class="itr-tag">MAX CREDIT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Documents Required -->
+    <section class="s-padding bg-light">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">DATA CHECKLIST</span>
+                <h2 class="section-title">Required <span class="text-gold">Information</span></h2>
+                <p style="color: var(--itr-muted); margin-bottom: 3rem;">Provide these details every month for a smooth filing experience.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Sales Invoices</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">All B2B and B2C sales invoices generated during the filing period.</p>
+                </div>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-file-import"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Purchase Bills</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">All purchase invoices and expenses to claim Input Tax Credit (ITC).</p>
+                </div>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Credit/Debit Notes</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Details of sales returns or purchase returns during the period.</p>
+                </div>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">HSN Summary</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Product-wise or service-wise HSN/SAC summary of all supplies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Process -->
+    <section class="s-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">MONTHLY WORKFLOW</span>
+                <h2>Our Filing <span class="text-gold">Process</span></h2>
+            </div>
+
+            <div class="p-flow">
+                <div class="p-step">
+                    <div class="p-num">01</div>
+                    <h4 style="margin-bottom: 0.5rem;">Data Collection</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Upload your invoices to our secure portal or WhatsApp.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">02</div>
+                    <h4 style="margin-bottom: 0.5rem;">Verification</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">CA-led verification of tax rates and ITC eligibility.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">03</div>
+                    <h4 style="margin-bottom: 0.5rem;">Draft Approval</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Review the final tax liability before we hit the 'File' button.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">04</div>
+                    <h4 style="margin-bottom: 0.5rem;">ARN Generation</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Receipt of final filing confirmation and ARN number.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Why DNC -->
+    <section class="s-padding" style="background: var(--itr-navy); color: #FFF; border-radius: 60px 60px 0 0;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline" style="color: var(--itr-gold);">— THE DNC ADVANTAGE —</span>
+                <h2 style="color: #FFF;">Why Choose Our <span class="text-gold">Filing Experts</span>?</h2>
+            </div>
+
+            <div class="mandatory-grid">
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-history"></i></div>
+                    <h3 style="color: #FFF;">Timely Alerts</h3>
+                    <p style="color: rgba(255,255,255,0.6);">Automatic reminders to ensure you never miss a filing deadline again.</p>
+                </div>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-search-dollar"></i></div>
+                    <h3 style="color: #FFF;">ITC Optimization</h3>
+                    <p style="color: rgba(255,255,255,0.6);">We ensure no Input Tax Credit is missed, saving your business money.</p>
+                </div>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-file-signature"></i></div>
+                    <h3 style="color: #FFF;">Expert Support</h3>
+                    <p style="color: rgba(255,255,255,0.6);">Real-time support for GST queries and documentation assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="s-padding bg-light">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-heading text-center">
+                <span class="overline">SUPPORT</span>
+                <h2>Frequently Asked <span class="text-gold">Questions</span></h2>
+            </div>
+
+            <div class="faq-v2">
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>What are the deadlines for GSTR-1 and GSTR-3B?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Generally, GSTR-1 is due by the 11th and GSTR-3B by the 20th of the following month for regular taxpayers.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>Can I file Nil returns?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Yes, even if there are no sales or purchases, a Nil return must be filed to avoid late fees.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>What is the late fee for delayed filing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">The late fee is ₹50 per day (₹20 for Nil returns) for each day of delay, subject to maximum limits.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Related Services -->
+    <section class="s-padding bg-light">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">EXPLORE MORE</span>
+                <h2>Compliance <span class="text-gold">Ecosystem</span></h2>
+            </div>
+            <div class="mandatory-grid">
+                <a href="gst-registration.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0F9FF; color: #0EA5E9; margin: 0 auto 1.5rem;"><i class="fas fa-university"></i></div>
+                        <h3>GST Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Get your GSTIN in 5-7 days and start your compliant business journey.</p>
+                    </div>
+                </a>
+                <a href="gst-annual-filing.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #FFF7ED; color: #F97316; margin: 0 auto 1.5rem;"><i class="fas fa-calendar-check"></i></div>
+                        <h3>GST Annual Return</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Consolidated annual filings (GSTR-9) for complete tax peace of mind.</p>
+                    </div>
+                </a>
+                <a href="advance-tax-filing.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0FDF4; color: #10B981; margin: 0 auto 1.5rem;"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Income Tax Filing</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Expert ITR filing services for individuals and business entities.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Infinite Reviews Carousel -->
+    <section class="s-padding" style="overflow: hidden;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">TESTIMONIALS</span>
+                <h2>What Our <span class="text-gold">Clients Say</span></h2>
+            </div>
+        </div>
+
+        <div class="reviews-marquee">
+            <div class="reviews-track">
+                <!-- Set 1 -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Flawless filing every month. Their ITC reconciliation saved us lakhs in the last financial year."</p>
+                    <div class="r-author">Rajesh Kumar</div>
+                    <div class="r-desig">Founder, TechSprint Solutions</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Zero late fees in 2 years. DNC's automated reminders are the best in the industry."</p>
+                    <div class="r-author">Priya Sharma</div>
+                    <div class="r-desig">Owner, Bloom Boutique</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Switching to DNC for GST filing was the best decision for our logistics business. Truly expert CA support."</p>
+                    <div class="r-author">Amit Patel</div>
+                    <div class="r-desig">Director, Patel Logistics</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Reliable, fast, and professional. They handle our complex quarterly returns with absolute ease."</p>
+                    <div class="r-author">Sneha Reddy</div>
+                    <div class="r-desig">Founder, AgroFresh India</div>
+                </div>
+                <!-- Duplicate for Infinite Loop -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Flawless filing every month. Their ITC reconciliation saved us lakhs in the last financial year."</p>
+                    <div class="r-author">Rajesh Kumar</div>
+                    <div class="r-desig">Founder, TechSprint Solutions</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Zero late fees in 2 years. DNC's automated reminders are the best in the industry."</p>
+                    <div class="r-author">Priya Sharma</div>
+                    <div class="r-desig">Owner, Bloom Boutique</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Switching to DNC for GST filing was the best decision for our logistics business. Truly expert CA support."</p>
+                    <div class="r-author">Amit Patel</div>
+                    <div class="r-desig">Director, Patel Logistics</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Reliable, fast, and professional. They handle our complex quarterly returns with absolute ease."</p>
+                    <div class="r-author">Sneha Reddy</div>
+                    <div class="r-desig">Founder, AgroFresh India</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--itr-navy); padding: 80px 0 40px; color: #FFF;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 4rem; margin-bottom: 4rem;">
+                <div>
+                    <img src="../../assets/logo.svg" alt="Logo" style="width: 50px; filter: brightness(0) invert(1); margin-bottom: 1.5rem;">
+                    <h3 style="color: #FFF; margin-bottom: 1rem;">Digital Next Consultancy</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem; line-height: 1.7;">Your trusted partner for all business registrations, legal compliances, and intellectual property rights across India.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="../../index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                        <li><a href="../../about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                        <li><a href="../../contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Compliances</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="gst-registration.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">GST Registration</a></li>
+                        <li><a href="gst-return-filing.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">GST Returns</a></li>
+                        <li><a href="advance-tax-filing.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Income Tax Filing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Reach Us</h4>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +91 88025 59782</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@digitalnextworld.com</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> New Delhi, India</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.8rem;">
+                © 2026 Digital Next Consultancy. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-v2-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,28 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PF Registration | Provident Fund | DNT Consultancy</title>
-    <meta name="description" content="Secure your employees' future with PF Registration. DNT Consultancy provides fast and accurate Provident Fund registration services.">
-    <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg"><link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/global-theme-override.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PF Registration | Provident Fund | DNC Consultancy</title>
+    <meta name="description" content="Secure your employees' future with PF Registration. DNC Consultancy provides fast and accurate Provident Fund registration services. Mandatory for firms with 20+ workers." />
+    <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg" />
+    
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/global-theme-override.css" />
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary: #2563EB; --dark: #0F172A; --muted: #64748B; --bg: #F8FAFC; }
-        .hero { padding: 140px 0 80px; background: #FFF; border-bottom: 1px solid #E2E8F0; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .form-card { padding: 2rem; background: #FFF; border: 1px solid #E5E7EB; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .section { padding: 80px 0; }
-        .btn { display: inline-block; padding: 12px 24px; background: var(--primary); color: #FFF; border-radius: 8px; text-decoration: none; font-weight: 700; }
-        .tag { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+        /* ======================== ITR PREMIUM CORE ======================== */
+        :root {
+            --itr-gold: #F59E0B;
+            --itr-navy: #050811;
+            --itr-bg-light: #FBF8F3;
+            --itr-text: #0F172A;
+            --itr-muted: #64748B;
+            --itr-border: #E2E8F0;
+            --itr-white: #FFFFFF;
+            --itr-blue: #1565C0;
+            --card-radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--itr-text);
+            background-color: var(--itr-white);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Sections --- */
+        .s-padding { padding: 44px 0; }
+        .bg-light { background: var(--itr-bg-light); }
+        
+        .section-heading { margin-bottom: 2.2rem; }
+        .section-heading.text-center { text-align: center; }
+        .overline {
+            display: block;
+            color: var(--itr-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Hero Section --- */
+        .itr-hero {
+            padding: 95px 0 60px;
+            background: radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+                        var(--itr-bg-light);
+            border-bottom: 1px solid var(--itr-border);
+        }
+
+        .hero-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            .hero-split-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .hero-left-content { order: 2; }
+            .hero-right-content { order: 1; }
+        }
+
+        .hero-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--itr-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .text-gold { color: var(--itr-gold); }
+
+        .hero-feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        /* --- Elite Lead Form --- */
+        .itr-lead-card {
+            background: #FFF;
+            padding: 2.5rem;
+            border-radius: 32px;
+            border: 1px solid var(--itr-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .itr-lead-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--itr-gold), #FCD34D);
+        }
+
+        .itr-form-group { margin-bottom: 1rem; }
+        .itr-form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .itr-form-input:focus {
+            border-color: var(--itr-gold);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+        }
+
+        /* --- Custom UI --- */
+        .btn-shine {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: var(--itr-navy);
+            color: #FFF;
+            border-radius: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-shine:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        .mandatory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .mandatory-card {
+            padding: 2.5rem;
+            background: #FFF;
+            border: 1px solid var(--itr-border);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+        .mandatory-card:hover { transform: translateY(-8px); border-color: var(--itr-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        .m-icon {
+            width: 60px; height: 60px;
+            background: var(--itr-gold-light);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--itr-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .itr-tag {
+            position: absolute; top: 20px; right: 20px;
+            padding: 4px 12px; background: var(--itr-gold-light);
+            color: var(--itr-gold); font-size: 0.7rem; font-weight: 800;
+            border-radius: 50px; text-transform: uppercase;
+        }
+
+        /* --- Workflow --- */
+        .p-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            margin-top: 3rem;
+        }
+        .p-flow::before {
+            content: '';
+            position: absolute; top: 30px; left: 50px; right: 50px;
+            height: 2px; 
+            background: repeating-linear-gradient(to right, var(--itr-gold) 0, var(--itr-gold) 10px, transparent 10px, transparent 20px);
+            background-size: 20px 100%;
+            z-index: 0;
+            opacity: 0.3;
+            animation: flowLine 1.5s linear infinite;
+        }
+
+        @keyframes flowLine {
+            from { background-position: 0 0; }
+            to { background-position: 20px 0; }
+        }
+
+        .p-step { position: relative; z-index: 1; text-align: center; }
+        .p-num {
+            width: 60px; height: 60px; background: var(--itr-navy);
+            color: #FFF; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            font-weight: 800; margin: 0 auto 1.5rem;
+            border: 4px solid #FFF; box-shadow: 0 0 0 1px var(--itr-border);
+        }
+
+        /* --- FAQ --- */
+        .faq-v2 { display: flex; flex-direction: column; gap: 1rem; }
+        .faq-v2-item { border: 1px solid var(--itr-border); border-radius: 16px; background: #FFF; overflow: hidden; }
+        .faq-v2-btn {
+            width: 100%; padding: 1.5rem; display: flex;
+            justify-content: space-between; align-items: center;
+            background: none; border: none; cursor: pointer;
+            text-align: left; font-weight: 700; font-size: 1rem;
+            color: var(--itr-navy);
+        }
+        
+        /* --- Reviews Marquee --- */
+        .reviews-marquee { overflow: hidden; padding: 2rem 0; position: relative; }
+        .reviews-track { display: flex; gap: 2rem; animation: marquee 30s linear infinite; width: max-content; }
+        @keyframes marquee { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+        .review-card-v2 {
+            width: 350px; background: #FFF; padding: 2rem;
+            border-radius: 20px; border: 1px solid var(--itr-border);
+            flex-shrink: 0;
+        }
+        .r-stars { color: var(--itr-gold); margin-bottom: 1rem; }
+        .r-text { font-style: italic; color: var(--itr-muted); margin-bottom: 1.5rem; }
+        .r-author { font-weight: 700; }
+        .r-desig { font-size: 0.8rem; color: var(--itr-gold); }
+
+        @media (max-width: 768px) {
+            .p-flow { grid-template-columns: 1fr; }
+            .p-flow::before { display: none; }
+        }
     </style>
 </head>
+
 <body>
     <nav id="main-nav" class="light-page" aria-label="Main Navigation">
         <div class="container">
           <div class="nav-inner">
             <a href="../../index.html" class="nav-logo">
-              <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNT Logo"></div>
+              <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNC Logo"></div>
               <div class="nav-logo-text">
                 <span class="nav-logo-name">Digital Next</span>
                 <span class="nav-logo-sub">Consultancy</span>
@@ -97,99 +339,99 @@
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </button>
-                <div class="nav-dropdown-content">
+                                        <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../iso/iso-9001.html">ISO 9001:2015</a></li>
+                <li><a href="../iso/halal.html">Halal Certification</a></li>
+                <li><a href="../iso/who-gmp.html">WHO - GMP Certification</a></li>
+                <li><a href="../iso/gdp.html">GDP Certification</a></li>
+                <li><a href="../iso/iso-14001.html">ISO 14001 Certification</a></li>
+                <li><a href="../iso/iso-45001.html">ISO 45001 Certification</a></li>
+                <li><a href="../iso/iso-22000.html">ISO 22000 Certification</a></li>
+                <li><a href="../iso/iso-27001.html">ISO 27001 Certification</a></li>
+                <li><a href="../iso/ce-mark.html">CE Mark Certification</a></li>
+                <li><a href="../iso/haccp.html">HACCP Certification</a></li>
+              </ul>
+            </div>
+              </div>
+    
+          <!-- IPR Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              IPR
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../ipr/trademark-registration.html">Trademark Registration</a></li>
+                <li><a href="../ipr/trademark-objection.html">Trademark Objection</a></li>
+                <li><a href="../ipr/trademark-renewal.html">Trademark Renewal</a></li>
+                <li><a href="../ipr/copyright-registration.html">Copyright Registration</a></li>
+                <li><a href="../ipr/patent-registration.html">Patent Registration</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Compliances Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              Compliances
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content mega-menu mega-menu-compliances">
+              <div class="mega-menu-grid">
+                <div>
+                  <span class="mega-menu-col-title">GST Compliances</span>
                   <ul>
-                    <li><a href="#">ISO 9001:2015</a></li>
-                    <li><a href="#">Halal Certification</a></li>
-                    <li><a href="#">WHO - GMP Certification</a></li>
-                    <li><a href="#">GDP Certification</a></li>
-                    <li><a href="#">ISO 14001 Certification</a></li>
-                    <li><a href="#">ISO 45001 Certification</a></li>
-                    <li><a href="#">ISO 22000 Certification</a></li>
-                    <li><a href="#">ISO 27001 Certification</a></li>
-                    <li><a href="#">CE Mark Certification</a></li>
-                    <li><a href="#">HACCP Certification</a></li>
+                    <li><a href="../compliances/gst-registration.html">GST Registration</a></li>
+                    <li><a href="../compliances/gst-return-filing.html">GST Return Filing</a></li>
+                    <li><a href="../compliances/gst-annual-filing.html">GST Annual Filing</a></li>
+                    <li><a href="../compliances/gst-notice-advisory.html">GST Notice &amp; Advisory</a></li>
+                    <li><a href="../compliances/gst-special-cases.html">GST for Special Cases</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Income Tax</span>
+                  <ul>
+                    <li><a href="../compliances/advance-tax-filing.html">Income Tax Return Filing</a></li>
+                    <li><a href="../compliances/advance-tax-filing.html">Advance Tax Filing</a></li>
+                    <li><a href="../compliances/tax-notices-assessment.html">Tax Notices &amp; Assessment</a></li>
+                    <li><a href="../compliances/tds-filing.html">TDS Filing</a></li>
+                    <li><a href="../compliances/professional-tax.html">Professional Tax</a></li>
+                    <li><a href="../compliances/pan-tan-application.html">PAN / TAN Application</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Corporate Filings</span>
+                  <ul>
+                    <li><a href="../compliances/company-annual-filing.html">Company Annual Filing</a></li>
+                    <li><a href="../compliances/llp-annual-filing.html">LLP Annual Filing</a></li>
+                    <li><a href="../compliances/director-kyc.html">Director KYC</a></li>
+                    <li><a href="../compliances/roc-filings.html">ROC Filings</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Accounting</span>
+                  <ul>
+                    <li><a href="../compliances/monthly-bookkeeping.html">Monthly Bookkeeping</a></li>
+                    <li><a href="../compliances/financial-statements.html">Financial Statements</a></li>
+                    <li><a href="../compliances/mis-reporting.html">MIS Reporting</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Other Compliances</span>
+                  <ul>
+                    <li><a href="../compliances/compliance-advisory.html">Compliance Advisory</a></li>
+                    <li><a href="../compliances/closing-llp.html">Closing LLP</a></li>
                   </ul>
                 </div>
               </div>
-    
-              <!-- IPR Dropdown -->
-              <div class="nav-dropdown-wrap">
-                <button class="nav-dropdown-btn">
-                  IPR
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
-                <div class="nav-dropdown-content">
-                  <ul>
-                    <li><a href="#">Trademark Registration</a></li>
-                    <li><a href="#">Trademark Objection</a></li>
-                    <li><a href="#">Trademark Renewal</a></li>
-                    <li><a href="#">Copyright Registration</a></li>
-                    <li><a href="#">Patent Registration</a></li>
-                  </ul>
-                </div>
-              </div>
-    
-              <!-- Compliances Dropdown -->
-              <div class="nav-dropdown-wrap">
-                <button class="nav-dropdown-btn">
-                  Compliances
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
-                <div class="nav-dropdown-content mega-menu mega-menu-compliances">
-                  <div class="mega-menu-grid">
-                    <div>
-                      <span class="mega-menu-col-title">GST Compliances</span>
-                      <ul>
-                        <li><a href="#">GST Registration</a></li>
-                        <li><a href="#">GST Return Filing (Monthly/ Quaterly)</a></li>
-                        <li><a href="#">GST Annual Filing</a></li>
-                        <li><a href="#">GST Notice &amp; Advisory</a></li>
-                        <li><a href="#">GST for Special Cases (E-commerce, TDS/TCS, Non-Resident)</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Income Tax</span>
-                      <ul>
-                        <li><a href="../itr-filing.html">Income Tax Return Filing</a></li>
-                        <li><a href="#">Advance Tax Filing</a></li>
-                        <li><a href="#">Tax Notices &amp; Assessment</a></li>
-                        <li><a href="#">TDS Filing</a></li>
-                        <li><a href="#">Professional Tax</a></li>
-                        <li><a href="#">PAN / TAN Application</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Corporate Filings</span>
-                      <ul>
-                        <li><a href="#">Company Annual Filing</a></li>
-                        <li><a href="#">LLP Annual Filing</a></li>
-                        <li><a href="#">Director KYC</a></li>
-                        <li><a href="change-address.html">ROC Filings</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Accounting</span>
-                      <ul>
-                        <li><a href="#">Monthly Bookkeeping</a></li>
-                        <li><a href="#">Financial Statements</a></li>
-                        <li><a href="#">MIS Reporting</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Other Compliances</span>
-                      <ul>
-                        <li><a href="#">Compliance Advisory</a></li>
-                        <li><a href="#">Closing LLP</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
     
               <!-- Business Growth Dropdown -->
               <div class="nav-dropdown-wrap">
@@ -242,118 +484,491 @@
             </button>
           </div>
         </div>
-    
-        <div id="mobile-menu">
-          <a href="../../index.html" class="mobile-nav-link">Home</a>
-    
-          <!-- Company Registration -->
-          <button class="mobile-dropdown-btn">
-            Company Registration
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
-            <a href="partnership.html" class="mobile-sub-link">Partnership Firm</a>
-            <a href="llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
-            <a href="opc.html" class="mobile-sub-link">One Person Company</a>
-            <a href="pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
-            <a href="public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
-            <a href="nidhi.html" class="mobile-sub-link">Nidhi Company</a>
-            <a href="fpo.html" class="mobile-sub-link">FPO Registration</a>
-            <a href="section-8.html" class="mobile-sub-link">Section 8 Company</a>
-            <a href="trust.html" class="mobile-sub-link">Trust</a>
-            <a href="society.html" class="mobile-sub-link">Society</a>
-            <a href="msme.html" class="mobile-sub-link">MSME Registration</a>
-            <a href="fssai.html" class="mobile-sub-link">FSSAI License</a>
-            <a href="iec.html" class="mobile-sub-link">Import Export Code</a>
-          </div>
-    
-          <!-- ISO -->
-          <button class="mobile-dropdown-btn">
-            ISO
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">ISO 9001:2015</a>
-            <a href="#" class="mobile-sub-link">Halal Certification</a>
-            <a href="#" class="mobile-sub-link">WHO - GMP</a>
-            <a href="#" class="mobile-sub-link">ISO 27001</a>
-          </div>
-    
-          <!-- Compliances -->
-          <button class="mobile-dropdown-btn">
-            Compliances
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">GST Registration</a>
-            <a href="#" class="mobile-sub-link">GST Return Filing</a>
-            <a href="../itr-filing.html" class="mobile-sub-link">Income Tax Return</a>
-            <a href="#" class="mobile-sub-link">TDS Filing</a>
-            <a href="#" class="mobile-sub-link">Company Annual Filing</a>
-            <a href="#" class="mobile-sub-link">LLP Annual Filing</a>
-            <a href="#" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
-          </div>
-    
-          <!-- IPR -->
-          <button class="mobile-dropdown-btn">
-            IPR
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">Trademark Registration</a>
-            <a href="#" class="mobile-sub-link">Trademark Objection</a>
-            <a href="#" class="mobile-sub-link">Copyright Registration</a>
-            <a href="#" class="mobile-sub-link">Patent Registration</a>
-          </div>
-    
-          <!-- Business Growth -->
-          <button class="mobile-dropdown-btn">
-            Business Growth
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
-            <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
-            <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
-          </div>
-    
-          <!-- AI Solutions -->
-          <button class="mobile-dropdown-btn">
-            AI Solutions
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
-            <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
-          </div>
-    
-          <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    <div id="mobile-menu">
+      <a href="../../index.html" class="mobile-nav-link">Home</a>
+
+      <!-- Company Registration -->
+      <button class="mobile-dropdown-btn">
+        Company Registration
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
+        <a href="partnership.html" class="mobile-sub-link">Partnership Firm</a>
+        <a href="llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
+        <a href="opc.html" class="mobile-sub-link">One Person Company</a>
+        <a href="pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
+        <a href="public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
+        <a href="nidhi.html" class="mobile-sub-link">Nidhi Company</a>
+        <a href="fpo.html" class="mobile-sub-link">FPO Registration</a>
+        <a href="section-8.html" class="mobile-sub-link">Section 8 Company</a>
+        <a href="trust.html" class="mobile-sub-link">Trust</a>
+        <a href="society.html" class="mobile-sub-link">Society</a>
+        <a href="msme.html" class="mobile-sub-link">MSME Registration</a>
+        <a href="fssai.html" class="mobile-sub-link">FSSAI License</a>
+        <a href="iec.html" class="mobile-sub-link">Import Export Code</a>
+      </div>
+
+      <!-- ISO -->
+      <button class="mobile-dropdown-btn">
+        ISO
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../iso/iso-9001.html" class="mobile-sub-link">ISO 9001:2015</a>
+        <a href="../iso/halal.html" class="mobile-sub-link">Halal Certification</a>
+        <a href="../iso/who-gmp.html" class="mobile-sub-link">WHO - GMP</a>
+        <a href="../iso/gdp.html" class="mobile-sub-link">GDP Certification</a>
+        <a href="../iso/iso-14001.html" class="mobile-sub-link">ISO 14001</a>
+        <a href="../iso/iso-45001.html" class="mobile-sub-link">ISO 45001</a>
+        <a href="../iso/iso-22000.html" class="mobile-sub-link">ISO 22000</a>
+        <a href="../iso/iso-27001.html" class="mobile-sub-link">ISO 27001</a>
+        <a href="../iso/ce-mark.html" class="mobile-sub-link">CE Mark</a>
+        <a href="../iso/haccp.html" class="mobile-sub-link">HACCP Certification</a>
+      </div>
+
+      <!-- Compliances -->
+      <button class="mobile-dropdown-btn">
+        Compliances
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../compliances/gst-registration.html" class="mobile-sub-link">GST Registration</a>
+        <a href="../compliances/gst-return-filing.html" class="mobile-sub-link">GST Return Filing</a>
+        <a href="../compliances/advance-tax-filing.html" class="mobile-sub-link">Income Tax Return</a>
+        <a href="../compliances/tds-filing.html" class="mobile-sub-link">TDS Filing</a>
+        <a href="../compliances/company-annual-filing.html" class="mobile-sub-link">Company Annual Filing</a>
+        <a href="../compliances/llp-annual-filing.html" class="mobile-sub-link">LLP Annual Filing</a>
+        <a href="../compliances/monthly-bookkeeping.html" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
+      </div>
+
+      <!-- IPR -->
+      <button class="mobile-dropdown-btn">
+        IPR
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../ipr/trademark-registration.html" class="mobile-sub-link">Trademark Registration</a>
+        <a href="../ipr/trademark-objection.html" class="mobile-sub-link">Trademark Objection</a>
+        <a href="../ipr/trademark-renewal.html" class="mobile-sub-link">Trademark Renewal</a>
+        <a href="../ipr/copyright-registration.html" class="mobile-sub-link">Copyright Registration</a>
+        <a href="../ipr/patent-registration.html" class="mobile-sub-link">Patent Registration</a>
+      </div>
+
+      <!-- Business Growth -->
+      <button class="mobile-dropdown-btn">
+        Business Growth
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
+        <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
+        <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
+      </div>
+
+      <!-- AI Solutions -->
+      <button class="mobile-dropdown-btn">
+        AI Solutions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
+        <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
+      </div>
+
+      <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    </div>
+  </nav>
+
+    <!-- Section 1: Hero -->
+    <header class="itr-hero">
+        <div class="container">
+            <div class="hero-split-grid">
+                <div class="hero-left-content">
+                    <span class="overline">Employee Social Security</span>
+                    <h1 class="hero-title">PF Registration <span class="text-gold">Services</span></h1>
+                    <p style="font-size: 1.15rem; color: var(--itr-muted); margin-bottom: 2rem;">Establish a robust social security net for your workforce. EPF registration is mandatory for firms with 20 or more employees.</p>
+                    
+                    <div class="hero-feature-list">
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Mandatory for Firms with 20+ Workers</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Tax-Free Savings & Retirement Benefits</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Comprehensive Post-Retirement Security</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="#details" class="btn-shine">
+                            REGISTER FOR PF →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right-content">
+                    <div class="itr-lead-card">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">PF Consultation</h3>
+                        <p style="color: var(--itr-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Our compliance team will handle your EPFO portal registration and filing.</p>
+                        
+                        <form id="itrFinalLeadForm">
+                            <div class="itr-form-group">
+                                <input type="text" placeholder="Full Name *" class="itr-form-input" required>
+                            </div>
+                            <div class="itr-form-group">
+                                <input type="tel" placeholder="Mobile Number *" class="itr-form-input" required>
+                            </div>
+                            <div class="itr-form-group">
+                                <input type="text" placeholder="Number of Employees" class="itr-form-input">
+                            </div>
+                            <div class="itr-form-group" style="margin-bottom: 1.5rem;">
+                                <select class="itr-form-input" required>
+                                    <option value="" disabled selected>Establishment Category</option>
+                                    <option value="Proprietorship">Proprietorship</option>
+                                    <option value="Partnership">Partnership/LLP</option>
+                                    <option value="Company">Private/Public Limited</option>
+                                    <option value="Trust">Trust/Society</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-shine" style="width: 100%;">
+                                GET FREE QUOTE →
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-    <header class="hero"><div class="container"><div class="grid">
-        <div><span class="tag">Employee Benefits</span><h1>PF Registration</h1><p>Establish a social security net for your employees. EPF registration is mandatory for firms with 20+ workers.</p></div>
-        <div class="form-card"><h3>Get Quote</h3><form><input type="text" placeholder="Name" style="width:100%;padding:10px;margin:10px 0;border:1px solid #DDD;border-radius:5px"><input type="tel" placeholder="Phone" style="width:100%;padding:10px;margin:10px 0;border:1px solid #DDD;border-radius:5px"><button class="btn" style="width:100%;border:none;cursor:pointer">Get Started</button></form></div>
-    </div></div></header>
-    <section class="section"><div class="container"><h2>Description</h2><p style="color:var(--muted);line-height:1.6">Employee Provident Fund (EPF) is a mandatory savings scheme for employees in India. It is regulated by the Employees' Provident Fund Organisation (EPFO). Both employer and employee contribute 12% of the basic salary towards this fund, ensuring financial stability post-retirement.</p></div></section>
-    <section class="section" style="background:var(--bg)"><div class="container"><h2>Documents Required</h2><ul><li>Partnership Deed or Registration Certificate</li><li>PAN Card of the establishment</li><li>Bank Statement/Cancelled Cheque</li><li>Digital Signature of Authorised Signatory</li></ul></div></section>
-    <section class="section"><div class="container"><h2>Process</h2><p>1. Data Collection > 2. Shram Suvidha Portal Filing > 3. Digital Signature Approval > 4. PF Establishment Code Allocation</p></div></section>
-    <section class="section" style="background:var(--dark);color:#FFF;border-radius:30px"><div class="container"><h2>Why Choose DNT?</h2><p>Timely monthly filings, zero compliance gaps, and expert liaison with EPFO offices.</p></div></section>
-    <section class="section"><div class="container"><h2>FAQ</h2><p><strong>When is PF mandatory?</strong> It is mandatory for any establishment employing 20 or more persons.</p></div></section>
-    <section class="section" style="background:var(--bg)"><div class="container"><h3>Review</h3><p>"Excellent handling of our PF registration and monthly returns." - S. Mehra</p></div></section>
-    <footer style="padding:40px 0;text-align:center;color:var(--muted)">© 2026 DNT Consultancy</footer>
+    </header>
+
+    <!-- Section 2: Overview -->
+    <section class="s-padding" id="details">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">— RETIREMENT SAVINGS —</span>
+                <h2>Understanding <span class="text-gold">EPF Scheme</span></h2>
+                <p style="color: var(--itr-muted); max-width: 800px; margin: 0 auto;">Employee Provident Fund (EPF) is a mandatory savings scheme regulated by the EPFO. It ensures financial stability for employees post-retirement through shared contributions.</p>
+            </div>
+
+            <div class="mandatory-grid" style="margin-top: 3rem;">
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-piggy-bank"></i></div>
+                    <h3>Retirement Fund</h3>
+                    <p>Accumulate a substantial corpus through monthly contributions of 12% of basic salary from both employee and employer.</p>
+                    <span class="itr-tag">SAVINGS</span>
+                </div>
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Life Insurance (EDLI)</h3>
+                    <p>Includes Employees' Deposit Linked Insurance (EDLI) scheme, providing life cover to insured members at no extra cost.</p>
+                    <span class="itr-tag">COVERAGE</span>
+                </div>
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Pension (EPS)</h3>
+                    <p>A portion of the employer's contribution goes towards the Employees' Pension Scheme, securing a monthly pension.</p>
+                    <span class="itr-tag">SECURITY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Documents Required -->
+    <section class="s-padding bg-light">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">CHECKLIST</span>
+                <h2 class="section-title">Documents <span class="text-gold">Required</span></h2>
+                <p style="color: var(--itr-muted); margin-bottom: 3rem;">Keep these business and identity proofs ready for your PF application.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Establishment PAN</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Copy of the PAN Card issued in the name of the business entity or owner.</p>
+                </div>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-signature"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Digital Signature</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">DSC of the authorized signatory is mandatory for portal authentication.</p>
+                </div>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Reg. Certificate</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Partnership Deed, MOA/AOA, or Shop & Establishment License.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Process -->
+    <section class="s-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">MILESTONES</span>
+                <h2>The PF <span class="text-gold">Onboarding Flow</span></h2>
+            </div>
+
+            <div class="p-flow">
+                <div class="p-step">
+                    <div class="p-num">01</div>
+                    <h4 style="margin-bottom: 0.5rem;">Data Collection</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Gathering entity details and employee headcount for eligibility audit.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">02</div>
+                    <h4 style="margin-bottom: 0.5rem;">Portal Filing</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Submitting the application on the Shram Suvidha / EPFO portal.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">03</div>
+                    <h4 style="margin-bottom: 1rem;">DSC Approval</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Authenticating the application with a valid Digital Signature (DSC).</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">04</div>
+                    <h4 style="margin-bottom: 0.5rem;">Code Issuance</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Allocation of the permanent PF Establishment Code for your firm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Why DNC -->
+    <section class="s-padding" style="background: var(--itr-navy); color: #FFF; border-radius: 60px 60px 0 0;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline" style="color: var(--itr-gold);">— THE DNC PROMISE —</span>
+                <h2 style="color: #FFF;">Why Choose Our <span class="text-gold">Expertise</span>?</h2>
+            </div>
+
+            <div class="mandatory-grid">
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-calendar-check"></i></div>
+                    <h3 style="color: #FFF;">Timely ECR Filing</h3>
+                    <p style="color: rgba(255,255,255,0.6);">We ensure your Electronic Challan cum Return (ECR) is filed accurately and on time every month.</p>
+                </div>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-shield-alt"></i></div>
+                    <h3 style="color: #FFF;">Compliance Audit</h3>
+                    <p style="color: rgba(255,255,255,0.6);">Our experts conduct periodic audits to ensure your business remains 100% compliant with EPFO laws.</p>
+                </div>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-user-friends"></i></div>
+                    <h3 style="color: #FFF;">Employee Liaison</h3>
+                    <p style="color: rgba(255,255,255,0.6);">We assist your employees with UAN activation, KYC updates, and PF transfer/withdrawal queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="s-padding bg-light">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-heading text-center">
+                <span class="overline">SUPPORT</span>
+                <h2>Frequently Asked <span class="text-gold">Questions</span></h2>
+            </div>
+
+            <div class="faq-v2">
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>Is PF registration mandatory for small firms?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">It is mandatory for any establishment employing 20 or more persons. Firms with fewer than 20 can opt for voluntary registration.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>What is the penalty for late filing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Late filing attracts damages (interest and penalties) ranging from 5% to 25% per annum depending on the delay period.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>Can an employee opt out of PF?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Only "Excluded Employees" (those earning more than ₹15,000 at the time of joining and never having a PF account) can opt out.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Related Services -->
+    <section class="s-padding bg-light">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">EXPLORE MORE</span>
+                <h2>Related <span class="text-gold">Services</span></h2>
+            </div>
+            <div class="mandatory-grid">
+                <a href="esi.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0F9FF; color: #0EA5E9; margin: 0 auto 1.5rem;"><i class="fas fa-hospital-user"></i></div>
+                        <h3>ESI Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">The mandatory health insurance scheme for your workforce. Essential for 10+ employees.</p>
+                    </div>
+                </a>
+                <a href="../compliances/professional-tax.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0FDF4; color: #10B981; margin: 0 auto 1.5rem;"><i class="fas fa-calculator"></i></div>
+                        <h3>Professional Tax</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">State-level tax compliance for salaried employees and business entities.</p>
+                    </div>
+                </a>
+                <a href="dsc.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #FFF7ED; color: #F97316; margin: 0 auto 1.5rem;"><i class="fas fa-key"></i></div>
+                        <h3>Digital Signature</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Mandatory for PF portal authentication and all corporate filings in India.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Infinite Reviews Carousel -->
+    <section class="s-padding" style="overflow: hidden;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">TESTIMONIALS</span>
+                <h2>What Our <span class="text-gold">Clients Say</span></h2>
+            </div>
+        </div>
+
+        <div class="reviews-marquee">
+            <div class="reviews-track">
+                <!-- Set 1 -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Excellent handling of our PF registration and monthly returns. DNT team is very knowledgeable about EPFO norms."</p>
+                    <div class="r-author">S. Mehra</div>
+                    <div class="r-desig">HR Manager, Global Tech Corp</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"They helped us transition to PF compliance smoothly when our headcount crossed 20. Highly recommended."</p>
+                    <div class="r-author">Karan Johar</div>
+                    <div class="r-desig">Founder, Star Events</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"The compliance audit they conducted saved us from huge potential penalties. Professional and thorough."</p>
+                    <div class="r-author">Neha Sharma</div>
+                    <div class="r-desig">CFO, Radiant Solutions</div>
+                </div>
+                <!-- Duplicate for Infinite Loop -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Excellent handling of our PF registration and monthly returns. DNT team is very knowledgeable about EPFO norms."</p>
+                    <div class="r-author">S. Mehra</div>
+                    <div class="r-desig">HR Manager, Global Tech Corp</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"They helped us transition to PF compliance smoothly when our headcount crossed 20. Highly recommended."</p>
+                    <div class="r-author">Karan Johar</div>
+                    <div class="r-desig">Founder, Star Events</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"The compliance audit they conducted saved us from huge potential penalties. Professional and thorough."</p>
+                    <div class="r-author">Neha Sharma</div>
+                    <div class="r-desig">CFO, Radiant Solutions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--itr-navy); padding: 80px 0 40px; color: #FFF;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 4rem; margin-bottom: 4rem;">
+                <div>
+                    <img src="../../assets/logo.svg" alt="Logo" style="width: 50px; filter: brightness(0) invert(1); margin-bottom: 1.5rem;">
+                    <h3 style="color: #FFF; margin-bottom: 1rem;">Digital Next Consultancy</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem; line-height: 1.7;">Your trusted partner for all business registrations, legal compliances, and digital growth solutions across India.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="../../index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                        <li><a href="../../about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                        <li><a href="../../contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="pvt-ltd.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Company Registration</a></li>
+                        <li><a href="../compliance.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">GST & Tax</a></li>
+                        <li><a href="../digital-marketing.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Reach Us</h4>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +91 88025 59782</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@digitalnextworld.com</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> New Delhi, India</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.8rem;">
+                © 2026 Digital Next Consultancy. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
     <script src="../../js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-v2-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const ans = item.querySelector('.faq-ans');
+                const icon = button.querySelector('i');
+                
+                if (ans.style.display === 'block') {
+                    ans.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    ans.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

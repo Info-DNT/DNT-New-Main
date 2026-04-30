@@ -4,185 +4,256 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nidhi Company Registration | Financial Community Setup | DNT</title>
-    <meta name="description" content="Register your Nidhi Company and promote thrift and savings among members. Expert financial and legal registration services by Digital Next Consultancy." />
+    <title>Nidhi Company Registration | Financial Community Setup | DNC</title>
+    <meta name="description" content="Register your Nidhi Company and promote thrift and savings among members. Expert financial and legal registration services by Digital Next Consultancy (DNC)." />
     <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg" />
+    
+    <!-- Core CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/global-theme-override.css" />
+    
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* ======================== ITR PREMIUM CORE ======================== */
         :root {
-            --primary-color: #2563EB;
-            --accent-color: #F59E0B;
-            --text-main: #0F172A;
-            --text-muted: #475569;
-            --bg-light: #F8FAFC;
+            --itr-gold: #F59E0B;
+            --itr-navy: #050811;
+            --itr-bg-light: #FBF8F3;
+            --itr-text: #0F172A;
+            --itr-muted: #64748B;
+            --itr-border: #E2E8F0;
+            --itr-white: #FFFFFF;
+            --itr-blue: #1565C0;
+            --card-radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .service-hero {
-            padding: 160px 0 100px;
-            background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-                        #F8FAFC;
-            text-align: center;
-            border-bottom: 1px solid #E2E8F0;
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--itr-text);
+            background-color: var(--itr-white);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-            border-radius: 50px;
-            font-size: 0.85rem;
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Sections --- */
+        .s-padding { padding: 44px 0; }
+        .bg-light { background: var(--itr-bg-light); }
+        
+        .section-heading { margin-bottom: 2.2rem; }
+        .section-heading.text-center { text-align: center; }
+        .overline {
+            display: block;
+            color: var(--itr-gold);
             font-weight: 700;
-            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
-        .service-title {
+        /* --- Hero Section --- */
+        .itr-hero {
+            padding: 95px 0 60px;
+            background: radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+                        var(--itr-bg-light);
+            border-bottom: 1px solid var(--itr-border);
+        }
+
+        .hero-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            .hero-split-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .hero-left-content { order: 2; }
+            .hero-right-content { order: 1; }
+        }
+
+        .hero-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
-            color: var(--text-main);
             line-height: 1.1;
+            color: var(--itr-navy);
             margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
         }
 
-        .service-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.6;
+        .text-gold { color: var(--itr-gold); }
+
+        .hero-feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
         }
 
-        .btn-primary {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
-        }
-
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 2rem;
-            letter-spacing: -0.02em;
-        }
-
-        .text-blue {
-            color: var(--primary-color);
-        }
-
-        .description-content {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            max-width: 900px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .benefit-card {
-            padding: 2.5rem;
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .benefit-card h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .docs-section {
-            background: var(--bg-light);
-        }
-
-        .docs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .doc-item {
+        .hero-feature-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #E2E8F0;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
         }
 
-        .doc-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary-color);
-            border-radius: 50%;
+        /* --- Elite Lead Form --- */
+        .itr-lead-card {
+            background: #FFF;
+            padding: 2.5rem;
+            border-radius: 32px;
+            border: 1px solid var(--itr-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .itr-lead-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--itr-gold), #FCD34D);
+        }
+
+        .itr-form-group { margin-bottom: 1rem; }
+        .itr-form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .itr-form-input:focus {
+            border-color: var(--itr-gold);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+        }
+
+        /* --- Custom UI --- */
+        .btn-shine {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: var(--itr-navy);
+            color: #FFF;
+            border-radius: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-shine:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        .mandatory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .mandatory-card {
+            padding: 2.5rem;
+            background: #FFF;
+            border: 1px solid var(--itr-border);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+        .mandatory-card:hover { transform: translateY(-8px); border-color: var(--itr-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        .m-icon {
+            width: 60px; height: 60px;
+            background: var(--itr-gold-light);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--itr-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .itr-tag {
+            position: absolute; top: 20px; right: 20px;
+            padding: 4px 12px; background: var(--itr-gold-light);
+            color: var(--itr-gold); font-size: 0.7rem; font-weight: 800;
+            border-radius: 50px; text-transform: uppercase;
+        }
+
+        /* --- Workflow --- */
+        .p-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            margin-top: 3rem;
+        }
+        .p-flow::before {
+            content: '';
+            position: absolute; top: 30px; left: 50px; right: 50px;
+            height: 2px; 
+            background: repeating-linear-gradient(to right, var(--itr-gold) 0, var(--itr-gold) 10px, transparent 10px, transparent 20px);
+            background-size: 20px 100%;
+            z-index: 0;
+            opacity: 0.3;
+            animation: flowLine 1.5s linear infinite;
+        }
+
+        @keyframes flowLine {
+            from { background-position: 0 0; }
+            to { background-position: 20px 0; }
+        }
+        .p-step { position: relative; z-index: 1; text-align: center; }
+        .p-num {
+            width: 60px; height: 60px; background: var(--itr-navy);
+            color: #FFF; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            font-weight: 800; margin: 0 auto 1.5rem;
+            border: 4px solid #FFF; box-shadow: 0 0 0 1px var(--itr-border);
+        }
+
+        /* --- FAQ --- */
+        .faq-v2 { display: flex; flex-direction: column; gap: 1rem; }
+        .faq-v2-item { border: 1px solid var(--itr-border); border-radius: 16px; background: #FFF; overflow: hidden; }
+        .faq-v2-btn {
+            width: 100%; padding: 1.5rem; display: flex;
+            justify-content: space-between; align-items: center;
+            background: none; border: none; cursor: pointer;
+            text-align: left; font-weight: 700; font-size: 1rem;
+            color: var(--itr-navy);
+        }
+        
+        /* --- Reviews Marquee --- */
+        .reviews-marquee { overflow: hidden; padding: 2rem 0; position: relative; }
+        .reviews-track { display: flex; gap: 2rem; animation: marquee 30s linear infinite; width: max-content; }
+        @keyframes marquee { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+        .review-card-v2 {
+            width: 350px; background: #FFF; padding: 2rem;
+            border-radius: 20px; border: 1px solid var(--itr-border);
             flex-shrink: 0;
         }
-
-        .why-choose-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .why-item {
-            margin-bottom: 2rem;
-        }
-
-        .why-item h4 {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
+        .r-stars { color: var(--itr-gold); margin-bottom: 1rem; }
+        .r-text { font-style: italic; color: var(--itr-muted); margin-bottom: 1.5rem; }
+        .r-author { font-weight: 700; }
+        .r-desig { font-size: 0.8rem; color: var(--itr-gold); }
 
         @media (max-width: 768px) {
-            .why-choose-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
+            .p-flow { grid-template-columns: 1fr; }
+            .p-flow::before { display: none; }
         }
     </style>
 </head>
@@ -192,7 +263,7 @@
         <div class="container">
           <div class="nav-inner">
             <a href="../../index.html" class="nav-logo">
-              <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNT Logo"></div>
+              <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNC Logo"></div>
               <div class="nav-logo-text">
                 <span class="nav-logo-name">Digital Next</span>
                 <span class="nav-logo-sub">Consultancy</span>
@@ -267,20 +338,20 @@
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </button>
-                <div class="nav-dropdown-content">
-                  <ul>
-                    <li><a href="#">ISO 9001:2015</a></li>
-                    <li><a href="#">Halal Certification</a></li>
-                    <li><a href="#">WHO - GMP Certification</a></li>
-                    <li><a href="#">GDP Certification</a></li>
-                    <li><a href="#">ISO 14001 Certification</a></li>
-                    <li><a href="#">ISO 45001 Certification</a></li>
-                    <li><a href="#">ISO 22000 Certification</a></li>
-                    <li><a href="#">ISO 27001 Certification</a></li>
-                    <li><a href="#">CE Mark Certification</a></li>
-                    <li><a href="#">HACCP Certification</a></li>
-                  </ul>
-                </div>
+                                        <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../iso/iso-9001.html">ISO 9001:2015</a></li>
+                <li><a href="../iso/halal.html">Halal Certification</a></li>
+                <li><a href="../iso/who-gmp.html">WHO - GMP Certification</a></li>
+                <li><a href="../iso/gdp.html">GDP Certification</a></li>
+                <li><a href="../iso/iso-14001.html">ISO 14001 Certification</a></li>
+                <li><a href="../iso/iso-45001.html">ISO 45001 Certification</a></li>
+                <li><a href="../iso/iso-22000.html">ISO 22000 Certification</a></li>
+                <li><a href="../iso/iso-27001.html">ISO 27001 Certification</a></li>
+                <li><a href="../iso/ce-mark.html">CE Mark Certification</a></li>
+                <li><a href="../iso/haccp.html">HACCP Certification</a></li>
+              </ul>
+            </div>
               </div>
     
               <!-- IPR Dropdown -->
@@ -293,11 +364,11 @@
                 </button>
                 <div class="nav-dropdown-content">
                   <ul>
-                    <li><a href="#">Trademark Registration</a></li>
-                    <li><a href="#">Trademark Objection</a></li>
-                    <li><a href="#">Trademark Renewal</a></li>
-                    <li><a href="#">Copyright Registration</a></li>
-                    <li><a href="#">Patent Registration</a></li>
+                    <li><a href="../ipr/trademark-registration.html">Trademark Registration</a></li>
+                    <li><a href="../ipr/trademark-objection.html">Trademark Objection</a></li>
+                    <li><a href="../ipr/trademark-renewal.html">Trademark Renewal</a></li>
+                    <li><a href="../ipr/copyright-registration.html">Copyright Registration</a></li>
+                    <li><a href="../ipr/patent-registration.html">Patent Registration</a></li>
                   </ul>
                 </div>
               </div>
@@ -315,46 +386,46 @@
                     <div>
                       <span class="mega-menu-col-title">GST Compliances</span>
                       <ul>
-                        <li><a href="#">GST Registration</a></li>
-                        <li><a href="#">GST Return Filing (Monthly/ Quaterly)</a></li>
-                        <li><a href="#">GST Annual Filing</a></li>
-                        <li><a href="#">GST Notice &amp; Advisory</a></li>
-                        <li><a href="#">GST for Special Cases (E-commerce, TDS/TCS, Non-Resident)</a></li>
+                        <li><a href="../compliances/gst-registration.html">GST Registration</a></li>
+                        <li><a href="../compliances/gst-return-filing.html">GST Return Filing</a></li>
+                        <li><a href="../compliances/gst-annual-filing.html">GST Annual Filing</a></li>
+                        <li><a href="../compliances/gst-notice-advisory.html">GST Notice &amp; Advisory</a></li>
+                        <li><a href="../compliances/gst-special-cases.html">GST for Special Cases</a></li>
                       </ul>
                     </div>
                     <div>
                       <span class="mega-menu-col-title">Income Tax</span>
                       <ul>
-                        <li><a href="../itr-filing.html">Income Tax Return Filing</a></li>
-                        <li><a href="#">Advance Tax Filing</a></li>
-                        <li><a href="#">Tax Notices &amp; Assessment</a></li>
-                        <li><a href="#">TDS Filing</a></li>
-                        <li><a href="#">Professional Tax</a></li>
-                        <li><a href="#">PAN / TAN Application</a></li>
+                        <li><a href="../compliances/advance-tax-filing.html">Income Tax Return Filing</a></li>
+                        <li><a href="../compliances/advance-tax-filing.html">Advance Tax Filing</a></li>
+                        <li><a href="../compliances/tax-notices-assessment.html">Tax Notices &amp; Assessment</a></li>
+                        <li><a href="../compliances/tds-filing.html">TDS Filing</a></li>
+                        <li><a href="../compliances/professional-tax.html">Professional Tax</a></li>
+                        <li><a href="../compliances/pan-tan-application.html">PAN / TAN Application</a></li>
                       </ul>
                     </div>
                     <div>
                       <span class="mega-menu-col-title">Corporate Filings</span>
                       <ul>
-                        <li><a href="#">Company Annual Filing</a></li>
-                        <li><a href="#">LLP Annual Filing</a></li>
-                        <li><a href="#">Director KYC</a></li>
-                        <li><a href="change-address.html">ROC Filings</a></li>
+                        <li><a href="../compliances/company-annual-filing.html">Company Annual Filing</a></li>
+                        <li><a href="../compliances/llp-annual-filing.html">LLP Annual Filing</a></li>
+                        <li><a href="../compliances/director-kyc.html">Director KYC</a></li>
+                        <li><a href="../compliances/roc-filings.html">ROC Filings</a></li>
                       </ul>
                     </div>
                     <div>
                       <span class="mega-menu-col-title">Accounting</span>
                       <ul>
-                        <li><a href="#">Monthly Bookkeeping</a></li>
-                        <li><a href="#">Financial Statements</a></li>
-                        <li><a href="#">MIS Reporting</a></li>
+                        <li><a href="../compliances/monthly-bookkeeping.html">Monthly Bookkeeping</a></li>
+                        <li><a href="../compliances/financial-statements.html">Financial Statements</a></li>
+                        <li><a href="../compliances/mis-reporting.html">MIS Reporting</a></li>
                       </ul>
                     </div>
                     <div>
                       <span class="mega-menu-col-title">Other Compliances</span>
                       <ul>
-                        <li><a href="#">Compliance Advisory</a></li>
-                        <li><a href="#">Closing LLP</a></li>
+                        <li><a href="../compliances/compliance-advisory.html">Compliance Advisory</a></li>
+                        <li><a href="../compliances/closing-llp.html">Closing LLP</a></li>
                       </ul>
                     </div>
                   </div>
@@ -412,220 +483,547 @@
             </button>
           </div>
         </div>
-    
-        <div id="mobile-menu">
-          <a href="../../index.html" class="mobile-nav-link">Home</a>
-    
-          <!-- Company Registration -->
-          <button class="mobile-dropdown-btn">
-            Company Registration
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
-            <a href="partnership.html" class="mobile-sub-link">Partnership Firm</a>
-            <a href="llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
-            <a href="opc.html" class="mobile-sub-link">One Person Company</a>
-            <a href="pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
-            <a href="public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
-            <a href="nidhi.html" class="mobile-sub-link">Nidhi Company</a>
-            <a href="fpo.html" class="mobile-sub-link">FPO Registration</a>
-            <a href="section-8.html" class="mobile-sub-link">Section 8 Company</a>
-            <a href="trust.html" class="mobile-sub-link">Trust</a>
-            <a href="society.html" class="mobile-sub-link">Society</a>
-            <a href="msme.html" class="mobile-sub-link">MSME Registration</a>
-            <a href="fssai.html" class="mobile-sub-link">FSSAI License</a>
-            <a href="iec.html" class="mobile-sub-link">Import Export Code</a>
-          </div>
-    
-          <!-- ISO -->
-          <button class="mobile-dropdown-btn">
-            ISO
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">ISO 9001:2015</a>
-            <a href="#" class="mobile-sub-link">Halal Certification</a>
-            <a href="#" class="mobile-sub-link">WHO - GMP</a>
-            <a href="#" class="mobile-sub-link">ISO 27001</a>
-          </div>
-    
-          <!-- Compliances -->
-          <button class="mobile-dropdown-btn">
-            Compliances
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">GST Registration</a>
-            <a href="#" class="mobile-sub-link">GST Return Filing</a>
-            <a href="../itr-filing.html" class="mobile-sub-link">Income Tax Return</a>
-            <a href="#" class="mobile-sub-link">TDS Filing</a>
-            <a href="#" class="mobile-sub-link">Company Annual Filing</a>
-            <a href="#" class="mobile-sub-link">LLP Annual Filing</a>
-            <a href="#" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
-          </div>
-    
-          <!-- IPR -->
-          <button class="mobile-dropdown-btn">
-            IPR
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">Trademark Registration</a>
-            <a href="#" class="mobile-sub-link">Trademark Objection</a>
-            <a href="#" class="mobile-sub-link">Copyright Registration</a>
-            <a href="#" class="mobile-sub-link">Patent Registration</a>
-          </div>
-    
-          <!-- Business Growth -->
-          <button class="mobile-dropdown-btn">
-            Business Growth
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
-            <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
-            <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
-          </div>
-    
-          <!-- AI Solutions -->
-          <button class="mobile-dropdown-btn">
-            AI Solutions
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
-            <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
-          </div>
-    
-          <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
-        </div>
-      </nav>
+    <div id="mobile-menu">
+      <a href="../../index.html" class="mobile-nav-link">Home</a>
 
-    <header class="service-hero">
+      <!-- Company Registration -->
+      <button class="mobile-dropdown-btn">
+        Company Registration
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
+        <a href="partnership.html" class="mobile-sub-link">Partnership Firm</a>
+        <a href="llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
+        <a href="opc.html" class="mobile-sub-link">One Person Company</a>
+        <a href="pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
+        <a href="public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
+        <a href="nidhi.html" class="mobile-sub-link">Nidhi Company</a>
+        <a href="fpo.html" class="mobile-sub-link">FPO Registration</a>
+        <a href="section-8.html" class="mobile-sub-link">Section 8 Company</a>
+        <a href="trust.html" class="mobile-sub-link">Trust</a>
+        <a href="society.html" class="mobile-sub-link">Society</a>
+        <a href="msme.html" class="mobile-sub-link">MSME Registration</a>
+        <a href="fssai.html" class="mobile-sub-link">FSSAI License</a>
+        <a href="iec.html" class="mobile-sub-link">Import Export Code</a>
+      </div>
+
+      <!-- ISO -->
+      <button class="mobile-dropdown-btn">
+        ISO
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../iso/iso-9001.html" class="mobile-sub-link">ISO 9001:2015</a>
+        <a href="../iso/halal.html" class="mobile-sub-link">Halal Certification</a>
+        <a href="../iso/who-gmp.html" class="mobile-sub-link">WHO - GMP</a>
+        <a href="../iso/gdp.html" class="mobile-sub-link">GDP Certification</a>
+        <a href="../iso/iso-14001.html" class="mobile-sub-link">ISO 14001</a>
+        <a href="../iso/iso-45001.html" class="mobile-sub-link">ISO 45001</a>
+        <a href="../iso/iso-22000.html" class="mobile-sub-link">ISO 22000</a>
+        <a href="../iso/iso-27001.html" class="mobile-sub-link">ISO 27001</a>
+        <a href="../iso/ce-mark.html" class="mobile-sub-link">CE Mark</a>
+        <a href="../iso/haccp.html" class="mobile-sub-link">HACCP Certification</a>
+      </div>
+
+      <!-- Compliances -->
+      <button class="mobile-dropdown-btn">
+        Compliances
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../compliances/gst-registration.html" class="mobile-sub-link">GST Registration</a>
+        <a href="../compliances/gst-return-filing.html" class="mobile-sub-link">GST Return Filing</a>
+        <a href="../compliances/advance-tax-filing.html" class="mobile-sub-link">Income Tax Return</a>
+        <a href="../compliances/tds-filing.html" class="mobile-sub-link">TDS Filing</a>
+        <a href="../compliances/company-annual-filing.html" class="mobile-sub-link">Company Annual Filing</a>
+        <a href="../compliances/llp-annual-filing.html" class="mobile-sub-link">LLP Annual Filing</a>
+        <a href="../compliances/monthly-bookkeeping.html" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
+      </div>
+
+      <!-- IPR -->
+      <button class="mobile-dropdown-btn">
+        IPR
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../ipr/trademark-registration.html" class="mobile-sub-link">Trademark Registration</a>
+        <a href="../ipr/trademark-objection.html" class="mobile-sub-link">Trademark Objection</a>
+        <a href="../ipr/trademark-renewal.html" class="mobile-sub-link">Trademark Renewal</a>
+        <a href="../ipr/copyright-registration.html" class="mobile-sub-link">Copyright Registration</a>
+        <a href="../ipr/patent-registration.html" class="mobile-sub-link">Patent Registration</a>
+      </div>
+
+      <!-- Business Growth -->
+      <button class="mobile-dropdown-btn">
+        Business Growth
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
+        <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
+        <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
+      </div>
+
+      <!-- AI Solutions -->
+      <button class="mobile-dropdown-btn">
+        AI Solutions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
+        <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
+      </div>
+
+      <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    </div>
+  </nav>
+
+    <!-- Section 1: Hero -->
+    <header class="itr-hero">
         <div class="container">
-            <div class="hero-badge">Financial Mutual Benefit</div>
-            <h1 class="service-title">Nidhi Company <span class="text-blue">Registration</span></h1>
-            <p class="service-subtitle">Promote the habit of thrift and savings among members by incorporating a Nidhi Company under the Companies Act.</p>
-            <a href="../../contact.html" class="btn-primary">Start Registration</a>
+            <div class="hero-split-grid">
+                <div class="hero-left-content">
+                    <span class="overline">Mutual Benefit Society</span>
+                    <h1 class="hero-title">Nidhi Company <span class="text-gold">Registration</span></h1>
+                    <p style="font-size: 1.15rem; color: var(--itr-muted); margin-bottom: 2rem;">Cultivate savings and thrift among members. A Nidhi Company is a cost-effective way to start a financial community without stringent RBI oversight.</p>
+                    
+                    <div class="hero-feature-list">
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>No RBI License Required</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Secured Member-Only Lending</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Easy & Low-Cost Compliance</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="#details" class="btn-shine">
+                            EXPLORE DETAILS →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right-content">
+                    <div class="itr-lead-card">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Claim Free Consultation</h3>
+                        <p style="color: var(--itr-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Our financial legal experts will call you within 30 minutes to discuss your setup.</p>
+                        
+                        <form id="itrFinalLeadForm">
+                            <div class="itr-form-group">
+                                <input type="text" placeholder="Full Name *" class="itr-form-input" required>
+                            </div>
+                            <div class="itr-form-group">
+                                <input type="tel" placeholder="Mobile Number *" class="itr-form-input" required>
+                            </div>
+                            <div class="itr-form-group">
+                                <input type="email" placeholder="Email Address" class="itr-form-input">
+                            </div>
+                            <div class="itr-form-group" style="margin-bottom: 1.5rem;">
+                                <select class="itr-form-input" required>
+                                    <option value="" disabled selected>Select Area of Operation</option>
+                                    <option value="District">District Level</option>
+                                    <option value="State">State Level</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-shine" style="width: 100%;">
+                                GET STARTED NOW →
+                            </button>
+                            <p style="text-align: center; font-size: 0.75rem; color: var(--itr-muted); margin-top: 1rem;">
+                                Secure & Confidential Processing
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="section-padding">
+    <!-- Section 2: Overview -->
+    <section class="s-padding" id="details">
         <div class="container">
-            <h2 class="section-title">Service <span class="text-blue">Description</span></h2>
-            <div class="description-content">
-                <p>A Nidhi Company is a type of company in the Indian non-banking financial sector, recognized under Section 406 of the Companies Act, 2013. Its core business is borrowing and lending money between its members.</p>
-                <p>Nidhi companies are created for the mutual benefit of their members and aim to cultivate the habit of saving. They are regulated by the Ministry of Corporate Affairs and are exempt from several stringent RBI regulations applicable to NBFCs. Digital Next Consultancy provides comprehensive support for Nidhi incorporation, ensuring all NDH rules are strictly followed.</p>
+            <div class="section-heading text-center">
+                <span class="overline">— OVERVIEW —</span>
+                <h2>Why Form a <span class="text-gold">Nidhi Company</span>?</h2>
+                <p style="color: var(--itr-muted); max-width: 800px; margin: 0 auto;">Nidhi Companies are a specialized form of NBFCs designed for mutual benefit. They promote thrift and provide credit facilities strictly to their members at reasonable rates.</p>
             </div>
-        </div>
-    </section>
 
-    <section class="section-padding docs-section">
-        <div class="container">
-            <h2 class="section-title text-center">Documents <span class="text-blue">Required</span></h2>
-            <div class="docs-grid">
-                <div class="doc-item">
-                    <div class="doc-dot"></div>
-                    <span>PAN Card of All 3 Directors</span>
+            <div class="mandatory-grid" style="margin-top: 3rem;">
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Thrift & Savings</h3>
+                    <p>Encourage members to save more by offering better deposit rates than traditional banks.</p>
+                    <span class="itr-tag">FINANCIAL</span>
                 </div>
-                <div class="doc-item">
-                    <div class="doc-dot"></div>
-                    <span>Aadhar Card of All 3 Directors</span>
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Low RBI Oversight</h3>
+                    <p>Operate with fewer regulatory hurdles compared to standard Non-Banking Financial Companies.</p>
+                    <span class="itr-tag">LEGAL</span>
                 </div>
-                <div class="doc-item">
-                    <div class="doc-dot"></div>
-                    <span>Digital Signature (DSC)</span>
-                </div>
-                <div class="doc-item">
-                    <div class="doc-dot"></div>
-                    <span>Proof of Registered Office</span>
-                </div>
-                <div class="doc-item">
-                    <div class="doc-dot"></div>
-                    <span>Utility Bill of Office Premise</span>
-                </div>
-                <div class="doc-item">
-                    <div class="doc-dot"></div>
-                    <span>NOC from Landlord</span>
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-users"></i></div>
+                    <h3>Mutual Benefit</h3>
+                    <p>All transactions are member-only, creating a self-sustaining financial community ecosystem.</p>
+                    <span class="itr-tag">COMMUNITY</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
+    <!-- Section 3: Documents Required -->
+    <section class="s-padding bg-light">
         <div class="container">
-            <h2 class="section-title text-center">Key <span class="text-blue">Benefits</span></h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h4>Mutual Benefit</h4>
-                    <p>Fosters a collaborative environment where members support each other's financial needs.</p>
+            <div class="section-heading text-center">
+                <span class="overline">DOCUMENTATION</span>
+                <h2 class="section-title">Essential <span class="text-gold">Documents</span></h2>
+                <p style="color: var(--itr-muted); margin-bottom: 3rem;">A curated list of requirements for a hassle-free Nidhi registration process.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Director PAN</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">PAN Card of all 3 Directors and initial subscribers.</p>
                 </div>
-                <div class="benefit-card">
-                    <h4>Low Capital Requirement</h4>
-                    <p>Can be started with a relatively lower minimum capital compared to other financial institutions.</p>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Address Proof</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Utility Bill & NOC for the Registered Office Premise.</p>
                 </div>
-                <div class="benefit-card">
-                    <h4>Limited RBI Oversight</h4>
-                    <p>Exempt from many complex RBI regulations, making it easier to manage and operate.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>Secured Lending</h4>
-                    <p>Lending is restricted to members and is typically secured by collateral like gold or property.</p>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">KYC Docs</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Passport photos, Aadhar, and bank statements of members.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding docs-section">
+    <!-- Section 4: Process -->
+    <section class="s-padding">
         <div class="container">
-            <div class="why-choose-grid">
+            <div class="section-heading text-center">
+                <span class="overline">WORKFLOW</span>
+                <h2>Registration <span class="text-gold">Process</span></h2>
+            </div>
+
+            <div class="p-flow">
+                <div class="p-step">
+                    <div class="p-num">01</div>
+                    <h4 style="margin-bottom: 0.5rem;">DSC & DIN</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Application for Digital Signature and Director Identification.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">02</div>
+                    <h4 style="margin-bottom: 0.5rem;">Name Approval</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Reservation of unique Nidhi name through MCA RUN service.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">03</div>
+                    <h4 style="margin-bottom: 0.5rem;">MoA/AoA</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Drafting Charter documents with financial community objects.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">04</div>
+                    <h4 style="margin-bottom: 0.5rem;">Certificate</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Issuance of Certificate of Incorporation by RoC.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Why DNC -->
+    <section class="s-padding" style="background: var(--itr-navy); color: #FFF; border-radius: 60px 60px 0 0;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline" style="color: var(--itr-gold);">— THE DNC PROMISE —</span>
+                <h2 style="color: #FFF;">Why Choose Our <span class="text-gold">Expertise</span>?</h2>
+            </div>
+
+            <div class="mandatory-grid">
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-coins"></i></div>
+                    <h3 style="color: #FFF;">Financial Mastery</h3>
+                    <p style="color: rgba(255,255,255,0.6);">In-depth knowledge of NDH rules and member-lending compliance.</p>
+                </div>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-chart-line"></i></div>
+                    <h3 style="color: #FFF;">NOF Ratio Help</h3>
+                    <p style="color: rgba(255,255,255,0.6);">Assistance in maintaining the mandatory 1:20 Net Owned Funds ratio.</p>
+                </div>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-file-invoice"></i></div>
+                    <h3 style="color: #FFF;">End-to-End Filing</h3>
+                    <p style="color: rgba(255,255,255,0.6);">We handle everything from name reservation to the final incorporation certificate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="s-padding bg-light">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-heading text-center">
+                <span class="overline">SUPPORT</span>
+                <h2>Frequently Asked <span class="text-gold">Questions</span></h2>
+            </div>
+
+            <div class="faq-v2">
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>How many members are required?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">A minimum of 7 members is required to start, with at least 3 serving as directors.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>Is an RBI license mandatory?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">No, Nidhi Companies are exempt from the core NBFC registration with RBI, but must follow MCA guidelines.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>What is the maximum interest rate?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">The maximum lending rate is capped at 7.5% above the maximum rate offered on deposits by the Nidhi.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>Can Nidhi lend to non-members?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Strictly no. A Nidhi Company can only accept deposits from and lend to its registered members.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Related Services -->
+    <section class="s-padding bg-light">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">EXPLORE MORE</span>
+                <h2>Related <span class="text-gold">Services</span></h2>
+            </div>
+            <div class="mandatory-grid">
+                <a href="section-8.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0F9FF; color: #0EA5E9; margin: 0 auto 1.5rem;"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Section 8 Company</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Establish a non-profit entity for social causes with corporate benefits.</p>
+                    </div>
+                </a>
+                <a href="trust.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #FFF7ED; color: #F97316; margin: 0 auto 1.5rem;"><i class="fas fa-landmark"></i></div>
+                        <h3>Trust Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Legal setup for charitable activities and asset management.</p>
+                    </div>
+                </a>
+                <a href="society.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0FDF4; color: #10B981; margin: 0 auto 1.5rem;"><i class="fas fa-users"></i></div>
+                        <h3>Society Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Form a democratic association for cultural or social welfare.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Infinite Reviews Carousel -->
+    <section class="s-padding" style="overflow: hidden;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">TESTIMONIALS</span>
+                <h2>What Our <span class="text-gold">Clients Say</span></h2>
+            </div>
+        </div>
+
+        <div class="reviews-marquee">
+            <div class="reviews-track">
+                <!-- Set 1 -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"DNT helped me register my Pvt Ltd company in record time. Their team is highly professional and proactive."</p>
+                    <div class="r-author">Rajesh Kumar</div>
+                    <div class="r-desig">Founder, TechSprint Solutions</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"The easiest way to handle GST compliances. They handle everything while I focus on my business growth."</p>
+                    <div class="r-author">Priya Sharma</div>
+                    <div class="r-desig">Owner, Bloom Boutique</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"From Trademark to IEC, they are our one-stop shop. Extremely reliable and knowledgeable experts."</p>
+                    <div class="r-author">Amit Patel</div>
+                    <div class="r-desig">Director, Patel Logistics</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Excellent service for APEDA registration. The digital process was seamless and zero-friction."</p>
+                    <div class="r-author">Sneha Reddy</div>
+                    <div class="r-desig">Founder, AgroFresh India</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Highly recommended for MSME registration. They made the entire govt process feel effortless."</p>
+                    <div class="r-author">Vikram Singh</div>
+                    <div class="r-desig">Proprietor, Singh Manufacturing</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Their knowledge of FSSAI regulations is unmatched. We got our license much faster than expected."</p>
+                    <div class="r-author">Anjali Gupta</div>
+                    <div class="r-desig">CEO, Healthy Bites</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Premium service at an affordable cost. Their compliance dashboard keeps us ahead of all deadlines."</p>
+                    <div class="r-author">Rohan Mehta</div>
+                    <div class="r-desig">Founder, Zenith Logics</div>
+                </div>
+                <!-- Set 2 -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"DNC helped me register my Pvt Ltd company in record time. Their team is highly professional and proactive."</p>
+                    <div class="r-author">Rajesh Kumar</div>
+                    <div class="r-desig">Founder, TechSprint Solutions</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"The easiest way to handle GST compliances. They handle everything while I focus on my business growth."</p>
+                    <div class="r-author">Priya Sharma</div>
+                    <div class="r-desig">Owner, Bloom Boutique</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"From Trademark to IEC, they are our one-stop shop. Extremely reliable and knowledgeable experts."</p>
+                    <div class="r-author">Amit Patel</div>
+                    <div class="r-desig">Director, Patel Logistics</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Excellent service for APEDA registration. The digital process was seamless and zero-friction."</p>
+                    <div class="r-author">Sneha Reddy</div>
+                    <div class="r-desig">Founder, AgroFresh India</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Highly recommended for MSME registration. They made the entire govt process feel effortless."</p>
+                    <div class="r-author">Vikram Singh</div>
+                    <div class="r-desig">Proprietor, Singh Manufacturing</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Their knowledge of FSSAI regulations is unmatched. We got our license much faster than expected."</p>
+                    <div class="r-author">Anjali Gupta</div>
+                    <div class="r-desig">CEO, Healthy Bites</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Premium service at an affordable cost. Their compliance dashboard keeps us ahead of all deadlines."</p>
+                    <div class="r-author">Rohan Mehta</div>
+                    <div class="r-desig">Founder, Zenith Logics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--itr-navy); padding: 80px 0 40px; color: #FFF;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 4rem; margin-bottom: 4rem;">
                 <div>
-                    <h2 class="section-title">Why Choose <br><span class="text-blue">Digital Next Consultancy?</span></h2>
-                    <p class="description-content">We ensure your Nidhi Company is compliant with all Ministry of Corporate Affairs (MCA) guidelines for smooth financial operations.</p>
+                    <img src="../../assets/logo.svg" alt="Logo" style="width: 50px; filter: brightness(0) invert(1); margin-bottom: 1.5rem;">
+                    <h3 style="color: #FFF; margin-bottom: 1rem;">Digital Next Consultancy</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem; line-height: 1.7;">Your trusted partner for all business registrations, legal compliances, and digital growth solutions across India.</p>
                 </div>
                 <div>
-                    <div class="why-item">
-                        <h4>Compliance with NDH Rules</h4>
-                        <p>We ensure strict adherence to the Nidhi Rules, 2014, to avoid any future legal complications.</p>
-                    </div>
-                    <div class="why-item">
-                        <h4>Strategic MoA Drafting</h4>
-                        <p>We draft the Memorandum to strictly include only the permitted mutual benefit objects.</p>
-                    </div>
-                    <div class="why-item">
-                        <h4>Hassle-Free Filing</h4>
-                        <p>Our experts manage all filings with the Registrar of Companies (RoC) from start to finish.</p>
-                    </div>
-                    <div class="why-item">
-                        <h4>Financial Advisory</h4>
-                        <p>Get professional advice on maintaining the required Net Owned Funds (NOF) ratio.</p>
-                    </div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="../../index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                        <li><a href="../../about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                        <li><a href="../../contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="pvt-ltd.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Company Registration</a></li>
+                        <li><a href="../compliance.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">GST & Tax</a></li>
+                        <li><a href="../digital-marketing.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Reach Us</h4>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +91 88025 59782</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@digitalnextworld.com</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> New Delhi, India</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer style="padding: 60px 0; background: #0F172A; color: white; text-align: center;">
-        <div class="container">
-            <img src="../../assets/logo.svg" alt="DNT Logo" style="width: 60px; margin-bottom: 1.5rem; filter: brightness(0) invert(1);">
-            <p style="opacity: 0.7;">© 2026 Digital Next Consultancy Pvt. Ltd. All Rights Reserved.</p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.8rem;">
+                © 2026 Digital Next Consultancy. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
     <script src="../../js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-v2-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const ans = item.querySelector('.faq-ans');
+                const icon = button.querySelector('i');
+                
+                if (ans.style.display === 'block') {
+                    ans.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    ans.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

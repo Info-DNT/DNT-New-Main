@@ -4,175 +4,257 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FSSAI License Registration | Food Safety Compliance | DNT</title>
-    <meta name="description" content="Get your FSSAI license quickly with DNT Consultancy. We handle Basic, State, and Central FSSAI registrations for all food businesses in India." />
+    <title>FSSAI License Registration | Food Safety Compliance | DNC</title>
+    <meta name="description" content="Get your FSSAI license quickly with DNC Consultancy. We handle Basic, State, and Central FSSAI registrations for all food businesses in India." />
     <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg" />
+    
+    <!-- Core CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/global-theme-override.css" />
+    
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Scoped styles for the new service pages */
+        /* ======================== ITR PREMIUM CORE ======================== */
         :root {
-            --primary: #2563EB;
-            --accent: #F59E0B;
-            --dark: #0F172A;
-            --muted: #64748B;
-            --light-bg: #F8FAFC;
+            --itr-gold: #F59E0B;
+            --itr-navy: #050811;
+            --itr-bg-light: #FBF8F3;
+            --itr-text: #0F172A;
+            --itr-muted: #64748B;
+            --itr-border: #E2E8F0;
+            --itr-white: #FFFFFF;
+            --itr-blue: #1565C0;
+            --card-radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .hero-split {
-            padding: 160px 0 100px;
-            background: radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 90%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
-                        #FFFFFF;
-            overflow: hidden;
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--itr-text);
+            background-color: var(--itr-white);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        .hero-grid {
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Sections --- */
+        .s-padding { padding: 44px 0; }
+        .bg-light { background: var(--itr-bg-light); }
+        
+        .section-heading { margin-bottom: 2.2rem; }
+        .section-heading.text-center { text-align: center; }
+        .overline {
+            display: block;
+            color: var(--itr-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Hero Section --- */
+        .itr-hero {
+            padding: 95px 0 60px;
+            background: radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+                        var(--itr-bg-light);
+            border-bottom: 1px solid var(--itr-border);
+        }
+
+        .hero-split-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 420px;
+            gap: 3rem;
             align-items: center;
         }
 
-        .hero-content h1 {
+        @media (max-width: 991px) {
+            .hero-split-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .hero-left-content { order: 2; }
+            .hero-right-content { order: 1; }
+        }
+
+        .hero-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             line-height: 1.1;
+            color: var(--itr-navy);
             margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-            color: var(--dark);
         }
 
-        .hero-content p {
-            font-size: 1.15rem;
-            line-height: 1.6;
-            color: var(--muted);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
+        .text-gold { color: var(--itr-gold); }
 
-        .hero-features {
+        .hero-feature-list {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            margin-bottom: 2.5rem;
+            margin: 2rem 0;
         }
 
         .hero-feature-item {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 12px;
             font-weight: 600;
-            color: var(--dark);
             font-size: 1.05rem;
         }
 
-        .hero-feature-item svg {
-            color: var(--accent);
-            flex-shrink: 0;
+        /* --- Elite Lead Form --- */
+        .itr-lead-card {
+            background: #FFF;
+            padding: 2.5rem;
+            border-radius: 32px;
+            border: 1px solid var(--itr-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Glass Form Card */
-        .hero-form-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(245, 158, 11, 0.18);
-            border-radius: 24px;
+        .itr-lead-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--itr-gold), #FCD34D);
+        }
+
+        .itr-form-group { margin-bottom: 1rem; }
+        .itr-form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .itr-form-input:focus {
+            border-color: var(--itr-gold);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+        }
+
+        /* --- Custom UI --- */
+        .btn-shine {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: var(--itr-navy);
+            color: #FFF;
+            border-radius: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-shine:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        .mandatory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .mandatory-card {
             padding: 2.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            background: #FFF;
+            border: 1px solid var(--itr-border);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
         }
+        .mandatory-card:hover { transform: translateY(-8px); border-color: var(--itr-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 
-        .hero-form-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .hero-form-card p {
-            font-size: 0.9rem;
-            color: var(--muted);
+        .m-icon {
+            width: 60px; height: 60px;
+            background: var(--itr-gold-light);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--itr-gold);
             margin-bottom: 1.5rem;
         }
 
-        /* Reuse DNT Form Styles */
-        .dnt-field { margin-bottom: 1rem; position: relative; }
-        .dnt-field-inner { display: flex; align-items: center; background: #F9FAF9; border: 1.5px solid #E5E7EB; border-radius: 12px; transition: all 0.3s; padding: 0 1rem; }
-        .dnt-field-inner:focus-within { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1); background: #FFF; }
-        .dnt-field-icon { color: #9CA3AF; margin-right: 0.75rem; display: flex; align-items: center; }
-        .dnt-field-inner:focus-within .dnt-field-icon { color: var(--accent); }
-        .dnt-field input, .dnt-field select, .dnt-field textarea { width: 100%; background: transparent; border: none; outline: none; padding: 1rem 0; font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--dark); }
-        .dnt-field label { position: absolute; left: 3rem; top: 1rem; color: #9CA3AF; pointer-events: none; transition: all 0.3s; }
-        .dnt-field input:focus ~ label, .dnt-field input:not(:placeholder-shown) ~ label,
-        .dnt-field select:focus ~ label, .dnt-field select.has-value ~ label { top: -0.6rem; left: 0.8rem; font-size: 0.75rem; font-weight: 700; color: var(--accent); background: #FFF; padding: 0 0.4rem; border-radius: 4px; }
-        
-        .btn-submit { width: 100%; background: linear-gradient(135deg, #F59E0B, #D97706); color: #050811; border: none; border-radius: 12px; padding: 1rem; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
-        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2); }
-
-        /* Section Layouts */
-        .section-padding { padding: 100px 0; }
-        .section-header { margin-bottom: 4rem; max-width: 800px; }
-        .section-tag { display: inline-block; padding: 6px 16px; background: rgba(37, 99, 235, 0.08); color: var(--primary); border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-        
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        
-        /* Service Types Grid */
-        .types-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .type-card { padding: 2.5rem; background: #FFF; border: 1px solid #E2E8F0; border-radius: 24px; transition: all 0.3s; }
-        .type-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .type-icon { width: 56px; height: 56px; background: var(--light-bg); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1.5rem; transition: all 0.3s; }
-        .type-card:hover .type-icon { background: var(--primary); color: #FFF; }
-
-        /* Documents Required */
-        .docs-section { background: var(--light-bg); border-radius: 40px; }
-        .docs-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .doc-item { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: #FFF; border-radius: 16px; border: 1px solid #E2E8F0; font-weight: 600; color: var(--dark); }
-        .doc-check { width: 24px; height: 24px; background: #ECFDF5; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #10B981; flex-shrink: 0; }
-
-        /* Process Steps */
-        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; }
-        .process-grid::after { content: ''; position: absolute; top: 40px; left: 0; width: 100%; height: 2px; background: #E2E8F0; z-index: 1; }
-        .process-step { position: relative; z-index: 2; text-align: center; }
-        .step-num { width: 80px; height: 80px; background: #FFF; border: 2px solid #E2E8F0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0 auto 1.5rem; transition: all 0.3s; }
-        .process-step:hover .step-num { border-color: var(--primary); background: var(--primary); color: #FFF; box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.1); }
-
-        /* FAQ Accordion */
-        .faq-item { border-bottom: 1px solid #E2E8F0; padding: 1.5rem 0; }
-        .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; padding: 0; cursor: pointer; text-align: left; }
-        .faq-trigger h4 { font-size: 1.15rem; font-weight: 700; color: var(--dark); }
-        .faq-icon { transition: transform 0.3s; color: var(--muted); }
-        .faq-item.open .faq-icon { transform: rotate(180deg); color: var(--accent); }
-        .faq-content { max-height: 0; overflow: hidden; transition: all 0.3s ease-out; opacity: 0; }
-        .faq-item.open .faq-content { max-height: 200px; opacity: 1; padding-top: 1rem; }
-
-        /* Review Section */
-        .review-card { background: var(--dark); color: #FFF; border-radius: 32px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
-        .review-card::before { content: '“'; position: absolute; top: 20px; left: 40px; font-size: 10rem; opacity: 0.1; font-family: serif; }
-        .stars { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; color: var(--accent); }
-        .review-text { font-size: 1.5rem; font-weight: 600; font-style: italic; margin-bottom: 2rem; line-height: 1.6; }
-        .reviewer { display: flex; align-items: center; justify-content: center; gap: 1rem; }
-        .reviewer-img { width: 50px; height: 50px; border-radius: 50%; background: #475569; }
-
-        @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-            .hero-content p { margin: 0 auto 2rem; }
-            .hero-features { align-items: center; }
-            .process-grid { grid-template-columns: 1fr 1fr; }
-            .process-grid::after { display: none; }
+        .itr-tag {
+            position: absolute; top: 20px; right: 20px;
+            padding: 4px 12px; background: var(--itr-gold-light);
+            color: var(--itr-gold); font-size: 0.7rem; font-weight: 800;
+            border-radius: 50px; text-transform: uppercase;
         }
 
+        /* --- Workflow --- */
+        .p-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            margin-top: 3rem;
+        }
+        .p-flow::before {
+            content: '';
+            position: absolute; top: 30px; left: 50px; right: 50px;
+            height: 2px; 
+            background: repeating-linear-gradient(to right, var(--itr-gold) 0, var(--itr-gold) 10px, transparent 10px, transparent 20px);
+            background-size: 20px 100%;
+            z-index: 0;
+            opacity: 0.3;
+            animation: flowLine 1.5s linear infinite;
+        }
+
+        @keyframes flowLine {
+            from { background-position: 0 0; }
+            to { background-position: 20px 0; }
+        }
+
+        .p-step { position: relative; z-index: 1; text-align: center; }
+        .p-num {
+            width: 60px; height: 60px; background: var(--itr-navy);
+            color: #FFF; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            font-weight: 800; margin: 0 auto 1.5rem;
+            border: 4px solid #FFF; box-shadow: 0 0 0 1px var(--itr-border);
+        }
+
+        /* --- FAQ --- */
+        .faq-v2 { display: flex; flex-direction: column; gap: 1rem; }
+        .faq-v2-item { border: 1px solid var(--itr-border); border-radius: 16px; background: #FFF; overflow: hidden; }
+        .faq-v2-btn {
+            width: 100%; padding: 1.5rem; display: flex;
+            justify-content: space-between; align-items: center;
+            background: none; border: none; cursor: pointer;
+            text-align: left; font-weight: 700; font-size: 1rem;
+            color: var(--itr-navy);
+        }
+        
+        /* --- Reviews Marquee --- */
+        .reviews-marquee { overflow: hidden; padding: 2rem 0; position: relative; }
+        .reviews-track { display: flex; gap: 2rem; animation: marquee 30s linear infinite; width: max-content; }
+        @keyframes marquee { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+        .review-card-v2 {
+            width: 350px; background: #FFF; padding: 2rem;
+            border-radius: 20px; border: 1px solid var(--itr-border);
+            flex-shrink: 0;
+        }
+        .r-stars { color: var(--itr-gold); margin-bottom: 1rem; }
+        .r-text { font-style: italic; color: var(--itr-muted); margin-bottom: 1.5rem; }
+        .r-author { font-weight: 700; }
+        .r-desig { font-size: 0.8rem; color: var(--itr-gold); }
+
         @media (max-width: 768px) {
-            .docs-list { grid-template-columns: 1fr; }
-            .section-title { font-size: 2.2rem; }
-            .hero-split { padding: 120px 0 60px; }
-            .hero-form-card { padding: 1.5rem; }
+            .p-flow { grid-template-columns: 1fr; }
+            .p-flow::before { display: none; }
         }
     </style>
 </head>
@@ -182,7 +264,7 @@
         <div class="container">
           <div class="nav-inner">
             <a href="../../index.html" class="nav-logo">
-              <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNT Logo"></div>
+              <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNC Logo"></div>
               <div class="nav-logo-text">
                 <span class="nav-logo-name">Digital Next</span>
                 <span class="nav-logo-sub">Consultancy</span>
@@ -257,99 +339,99 @@
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </button>
-                <div class="nav-dropdown-content">
+                                        <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../iso/iso-9001.html">ISO 9001:2015</a></li>
+                <li><a href="../iso/halal.html">Halal Certification</a></li>
+                <li><a href="../iso/who-gmp.html">WHO - GMP Certification</a></li>
+                <li><a href="../iso/gdp.html">GDP Certification</a></li>
+                <li><a href="../iso/iso-14001.html">ISO 14001 Certification</a></li>
+                <li><a href="../iso/iso-45001.html">ISO 45001 Certification</a></li>
+                <li><a href="../iso/iso-22000.html">ISO 22000 Certification</a></li>
+                <li><a href="../iso/iso-27001.html">ISO 27001 Certification</a></li>
+                <li><a href="../iso/ce-mark.html">CE Mark Certification</a></li>
+                <li><a href="../iso/haccp.html">HACCP Certification</a></li>
+              </ul>
+            </div>
+              </div>
+    
+          <!-- IPR Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              IPR
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content">
+              <ul>
+                <li><a href="../ipr/trademark-registration.html">Trademark Registration</a></li>
+                <li><a href="../ipr/trademark-objection.html">Trademark Objection</a></li>
+                <li><a href="../ipr/trademark-renewal.html">Trademark Renewal</a></li>
+                <li><a href="../ipr/copyright-registration.html">Copyright Registration</a></li>
+                <li><a href="../ipr/patent-registration.html">Patent Registration</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Compliances Dropdown -->
+          <div class="nav-dropdown-wrap">
+            <button class="nav-dropdown-btn">
+              Compliances
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="nav-dropdown-content mega-menu mega-menu-compliances">
+              <div class="mega-menu-grid">
+                <div>
+                  <span class="mega-menu-col-title">GST Compliances</span>
                   <ul>
-                    <li><a href="#">ISO 9001:2015</a></li>
-                    <li><a href="#">Halal Certification</a></li>
-                    <li><a href="#">WHO - GMP Certification</a></li>
-                    <li><a href="#">GDP Certification</a></li>
-                    <li><a href="#">ISO 14001 Certification</a></li>
-                    <li><a href="#">ISO 45001 Certification</a></li>
-                    <li><a href="#">ISO 22000 Certification</a></li>
-                    <li><a href="#">ISO 27001 Certification</a></li>
-                    <li><a href="#">CE Mark Certification</a></li>
-                    <li><a href="#">HACCP Certification</a></li>
+                    <li><a href="../compliances/gst-registration.html">GST Registration</a></li>
+                    <li><a href="../compliances/gst-return-filing.html">GST Return Filing</a></li>
+                    <li><a href="../compliances/gst-annual-filing.html">GST Annual Filing</a></li>
+                    <li><a href="../compliances/gst-notice-advisory.html">GST Notice &amp; Advisory</a></li>
+                    <li><a href="../compliances/gst-special-cases.html">GST for Special Cases</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Income Tax</span>
+                  <ul>
+                    <li><a href="../compliances/advance-tax-filing.html">Income Tax Return Filing</a></li>
+                    <li><a href="../compliances/advance-tax-filing.html">Advance Tax Filing</a></li>
+                    <li><a href="../compliances/tax-notices-assessment.html">Tax Notices &amp; Assessment</a></li>
+                    <li><a href="../compliances/tds-filing.html">TDS Filing</a></li>
+                    <li><a href="../compliances/professional-tax.html">Professional Tax</a></li>
+                    <li><a href="../compliances/pan-tan-application.html">PAN / TAN Application</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Corporate Filings</span>
+                  <ul>
+                    <li><a href="../compliances/company-annual-filing.html">Company Annual Filing</a></li>
+                    <li><a href="../compliances/llp-annual-filing.html">LLP Annual Filing</a></li>
+                    <li><a href="../compliances/director-kyc.html">Director KYC</a></li>
+                    <li><a href="../compliances/roc-filings.html">ROC Filings</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Accounting</span>
+                  <ul>
+                    <li><a href="../compliances/monthly-bookkeeping.html">Monthly Bookkeeping</a></li>
+                    <li><a href="../compliances/financial-statements.html">Financial Statements</a></li>
+                    <li><a href="../compliances/mis-reporting.html">MIS Reporting</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="mega-menu-col-title">Other Compliances</span>
+                  <ul>
+                    <li><a href="../compliances/compliance-advisory.html">Compliance Advisory</a></li>
+                    <li><a href="../compliances/closing-llp.html">Closing LLP</a></li>
                   </ul>
                 </div>
               </div>
-    
-              <!-- IPR Dropdown -->
-              <div class="nav-dropdown-wrap">
-                <button class="nav-dropdown-btn">
-                  IPR
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
-                <div class="nav-dropdown-content">
-                  <ul>
-                    <li><a href="#">Trademark Registration</a></li>
-                    <li><a href="#">Trademark Objection</a></li>
-                    <li><a href="#">Trademark Renewal</a></li>
-                    <li><a href="#">Copyright Registration</a></li>
-                    <li><a href="#">Patent Registration</a></li>
-                  </ul>
-                </div>
-              </div>
-    
-              <!-- Compliances Dropdown -->
-              <div class="nav-dropdown-wrap">
-                <button class="nav-dropdown-btn">
-                  Compliances
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
-                <div class="nav-dropdown-content mega-menu mega-menu-compliances">
-                  <div class="mega-menu-grid">
-                    <div>
-                      <span class="mega-menu-col-title">GST Compliances</span>
-                      <ul>
-                        <li><a href="#">GST Registration</a></li>
-                        <li><a href="#">GST Return Filing (Monthly/ Quaterly)</a></li>
-                        <li><a href="#">GST Annual Filing</a></li>
-                        <li><a href="#">GST Notice &amp; Advisory</a></li>
-                        <li><a href="#">GST for Special Cases (E-commerce, TDS/TCS, Non-Resident)</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Income Tax</span>
-                      <ul>
-                        <li><a href="../itr-filing.html">Income Tax Return Filing</a></li>
-                        <li><a href="#">Advance Tax Filing</a></li>
-                        <li><a href="#">Tax Notices &amp; Assessment</a></li>
-                        <li><a href="#">TDS Filing</a></li>
-                        <li><a href="#">Professional Tax</a></li>
-                        <li><a href="#">PAN / TAN Application</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Corporate Filings</span>
-                      <ul>
-                        <li><a href="#">Company Annual Filing</a></li>
-                        <li><a href="#">LLP Annual Filing</a></li>
-                        <li><a href="#">Director KYC</a></li>
-                        <li><a href="change-address.html">ROC Filings</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Accounting</span>
-                      <ul>
-                        <li><a href="#">Monthly Bookkeeping</a></li>
-                        <li><a href="#">Financial Statements</a></li>
-                        <li><a href="#">MIS Reporting</a></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <span class="mega-menu-col-title">Other Compliances</span>
-                      <ul>
-                        <li><a href="#">Compliance Advisory</a></li>
-                        <li><a href="#">Closing LLP</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
     
               <!-- Business Growth Dropdown -->
               <div class="nav-dropdown-wrap">
@@ -402,153 +484,170 @@
             </button>
           </div>
         </div>
-    
-        <div id="mobile-menu">
-          <a href="../../index.html" class="mobile-nav-link">Home</a>
-    
-          <!-- Company Registration -->
-          <button class="mobile-dropdown-btn">
-            Company Registration
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
-            <a href="partnership.html" class="mobile-sub-link">Partnership Firm</a>
-            <a href="llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
-            <a href="opc.html" class="mobile-sub-link">One Person Company</a>
-            <a href="pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
-            <a href="public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
-            <a href="nidhi.html" class="mobile-sub-link">Nidhi Company</a>
-            <a href="fpo.html" class="mobile-sub-link">FPO Registration</a>
-            <a href="section-8.html" class="mobile-sub-link">Section 8 Company</a>
-            <a href="trust.html" class="mobile-sub-link">Trust</a>
-            <a href="society.html" class="mobile-sub-link">Society</a>
-            <a href="msme.html" class="mobile-sub-link">MSME Registration</a>
-            <a href="fssai.html" class="mobile-sub-link">FSSAI License</a>
-            <a href="iec.html" class="mobile-sub-link">Import Export Code</a>
-          </div>
-    
-          <!-- ISO -->
-          <button class="mobile-dropdown-btn">
-            ISO
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">ISO 9001:2015</a>
-            <a href="#" class="mobile-sub-link">Halal Certification</a>
-            <a href="#" class="mobile-sub-link">WHO - GMP</a>
-            <a href="#" class="mobile-sub-link">ISO 27001</a>
-          </div>
-    
-          <!-- Compliances -->
-          <button class="mobile-dropdown-btn">
-            Compliances
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">GST Registration</a>
-            <a href="#" class="mobile-sub-link">GST Return Filing</a>
-            <a href="../itr-filing.html" class="mobile-sub-link">Income Tax Return</a>
-            <a href="#" class="mobile-sub-link">TDS Filing</a>
-            <a href="#" class="mobile-sub-link">Company Annual Filing</a>
-            <a href="#" class="mobile-sub-link">LLP Annual Filing</a>
-            <a href="#" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
-          </div>
-    
-          <!-- IPR -->
-          <button class="mobile-dropdown-btn">
-            IPR
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="#" class="mobile-sub-link">Trademark Registration</a>
-            <a href="#" class="mobile-sub-link">Trademark Objection</a>
-            <a href="#" class="mobile-sub-link">Copyright Registration</a>
-            <a href="#" class="mobile-sub-link">Patent Registration</a>
-          </div>
-    
-          <!-- Business Growth -->
-          <button class="mobile-dropdown-btn">
-            Business Growth
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
-            <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
-            <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
-          </div>
-    
-          <!-- AI Solutions -->
-          <button class="mobile-dropdown-btn">
-            AI Solutions
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="mobile-sub-menu">
-            <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
-            <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
-          </div>
-    
-          <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
-        </div>
-      </nav>v>
+    <div id="mobile-menu">
+      <a href="../../index.html" class="mobile-nav-link">Home</a>
 
-    <!-- SECTION 1: Hero with Form -->
-    <header class="hero-split">
+      <!-- Company Registration -->
+      <button class="mobile-dropdown-btn">
+        Company Registration
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="proprietorship.html" class="mobile-sub-link">Proprietorship Firm</a>
+        <a href="partnership.html" class="mobile-sub-link">Partnership Firm</a>
+        <a href="llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
+        <a href="opc.html" class="mobile-sub-link">One Person Company</a>
+        <a href="pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
+        <a href="public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
+        <a href="nidhi.html" class="mobile-sub-link">Nidhi Company</a>
+        <a href="fpo.html" class="mobile-sub-link">FPO Registration</a>
+        <a href="section-8.html" class="mobile-sub-link">Section 8 Company</a>
+        <a href="trust.html" class="mobile-sub-link">Trust</a>
+        <a href="society.html" class="mobile-sub-link">Society</a>
+        <a href="msme.html" class="mobile-sub-link">MSME Registration</a>
+        <a href="fssai.html" class="mobile-sub-link">FSSAI License</a>
+        <a href="iec.html" class="mobile-sub-link">Import Export Code</a>
+      </div>
+
+      <!-- ISO -->
+      <button class="mobile-dropdown-btn">
+        ISO
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../iso/iso-9001.html" class="mobile-sub-link">ISO 9001:2015</a>
+        <a href="../iso/halal.html" class="mobile-sub-link">Halal Certification</a>
+        <a href="../iso/who-gmp.html" class="mobile-sub-link">WHO - GMP</a>
+        <a href="../iso/gdp.html" class="mobile-sub-link">GDP Certification</a>
+        <a href="../iso/iso-14001.html" class="mobile-sub-link">ISO 14001</a>
+        <a href="../iso/iso-45001.html" class="mobile-sub-link">ISO 45001</a>
+        <a href="../iso/iso-22000.html" class="mobile-sub-link">ISO 22000</a>
+        <a href="../iso/iso-27001.html" class="mobile-sub-link">ISO 27001</a>
+        <a href="../iso/ce-mark.html" class="mobile-sub-link">CE Mark</a>
+        <a href="../iso/haccp.html" class="mobile-sub-link">HACCP Certification</a>
+      </div>
+
+      <!-- Compliances -->
+      <button class="mobile-dropdown-btn">
+        Compliances
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../compliances/gst-registration.html" class="mobile-sub-link">GST Registration</a>
+        <a href="../compliances/gst-return-filing.html" class="mobile-sub-link">GST Return Filing</a>
+        <a href="../compliances/advance-tax-filing.html" class="mobile-sub-link">Income Tax Return</a>
+        <a href="../compliances/tds-filing.html" class="mobile-sub-link">TDS Filing</a>
+        <a href="../compliances/company-annual-filing.html" class="mobile-sub-link">Company Annual Filing</a>
+        <a href="../compliances/llp-annual-filing.html" class="mobile-sub-link">LLP Annual Filing</a>
+        <a href="../compliances/monthly-bookkeeping.html" class="mobile-sub-link">Accounting &amp; Bookkeeping</a>
+      </div>
+
+      <!-- IPR -->
+      <button class="mobile-dropdown-btn">
+        IPR
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../ipr/trademark-registration.html" class="mobile-sub-link">Trademark Registration</a>
+        <a href="../ipr/trademark-objection.html" class="mobile-sub-link">Trademark Objection</a>
+        <a href="../ipr/trademark-renewal.html" class="mobile-sub-link">Trademark Renewal</a>
+        <a href="../ipr/copyright-registration.html" class="mobile-sub-link">Copyright Registration</a>
+        <a href="../ipr/patent-registration.html" class="mobile-sub-link">Patent Registration</a>
+      </div>
+
+      <!-- Business Growth -->
+      <button class="mobile-dropdown-btn">
+        Business Growth
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../digital-marketing.html#web" class="mobile-sub-link">Website Development</a>
+        <a href="../digital-marketing.html#seo" class="mobile-sub-link">SEO Services</a>
+        <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
+      </div>
+
+      <!-- AI Solutions -->
+      <button class="mobile-dropdown-btn">
+        AI Solutions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div class="mobile-sub-menu">
+        <a href="../technology.html#automation" class="mobile-sub-link">AI Automation</a>
+        <a href="../technology.html#automation" class="mobile-sub-link">Workflow Automation</a>
+      </div>
+
+      <a href="../../contact.html" class="mobile-cta-btn">Get Free Consultation</a>
+    </div>
+  </nav>
+
+    <!-- Section 1: Hero -->
+    <header class="itr-hero">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content reveal">
-                    <div class="section-tag">FSSAI Compliance</div>
-                    <h1>FSSAI License <span style="color: var(--primary)">Registration</span></h1>
-                    <p>Ensure your food business meets safety standards. From small eateries to large manufacturing units, we handle your FSSAI registration end-to-end.</p>
-                    <div class="hero-features">
+            <div class="hero-split-grid">
+                <div class="hero-left-content">
+                    <span class="overline">Food Safety Compliance</span>
+                    <h1 class="hero-title">FSSAI License <span class="text-gold">Registration</span></h1>
+                    <p style="font-size: 1.15rem; color: var(--itr-muted); margin-bottom: 2rem;">Ensure your food business meets national safety standards. From small eateries to large manufacturing units, we handle your FSSAI registration end-to-end.</p>
+                    
+                    <div class="hero-feature-list">
                         <div class="hero-feature-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            Expert Guidance on License Types
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Expert Guidance on License Types (Basic/State/Central)</span>
                         </div>
                         <div class="hero-feature-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            Hassle-free Documentation
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Hassle-free Documentation & Portal Filing</span>
                         </div>
                         <div class="hero-feature-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            Quick Approval & Certificate
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Quick Approval & Digital Certificate Download</span>
                         </div>
                     </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="#details" class="btn-shine">
+                            GET FOOD LICENSE →
+                        </a>
+                    </div>
                 </div>
-                <div class="hero-form-container reveal reveal-delay-1">
-                    <div class="hero-form-card">
-                        <h3>Apply for FSSAI</h3>
-                        <p>Get your food license in few easy steps.</p>
-                        <form id="serviceForm" onsubmit="event.preventDefault(); alert('Request Received! Our experts will call you shortly.');">
-                            <div class="dnt-field">
-                                <div class="dnt-field-inner">
-                                    <span class="dnt-field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                                    <input type="text" id="name" placeholder=" " required oninput="this.classList.toggle('has-value', this.value !== '')">
-                                    <label>Full Name</label>
-                                </div>
+
+                <div class="hero-right-content">
+                    <div class="itr-lead-card">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">FSSAI Application</h3>
+                        <p style="color: var(--itr-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Our experts will handle the complex FoSCoS portal filing for your business.</p>
+                        
+                        <form id="itrFinalLeadForm">
+                            <div class="itr-form-group">
+                                <input type="text" placeholder="Full Name *" class="itr-form-input" required>
                             </div>
-                            <div class="dnt-field">
-                                <div class="dnt-field-inner">
-                                    <span class="dnt-field-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-                                    <input type="tel" id="phone" placeholder=" " required oninput="this.classList.toggle('has-value', this.value !== '')">
-                                    <label>Phone Number</label>
-                                </div>
+                            <div class="itr-form-group">
+                                <input type="tel" placeholder="Mobile Number *" class="itr-form-input" required>
                             </div>
-                            <button type="submit" class="btn-submit">
-                                Get Free Quote
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            <div class="itr-form-group">
+                                <input type="text" placeholder="Business Name" class="itr-form-input">
+                            </div>
+                            <div class="itr-form-group" style="margin-bottom: 1.5rem;">
+                                <select class="itr-form-input" required>
+                                    <option value="" disabled selected>Annual Turnover</option>
+                                    <option value="Below 12L">Below ₹12 Lakhs (Basic)</option>
+                                    <option value="12L to 20Cr">₹12 Lakhs - ₹20 Crores (State)</option>
+                                    <option value="Above 20Cr">Above ₹20 Crores (Central)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-shine" style="width: 100%;">
+                                GET FREE QUOTE →
                             </button>
                         </form>
                     </div>
@@ -557,175 +656,327 @@
         </div>
     </header>
 
-    <!-- SECTION 2: Description & Types -->
-    <section class="section-padding">
+    <!-- Section 2: Overview -->
+    <section class="s-padding" id="details">
         <div class="container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="section-tag">Overview</div>
-                    <h2 class="section-title">FSSAI License <span style="color: var(--primary)">Description</span></h2>
-                    <div class="description-content" style="color: var(--muted); line-height: 1.8; font-size: 1.1rem;">
-                        <p>FSSAI (Food Safety and Standards Authority of India) registration is mandatory for any individual or entity involved in food-related activities, including manufacturing, processing, storage, distribution, and sale of food products.</p>
-                        <p>It ensures that the food products undergo quality checks, thereby reducing the chances of food adulteration and improving the accountability of food business operators (FBOs).</p>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-1">
-                    <div style="width: 100%; height: 300px; background: #FFF9F0; border-radius: 32px; border: 1px solid #FEF3C7; display: flex; align-items: center; justify-content: center;">
-                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                    </div>
-                </div>
+            <div class="section-heading text-center">
+                <span class="overline">— MANDATORY COMPLIANCE —</span>
+                <h2>Types of <span class="text-gold">FSSAI Licenses</span></h2>
+                <p style="color: var(--itr-muted); max-width: 800px; margin: 0 auto;">FSSAI registration is mandatory for any individual or entity involved in food-related activities, including manufacturing, processing, storage, and distribution.</p>
             </div>
 
-            <div style="margin-top: 6rem;">
-                <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
-                    <h2 class="section-title">Types of <span style="color: var(--primary)">FSSAI Registration</span></h2>
-                    <p style="color: var(--muted); font-size: 1.1rem;">The license required depends on the turnover and scale of your business.</p>
+            <div class="mandatory-grid" style="margin-top: 3rem;">
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-store"></i></div>
+                    <h3>Basic Registration</h3>
+                    <p>For small businesses or startups with an annual turnover below ₹12 Lakhs. Ideal for petty retailers and hawkers.</p>
+                    <span class="itr-tag">TURNOVER < 12L</span>
                 </div>
-                <div class="types-grid">
-                    <div class="type-card">
-                        <div class="type-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                        <h4>Basic Registration</h4>
-                        <p>For small businesses or startups with an annual turnover below ₹12 Lakhs.</p>
-                    </div>
-                    <div class="type-card">
-                        <div class="type-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-                        <h4>State License</h4>
-                        <p>For medium-sized businesses with an annual turnover between ₹12 Lakhs and ₹20 Crores.</p>
-                    </div>
-                    <div class="type-card">
-                        <div class="type-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                        <h4>Central License</h4>
-                        <p>For large businesses with a turnover exceeding ₹20 Crores or those operating in multiple states.</p>
-                    </div>
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-industry"></i></div>
+                    <h3>State License</h3>
+                    <p>For medium-sized businesses with an annual turnover between ₹12 Lakhs and ₹20 Crores operating in one state.</p>
+                    <span class="itr-tag">TURNOVER < 20CR</span>
+                </div>
+                <div class="mandatory-card">
+                    <div class="m-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Central License</h3>
+                    <p>For large businesses with turnover exceeding ₹20 Crores or those operating in multiple states / ports.</p>
+                    <span class="itr-tag">TURNOVER > 20CR</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: Documents Required -->
-    <section class="section-padding docs-section">
+    <!-- Section 3: Documents Required -->
+    <section class="s-padding bg-light">
         <div class="container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="section-tag">Checklist</div>
-                    <h2 class="section-title">Documents <span style="color: var(--primary)">Required</span></h2>
-                    <p style="color: var(--muted); margin-bottom: 2.5rem; font-size: 1.1rem;">Keep these documents handy for the application.</p>
-                    <div class="docs-list">
-                        <div class="doc-item"><div class="doc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>ID & Address Proof</div>
-                        <div class="doc-item"><div class="doc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Passport Size Photo</div>
-                        <div class="doc-item"><div class="doc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Business Address Proof</div>
-                        <div class="doc-item"><div class="doc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>List of Food Items</div>
-                        <div class="doc-item"><div class="doc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>NOC from Municipality</div>
-                        <div class="doc-item"><div class="doc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Layout of the Premise</div>
+            <div class="section-heading text-center">
+                <span class="overline">CHECKLIST</span>
+                <h2 class="section-title">Documents <span class="text-gold">Required</span></h2>
+                <p style="color: var(--itr-muted); margin-bottom: 3rem;">Keep these essentials ready for a smooth application process.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">ID & Address Proof</span>
                     </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Aadhar/PAN/Voter ID of the owner or authorized signatory.</p>
                 </div>
-                <div class="reveal reveal-delay-1" style="text-align: right;">
-                    <div style="display: inline-block; padding: 3rem; background: #FFF; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.05);">
-                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Premise Proof</span>
                     </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">Electricity bill/Rent Agreement of the business location.</p>
+                </div>
+                <div class="mandatory-card" style="padding: 1.5rem; border-radius: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--itr-gold);">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <span style="font-weight: 700; font-size: 1rem;">Food Item List</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--itr-muted); margin-top: 0.75rem;">A complete list of food categories/items to be handled.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: Process -->
-    <section class="section-padding">
+    <!-- Section 4: Process -->
+    <section class="s-padding">
         <div class="container">
-            <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
-                <div class="section-tag">Smooth Flow</div>
-                <h2 class="section-title">The <span style="color: var(--primary)">Process</span></h2>
+            <div class="section-heading text-center">
+                <span class="overline">MILESTONES</span>
+                <h2>Standard <span class="text-gold">Process Flow</span></h2>
             </div>
-            <div class="process-grid reveal animate-stagger">
-                <div class="process-step">
-                    <div class="step-num">01</div>
-                    <h4>Submit Details</h4>
-                    <p>Provide basic info and documents to our team.</p>
+
+            <div class="p-flow">
+                <div class="p-step">
+                    <div class="p-num">01</div>
+                    <h4 style="margin-bottom: 0.5rem;">Documentation</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Collecting all necessary proofs and food category details.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-num">02</div>
-                    <h4>Form Filling</h4>
-                    <p>We fill the Form A or Form B on the FoSCoS portal.</p>
+                <div class="p-step">
+                    <div class="p-num">02</div>
+                    <h4 style="margin-bottom: 0.5rem;">FoSCoS Filing</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Filing the appropriate Form (A or B) on the official FSSAI portal.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-num">03</div>
-                    <h4>Liaison</h4>
-                    <p>We handle queries from the food safety inspector.</p>
+                <div class="p-step">
+                    <div class="p-num">03</div>
+                    <h4 style="margin-bottom: 1rem;">Liaison</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Handling queries or inspections from food safety officers.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-num">04</div>
-                    <h4>Approval</h4>
-                    <p>Get your FSSAI license digitallly.</p>
+                <div class="p-step">
+                    <div class="p-num">04</div>
+                    <h4 style="margin-bottom: 0.5rem;">License Issued</h4>
+                    <p style="font-size: 0.85rem; color: var(--itr-muted);">Generation of your unique 14-digit FSSAI license number.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5: Why DNC -->
-    <section class="section-padding" style="background: var(--dark); color: #FFF; border-radius: 40px;">
+    <!-- Section 5: Why DNC -->
+    <section class="s-padding" style="background: var(--itr-navy); color: #FFF; border-radius: 60px 60px 0 0;">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag" style="background: rgba(255,255,255,0.1); color: #FFF;">DNT Advantage</div>
-                <h2 class="section-title" style="color: #FFF;">Why Choose <span style="color: var(--accent)">DNT?</span></h2>
+            <div class="section-heading text-center">
+                <span class="overline" style="color: var(--itr-gold);">— THE DNC PROMISE —</span>
+                <h2 style="color: #FFF;">Why Choose Our <span class="text-gold">Expertise</span>?</h2>
             </div>
-            <div class="types-grid">
-                <div class="type-card" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1);">
-                    <h4 style="color: #FFF;">Speed</h4>
-                    <p style="color: rgba(255,255,255,0.6);">We prioritize quick turnaround times for food licenses.</p>
+
+            <div class="mandatory-grid">
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-bolt"></i></div>
+                    <h3 style="color: #FFF;">Fast Turnaround</h3>
+                    <p style="color: rgba(255,255,255,0.6);">We prioritize quick processing to ensure your business starts serving customers without delay.</p>
                 </div>
-                <div class="type-card" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1);">
-                    <h4 style="color: #FFF;">Expertise</h4>
-                    <p style="color: rgba(255,255,255,0.6);">Our team understands food safety laws in detail.</p>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-check-double"></i></div>
+                    <h3 style="color: #FFF;">Accuracy Guaranteed</h3>
+                    <p style="color: rgba(255,255,255,0.6);">Our experts ensure every food category and NIC code is selected correctly to avoid legal issues.</p>
                 </div>
-                <div class="type-card" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1);">
-                    <h4 style="color: #FFF;">Support</h4>
-                    <p style="color: rgba(255,255,255,0.6);">End-to-end support until your license is in hand.</p>
+                <div class="mandatory-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                    <div class="m-icon" style="background: var(--itr-gold); color: #000;"><i class="fas fa-headset"></i></div>
+                    <h3 style="color: #FFF;">End-to-End Support</h3>
+                    <p style="color: rgba(255,255,255,0.6);">From initial consultation to the final 14-digit license number, we stay with you.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 6: FAQ -->
-    <section class="section-padding">
+    <!-- Section 6: FAQ -->
+    <section class="s-padding bg-light">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-heading text-center">
+                <span class="overline">SUPPORT</span>
+                <h2>Frequently Asked <span class="text-gold">Questions</span></h2>
+            </div>
+
+            <div class="faq-v2">
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>Is FSSAI mandatory for all food businesses?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Yes, every food business operator—from petty retailers to large manufacturers—is legally required to have FSSAI registration.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>How long is an FSSAI license valid?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">The validity can range from 1 to 5 years, as selected by the business operator during the application.</div>
+                </div>
+                <div class="faq-v2-item">
+                    <button class="faq-v2-btn">
+                        <span>What happens if I operate without a license?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div style="padding: 0 1.5rem 1.5rem; display: none;" class="faq-ans">Operating without a license can lead to heavy penalties, including fines up to ₹5 Lakhs and even imprisonment.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Related Services -->
+    <section class="s-padding bg-light">
         <div class="container">
-            <h2 class="section-title">FAQs</h2>
-            <div class="faq-accordion reveal">
-                <div class="faq-item">
-                    <button class="faq-trigger"><h4>Is FSSAI mandatory?</h4><span class="faq-icon">▼</span></button>
-                    <div class="faq-content"><p>Yes, it is mandatory for all food business operators in India.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger"><h4>How long is it valid?</h4><span class="faq-icon">▼</span></button>
-                    <div class="faq-content"><p>The validity can range from 1 to 5 years, as selected during application.</p></div>
-                </div>
+            <div class="section-heading text-center">
+                <span class="overline">EXPLORE MORE</span>
+                <h2>Related <span class="text-gold">Services</span></h2>
+            </div>
+            <div class="mandatory-grid">
+                <a href="../ipr/trademark-registration.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #FFF7ED; color: #F97316; margin: 0 auto 1.5rem;"><i class="fas fa-trademark"></i></div>
+                        <h3>Trademark Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Protect your food brand and logo from being copied by competitors.</p>
+                    </div>
+                </a>
+                <a href="../compliances/gst-registration.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #F0FDF4; color: #10B981; margin: 0 auto 1.5rem;"><i class="fas fa-file-invoice"></i></div>
+                        <h3>GST Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Essential for businesses looking to formalize their operations and claim ITC.</p>
+                    </div>
+                </a>
+                <a href="msme.html" style="text-decoration: none; color: inherit;">
+                    <div class="mandatory-card" style="text-align: center;">
+                        <div class="m-icon" style="background: #FEF3C7; color: #F59E0B; margin: 0 auto 1.5rem;"><i class="fas fa-id-badge"></i></div>
+                        <h3>MSME Registration</h3>
+                        <p style="font-size: 0.85rem; color: var(--itr-muted);">Unlock government benefits and easier access to bank loans for your eatery.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 7: Related + Review -->
-    <section class="section-padding docs-section">
-        <div class="container text-center">
-            <div class="review-card">
-                <p class="review-text">"Got my FSSAI State license in just 10 days. Very professional service!"</p>
-                <div class="reviewer">
-                    <div style="font-weight: 700;">Rajesh Kumar</div>
-                    <div style="font-size: 0.9rem; opacity: 0.7;">Owner, Spice Garden</div>
+    <!-- Section 8: Infinite Reviews Carousel -->
+    <section class="s-padding" style="overflow: hidden;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="overline">TESTIMONIALS</span>
+                <h2>What Our <span class="text-gold">Clients Say</span></h2>
+            </div>
+        </div>
+
+        <div class="reviews-marquee">
+            <div class="reviews-track">
+                <!-- Set 1 -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Got my FSSAI State license in just 10 days. Very professional service and smooth documentation process."</p>
+                    <div class="r-author">Rajesh Kumar</div>
+                    <div class="r-desig">Owner, Spice Garden</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"DNT helped me with my food manufacturing unit registration. They are highly proactive."</p>
+                    <div class="r-author">Priya Sharma</div>
+                    <div class="r-desig">Founder, FreshBites Foods</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"The easiest way to handle food safety compliances. They handle everything from A-Z."</p>
+                    <div class="r-author">Amit Patel</div>
+                    <div class="r-desig">Director, Patel Sweets</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Seamless process for our multi-state central license. Knowledgeable experts."</p>
+                    <div class="r-author">Sneha Reddy</div>
+                    <div class="r-desig">CEO, Global Foods India</div>
+                </div>
+                <!-- Duplicate for Infinite Loop -->
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Got my FSSAI State license in just 10 days. Very professional service and smooth documentation process."</p>
+                    <div class="r-author">Rajesh Kumar</div>
+                    <div class="r-desig">Owner, Spice Garden</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"DNT helped me with my food manufacturing unit registration. They are highly proactive."</p>
+                    <div class="r-author">Priya Sharma</div>
+                    <div class="r-desig">Founder, FreshBites Foods</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"The easiest way to handle food safety compliances. They handle everything from A-Z."</p>
+                    <div class="r-author">Amit Patel</div>
+                    <div class="r-desig">Director, Patel Sweets</div>
+                </div>
+                <div class="review-card-v2">
+                    <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="r-text">"Seamless process for our multi-state central license. Knowledgeable experts."</p>
+                    <div class="r-author">Sneha Reddy</div>
+                    <div class="r-desig">CEO, Global Foods India</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: #0F172A; padding: 60px 0; color: #FFF; text-align: center;">
+    <footer style="background: var(--itr-navy); padding: 80px 0 40px; color: #FFF;">
         <div class="container">
-            <p>© 2026 Digital Next Consultancy. All rights reserved.</p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 4rem; margin-bottom: 4rem;">
+                <div>
+                    <img src="../../assets/logo.svg" alt="Logo" style="width: 50px; filter: brightness(0) invert(1); margin-bottom: 1.5rem;">
+                    <h3 style="color: #FFF; margin-bottom: 1rem;">Digital Next Consultancy</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem; line-height: 1.7;">Your trusted partner for all business registrations, legal compliances, and digital growth solutions across India.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="../../index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                        <li><a href="../../about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                        <li><a href="../../contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="pvt-ltd.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Company Registration</a></li>
+                        <li><a href="../compliance.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">GST & Tax</a></li>
+                        <li><a href="../digital-marketing.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem;">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--itr-gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1.5rem;">Reach Us</h4>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +91 88025 59782</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@digitalnextworld.com</p>
+                    <p style="opacity: 0.6; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> New Delhi, India</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.8rem;">
+                © 2026 Digital Next Consultancy. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
     <script src="../../js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
-        document.querySelectorAll('.faq-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                trigger.parentElement.classList.toggle('open');
+        // FAQ Accordion
+        document.querySelectorAll('.faq-v2-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const ans = item.querySelector('.faq-ans');
+                const icon = button.querySelector('i');
+                
+                if (ans.style.display === 'block') {
+                    ans.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    ans.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
             });
         });
     </script>
