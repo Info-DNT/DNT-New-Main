@@ -1,0 +1,292 @@
+/* ==========================================================================
+   LAMP ANIMATION — HERO SECTION
+   --------------------------------------------------------------------------
+   A light beam emanates from the LEFT edge of the hero, sweeps RIGHTWARD,
+   and reveals the hero content (title, sub, highlight, buttons, globe) in
+   sequence. Built to work with the existing markup in index.html — no DOM
+   changes required.
+
+   Color palette: Pure blue (no cyan).
+     - #93C5FD  bright blue (hot center of the light source)
+     - #60A5FA  medium blue (source line edges + glow)
+     - #3B82F6  strong blue (cone fills)
+   ========================================================================== */
+
+
+/* --- Hero base: dark canvas so the blue light reads cleanly -------------- */
+.aurora-hero {
+    background: #060b1d !important;
+    /* Slightly deeper navy */
+    position: relative;
+    overflow: hidden;
+    padding-top: 50px !important;
+    /* Moved slightly back up */
+    min-height: 90vh !important;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Hero content colors ------------------------------------------------ */
+.aurora-hero .hero-title,
+.aurora-hero .hero-sub,
+.aurora-hero .hero-highlight {
+    color: #ffffff !important;
+}
+
+/* Force specific white text for the paragraph as requested */
+.aurora-hero .hero-content p {
+    color: #ffffff !important;
+}
+
+/* Force white for highlight line */
+.aurora-hero .hero-highlight {
+    color: #ffffff !important;
+}
+
+/* Keep blue for specific scale phrase */
+.aurora-hero .hero-gradient-text {
+    background: linear-gradient(to right, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* --- Navigation Fix: White at top, Black when Scrolled ------------------- */
+#main-nav:not(.scrolled) .nav-link,
+#main-nav:not(.scrolled) .nav-dropdown-btn,
+#main-nav:not(.scrolled) .nav-logo-name,
+#main-nav:not(.scrolled) .nav-logo-sub {
+    color: #ffffff !important;
+}
+
+#main-nav.scrolled .nav-link,
+#main-nav.scrolled .nav-dropdown-btn,
+#main-nav.scrolled .nav-logo-name,
+#main-nav.scrolled .nav-logo-sub {
+    color: #0f172a !important;
+    /* Pure Black/Slate 950 */
+}
+
+/* Brighten the Logo text specifically when on dark background */
+#main-nav:not(.scrolled) .nav-logo-text span {
+    color: #ffffff !important;
+}
+
+/* Lift the actual content above all light layers */
+.aurora-hero .container {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* --- Lamp source: vertical light line on the left edge ------------------- */
+.aurora-hero::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18%;
+    bottom: 18%;
+    width: 2px;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            #60A5FA 28%,
+            #93C5FD 50%,
+            #60A5FA 72%,
+            transparent 100%);
+    box-shadow: 0 0 32px 10px rgba(96, 165, 250, 0.70);
+    z-index: 5;
+    opacity: 0;
+    animation: lamp-source-in 0.8s 0.3s ease-out forwards;
+    pointer-events: none;
+}
+
+
+/* --- Lamp source: soft halo around the source line ----------------------- */
+.aurora-hero::after {
+    content: '';
+    position: absolute;
+    left: -130px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle,
+            rgba(147, 197, 253, 0.55) 0%,
+            rgba(59, 130, 246, 0.22) 35%,
+            transparent 70%);
+    filter: blur(36px);
+    z-index: 4;
+    opacity: 0;
+    animation: lamp-source-in 0.8s 0.3s ease-out forwards;
+    pointer-events: none;
+}
+
+
+/* --- Light cone: sweeps from left to right (uses existing .aurora-bg) ---- */
+.aurora-hero .aurora-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 92% 30% at 0% 50%, rgba(59, 130, 246, 0.55) 0%, rgba(59, 130, 246, 0.18) 35%, transparent 65%),
+        radial-gradient(ellipse 75% 50% at 0% 50%, rgba(96, 165, 250, 0.32) 0%, transparent 70%),
+        radial-gradient(ellipse 55% 80% at 0% 50%, rgba(59, 130, 246, 0.18) 0%, transparent 75%);
+    filter: blur(8px);
+    z-index: 2;
+    clip-path: inset(0 100% 0 0);
+    animation: lamp-cone-sweep 2s 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    pointer-events: none;
+}
+
+
+/* --- Subtle tech grid (uses existing .noise-overlay) --------------------- */
+.aurora-hero .noise-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 48px 48px;
+    z-index: 1;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+
+/* --- Hero content reveal: rises in as the light reaches each element ----- */
+.aurora-hero .hero-title {
+    opacity: 0;
+    animation: lamp-rise-x 1.2s 0.9s ease-out forwards;
+}
+
+.aurora-hero .hero-sub {
+    opacity: 0;
+    animation: lamp-rise-x 1.2s 1.2s ease-out forwards;
+}
+
+.aurora-hero .hero-highlight {
+    opacity: 0;
+    animation: lamp-rise-x 1s 1.4s ease-out forwards;
+}
+
+.aurora-hero .hero-btns {
+    opacity: 0;
+    animation: lamp-rise-y 0.8s 1.6s ease-out forwards;
+}
+
+.aurora-hero #globe-container {
+    opacity: 0;
+    animation: lamp-globe-in 1.5s 1.5s ease-out forwards;
+}
+
+
+/* --- Keyframes ----------------------------------------------------------- */
+@keyframes lamp-source-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lamp-cone-sweep {
+    from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0.6;
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+@keyframes lamp-rise-x {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes lamp-rise-y {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lamp-globe-in {
+    from {
+        opacity: 0;
+        transform: translate(20px, 0) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+
+/* --- Replay support (used by lamp.js window.replayLamp()) ---------------- */
+.aurora-hero.lamp-replay::before,
+.aurora-hero.lamp-replay::after,
+.aurora-hero.lamp-replay .aurora-bg,
+.aurora-hero.lamp-replay .hero-title,
+.aurora-hero.lamp-replay .hero-sub,
+.aurora-hero.lamp-replay .hero-highlight,
+.aurora-hero.lamp-replay .hero-btns,
+.aurora-hero.lamp-replay #globe-container {
+    animation: none !important;
+}
+
+
+/* --- Accessibility: respect reduced-motion preferences ------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .aurora-hero::before,
+    .aurora-hero::after,
+    .aurora-hero .aurora-bg,
+    .aurora-hero .hero-title,
+    .aurora-hero .hero-sub,
+    .aurora-hero .hero-highlight,
+    .aurora-hero .hero-btns,
+    .aurora-hero #globe-container {
+        animation: none !important;
+        opacity: 1 !important;
+        clip-path: none !important;
+        transform: none !important;
+    }
+}
+
+
+/* --- Mobile tuning: tighter source, smaller halo ------------------------- */
+@media (max-width: 768px) {
+    .aurora-hero::before {
+        top: 12%;
+        bottom: 12%;
+    }
+
+    .aurora-hero::after {
+        left: -90px;
+        width: 220px;
+        height: 220px;
+    }
+
+    .aurora-hero .aurora-bg {
+        background:
+            radial-gradient(ellipse 100% 40% at 0% 50%, rgba(59, 130, 246, 0.50) 0%, transparent 65%),
+            radial-gradient(ellipse 75% 60% at 0% 50%, rgba(96, 165, 250, 0.25) 0%, transparent 75%);
+    }
+}
