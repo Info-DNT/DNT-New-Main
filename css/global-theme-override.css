@@ -730,7 +730,9 @@ div[style*="linear-gradient"] .btn {
   display: flex;
   flex-direction: column;
   padding: 0;
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu.open {
@@ -754,7 +756,9 @@ div[style*="linear-gradient"] .btn {
 .menu-overlay.open {
   opacity: 1;
   visibility: visible;
+  touch-action: none;
 }
+
 
 .mobile-menu-header {
   padding: 1.5rem;
@@ -878,11 +882,22 @@ div[style*="linear-gradient"] .btn {
 }
 
 .mobile-sub-menu.open {
-  max-height: 500px; /* Adjust based on content */
+  max-height: 350px; /* Limit height for internal scrolling */
+  overflow-y: auto;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(226, 232, 240, 0.3);
 }
+
+/* Subtle scrollbar for internal sub-menus */
+.mobile-sub-menu::-webkit-scrollbar {
+  width: 3px;
+}
+.mobile-sub-menu::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.2);
+  border-radius: 10px;
+}
+
 
 .mobile-sub-link {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -911,4 +926,58 @@ div[style*="linear-gradient"] .btn {
 /* Prevent scrolling when menu is open */
 body.menu-open {
   overflow: hidden !important;
+}
+
+
+.mobile-menu {
+  touch-action: pan-y;
+}
+
+
+/* Ensure logo and text are dark in mobile menu drawer */
+.mobile-menu .nav-logo-icon img {
+  filter: brightness(0) !important;
+}
+
+.mobile-menu .nav-logo-name,
+.mobile-menu .nav-logo-sub {
+  color: var(--text-heading) !important;
+  text-shadow: none !important;
+  animation: none !important;
+}
+
+/* Custom scrollbar for mobile menu to make it visible */
+.mobile-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.3) !important; /* Soft gold thumb */
+  border-radius: 10px;
+}
+
+/* =============================================
+   SERVICE PAGE SPECIFIC OVERRIDES
+   (For pages with .light-page navigation)
+   ============================================= */
+
+/* 1. Ensure Hamburger is visible (Black) on light-page service headers */
+#main-nav.light-page:not(.scrolled) .menu-toggle span {
+  background: #000000 !important;
+}
+
+/* 2. Remove redundant close button in drawer on service pages 
+   (Since the main hamburger button transforms into a cross on top of the drawer) */
+#main-nav.light-page + .mobile-menu #mobile-menu-close {
+  display: none !important;
+}
+
+/* 3. Ensure logo in mobile drawer header has enough space when close button is hidden */
+#main-nav.light-page + .mobile-menu .mobile-menu-header {
+  justify-content: flex-start !important;
+  gap: 1.5rem !important;
 }

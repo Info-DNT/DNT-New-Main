@@ -213,12 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => toggleMenu(false));
     });
 
-    // Auto-close menu on scroll
-    window.addEventListener('scroll', () => {
-      if (document.body.classList.contains('menu-open')) {
-        toggleMenu(false);
-      }
-    }, { passive: true });
+    // Auto-close menu on scroll removed to allow scrolling within menu
+
   }
 
   /* ---- Theme Toggle Restore ---- */
