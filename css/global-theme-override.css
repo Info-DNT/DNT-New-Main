@@ -14,7 +14,7 @@ html {
 .nav-link, .nav-dropdown-btn {
   letter-spacing: -0.011em !important;
   font-weight: 600 !important;
-  font-size: 0.85rem !important;
+  font-size: 0.95rem !important;
   padding: 0.5rem 0.8rem !important;
 }
 
@@ -197,11 +197,17 @@ svg.table-yes,
 .btn-primary,
 .btn-gold,
 .btn-success,
-.btn-blue,
-.nav-cta-btn,
 .mobile-cta-btn {
   background: var(--accent-gold) !important;
   color: #000 !important;
+  border: none !important;
+}
+
+/* White-text gold buttons */
+.btn-blue,
+.nav-cta-btn {
+  background: var(--accent-gold) !important;
+  color: #ffffff !important;
   border: none !important;
 }
 
@@ -980,4 +986,90 @@ body.menu-open {
 #main-nav.light-page + .mobile-menu .mobile-menu-header {
   justify-content: flex-start !important;
   gap: 1.5rem !important;
+}
+
+/* =============================================
+   INDEX PAGE UI REFINEMENTS
+   ============================================= */
+
+/* Book a 15-Min button — white text */
+.btn-amber {
+  color: #ffffff !important;
+}
+
+/* All 4 Expertise flip cards — white background, darker text for visibility */
+#expert-solutions .grid-4 .flip-card .flip-card-front {
+  background: #ffffff !important;
+}
+
+#expert-solutions .grid-4 .flip-card .card-overline {
+  color: #374151 !important; /* Darker label text */
+}
+
+#expert-solutions .grid-4 .flip-card .flip-card-front h3 {
+  color: #0f172a !important; /* Deep navy heading */
+}
+
+#expert-solutions .grid-4 .flip-card .hover-tip {
+  color: #4b5563 !important; /* Darker "HOVER FOR DETAILS" */
+}
+
+/* GST & Tax cards — smooth hover lift animation */
+.tilt-card {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease !important;
+  cursor: default;
+}
+
+.tilt-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.10), 0 8px 20px rgba(245, 158, 11, 0.08) !important;
+}
+
+/* Legal & Compliance cards — hover lift animation */
+#legal-compliance .card {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease !important;
+  cursor: default;
+}
+
+/* =============================================
+   GLOBAL NAVBAR SIZE (All Pages)
+   ============================================= */
+
+/* Taller navbar */
+#main-nav .nav-inner { height: 88px !important; }
+
+/* Nav links & dropdown buttons */
+#main-nav .nav-link,
+#main-nav .nav-dropdown-btn {
+  font-size: 1.05rem !important;
+  padding: 0.65rem 1rem !important;
+}
+
+/* CTA button */
+#main-nav .nav-cta-btn {
+  font-size: 0.98rem !important;
+  padding: 0.7rem 1.4rem !important;
+}
+
+/* Logo */
+#main-nav .nav-logo-name { font-size: 1.15rem !important; }
+#main-nav .nav-logo-sub  { font-size: 0.70rem !important; }
+
+/* Dropdown menu items */
+#main-nav .nav-dropdown-content ul li a,
+#main-nav .nav-dropdown-content li a {
+  font-size: 0.95rem !important;
+  padding: 0.55rem 1.2rem !important;
+}
+
+/* Mega-menu column headers */
+#main-nav .mega-menu-col-title {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Mega-menu links */
+#main-nav .mega-menu-grid ul li a {
+  font-size: 0.95rem !important;
+  padding: 0.5rem 0 !important;
 }
