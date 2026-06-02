@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performance Marketing Solutions | Scale Your Business with Guaranteed ROI | DNT</title>
+    <meta name="description"
+        content="Scale your lead generation and sales with official Performance Marketing solutions. Maximize your ROAS through data-driven ad management and advanced conversion tracking." />
+    <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/global-theme-override.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --pm-indigo: #4F46E5;
+            --pm-blue: #2563EB;
+            --pm-dark: #0F172A;
+            --pm-pale: #EEF2F6;
+            --pm-light: #F8FAFC;
+            --pm-accent: #10B981;
+            --pm-gold: #F59E0B;
+            --font-head: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --card-radius: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--pm-dark);
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* SCROLL REVEAL ENGINE */
+        .reveal-3d {
+            opacity: 0;
+            transform: translateY(50px) scale(0.97) rotateX(3deg);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-3d.active {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0);
+        }
+
+        /* AMBIENT GLOW SYSTEM */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glow-1 {
+            width: 450px;
+            height: 450px;
+            background: var(--pm-indigo);
+            top: -5%;
+            left: -10%;
+            animation: floatBlob 22s infinite alternate ease-in-out;
+        }
+
+        .glow-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--pm-blue);
+            bottom: 10%;
+            right: -5%;
+            animation: floatBlob 18s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes floatBlob {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(60px, 40px) scale(1.1) rotate(45deg);
+            }
+        }
+
+        /* HERO */
+        .pm-hero {
+            background: #FFFFFF;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pm-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 55% at 85% 45%, rgba(79, 70, 229, 0.08) 0%, transparent 75%),
+                radial-gradient(ellipse 45% 45% at 15% 85%, rgba(37, 99, 235, 0.1) 0%, transparent 65%);
+        }
+
+        .pm-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.3;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(79, 70, 229, 0.08);
+            border: 1px solid rgba(79, 70, 229, 0.15);
+            color: var(--pm-indigo);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.03);
+        }
+
+        .hero-title {
+            font-family: var(--font-head);
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            font-weight: 800;
+            color: var(--pm-dark);
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            text-align: left;
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, var(--pm-indigo) 0%, var(--pm-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            color: rgba(15, 23, 42, 0.7);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-pm {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--pm-indigo) 0%, var(--pm-blue) 100%);
+            color: #fff;
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 15px 30px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-pm:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--pm-dark);
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 15px 30px;
+            border-radius: 14px;
+            border: 1.5px solid rgba(15, 23, 42, 0.2);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--pm-indigo);
+            color: var(--pm-indigo);
+            background: rgba(79, 70, 229, 0.03);
+            transform: translateY(-2px);
+        }
+
+        /* FLOATING BRAND BADGES */
+        .floating-badge {
+            position: absolute;
+            z-index: 5;
+            border-radius: 18px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 0.82rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            pointer-events: none;
+        }
+
+        .floating-badge i {
+            font-size: 1.15rem;
+        }
+
+        .meta-badge {
+            background: rgba(24, 119, 242, 0.12);
+            border: 1px solid rgba(24, 119, 242, 0.25);
+            color: #1877F2;
+            top: 18%;
+            right: -28px;
+            animation: floatMeta 6s ease-in-out infinite;
+        }
+
+        .google-badge {
+            background: rgba(234, 67, 53, 0.1);
+            border: 1px solid rgba(234, 67, 53, 0.2);
+            color: #EA4335;
+            bottom: 22%;
+            right: -18px;
+            animation: floatGoogle 7s ease-in-out infinite 1s;
+        }
+
+        .yt-badge {
+            background: rgba(255, 0, 0, 0.08);
+            border: 1px solid rgba(255, 0, 0, 0.15);
+            color: #FF0000;
+            top: 8%;
+            left: -20px;
+            animation: floatMeta 8s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes floatMeta {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(3deg);
+            }
+        }
+
+        @keyframes floatGoogle {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(-2deg);
+            }
+        }
+
+        /* DASHBOARD DECK (Desktop-style) */
+        .dashboard-wrap {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .dashboard-deck {
+            width: 460px;
+            background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 50px 100px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
+            color: #fff;
+        }
+
+        .dashboard-deck:hover {
+            transform: rotateY(-4deg) rotateX(3deg) translateY(-6px);
+        }
+
+        .deck-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .deck-logo {
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #A5B4FC;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .deck-live {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--pm-accent);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .deck-live-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--pm-accent);
+            animation: livePulse 1.5s infinite;
+        }
+
+        @keyframes livePulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
+        }
+
+        /* Dual Campaign Row */
+        .deck-campaigns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .camp-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 14px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .camp-card:hover {
+            border-color: rgba(165, 180, 252, 0.3);
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.08);
+        }
+
+        .camp-label {
+            font-size: 0.62rem;
+            color: #64748B;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .camp-label i {
+            font-size: 0.7rem;
+        }
+
+        .camp-metric {
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+
+        .camp-sub {
+            font-size: 0.68rem;
+            color: #94A3B8;
+        }
+
+        .camp-card.meta .camp-metric {
+            color: #818CF8;
+        }
+
+        .camp-card.google .camp-metric {
+            color: #FBBF24;
+        }
+
+        /* Spend Progress */
+        .deck-progress {
+            margin-bottom: 1rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.7rem;
+            color: #94A3B8;
+            font-weight: 700;
+        }
+
+        .progress-track {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #4F46E5, #10B981);
+            width: 0%;
+            animation: fillBar 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fillBar {
+            to {
+                width: 72%;
+            }
+        }
+
+        /* Dual SVG Graph */
+        .deck-graph {
+            height: 100px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .graph-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-svg path {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+        }
+
+        .graph-svg .line-meta {
+            animation: drawLine 3s ease forwards;
+        }
+
+        .graph-svg .line-google {
+            animation: drawLine 3.5s ease forwards 0.5s;
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .graph-legend {
+            display: flex;
+            gap: 16px;
+            margin-top: 6px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.65rem;
+            color: #94A3B8;
+            font-weight: 700;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Stream */
+        .stream-box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .stream-title {
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 4px;
+        }
+
+        .stream-container {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .stream-item {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 8px 10px;
+            font-size: 0.72rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .stream-icon {
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .stream-details {
+            flex: 1;
+        }
+
+        .stream-name {
+            font-weight: 600;
+            color: #CBD5E1;
+            font-size: 0.72rem;
+        }
+
+        .stream-val {
+            color: var(--pm-accent);
+            font-weight: 800;
+            font-size: 0.72rem;
+            white-space: nowrap;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TICKER STRIP */
+        .ticker-strip {
+            background: var(--pm-indigo);
+            padding: 16px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+        }
+
+        .ticker-inner {
+            display: inline-flex;
+            gap: 3.5rem;
+            animation: ticker 25s linear infinite;
+        }
+
+        .ticker-item,
+        .ticker-strip span,
+        .ticker-strip .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #FFFFFF !important;
+            font-weight: 750;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .ticker-dot {
+            width: 7px;
+            height: 7px;
+            background: #FFFFFF !important;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        @keyframes ticker {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* STATS BAND */
+        .stats-band {
+            background: var(--pm-pale);
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(79, 70, 229, 0.08);
+            position: relative;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 22px;
+            padding: 2.25rem 2rem;
+            border: 1px solid rgba(79, 70, 229, 0.06);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 24px 48px rgba(79, 70, 229, 0.12), 0 0 0 1px rgba(79, 70, 229, 0.15);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pm-indigo), var(--pm-blue));
+        }
+
+        .stat-num {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--pm-dark);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #64748B;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .stat-compare {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--pm-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        /* PARTNER CARDS STYLE */
+        .partners-section {
+            background: var(--pm-light);
+            position: relative;
+            padding: 90px 0;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.25rem;
+            margin-top: 3.5rem;
+        }
+
+        .partner-card {
+            background: #ffffff;
+            border: 1px solid rgba(79, 70, 229, 0.08);
+            border-radius: var(--card-radius);
+            padding: 3rem 2.5rem;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pm-indigo), var(--pm-blue));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.08), 0 0 0 1px rgba(79, 70, 229, 0.1);
+            border-color: rgba(79, 70, 229, 0.2);
+        }
+
+        .partner-card:hover::before {
+            opacity: 1;
+        }
+
+        .partner-logo-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s;
+        }
+
+        .partner-card:hover .partner-logo-container {
+            transform: scale(1.08);
+        }
+
+        .meta-partner .partner-logo-container {
+            background: rgba(24, 119, 242, 0.08);
+            color: #1877F2;
+            border: 1px solid rgba(24, 119, 242, 0.15);
+        }
+
+        .google-partner .partner-logo-container {
+            background: rgba(234, 67, 53, 0.08);
+            color: #EA4335;
+            border: 1px solid rgba(234, 67, 53, 0.15);
+        }
+
+        .wati-partner .partner-logo-container {
+            background: rgba(16, 185, 129, 0.08);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+
+        .partner-title {
+            font-family: var(--font-head);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--pm-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .partner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 1.15rem;
+        }
+
+        .meta-partner .partner-badge {
+            background: rgba(24, 119, 242, 0.1);
+            color: #1877F2;
+        }
+
+        .google-partner .partner-badge {
+            background: rgba(234, 67, 53, 0.1);
+            color: #EA4335;
+        }
+
+        .wati-partner .partner-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+
+        .partner-desc {
+            font-size: 0.9rem;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        .meta-svg-icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+
+        /* COMPARISON TABLE */
+        .compare-section {
+            padding: 90px 0;
+            background: #fff;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .overline {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--pm-indigo);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: var(--pm-dark);
+            line-height: 1.18;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-sub {
+            color: #64748B;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 3.5rem;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 45px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .compare-table thead tr {
+            background: var(--pm-dark);
+        }
+
+        .compare-table th {
+            padding: 20px 24px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .compare-table th.wa-col {
+            color: #A5B4FC;
+            font-size: 1rem;
+        }
+
+        .compare-table th:first-child {
+            text-align: left;
+        }
+
+        .compare-table tbody tr:nth-child(even) {
+            background: #F8FAFC;
+        }
+
+        .compare-table tbody tr:hover {
+            background: rgba(79, 70, 229, 0.02);
+        }
+
+        .compare-table td {
+            padding: 18px 24px;
+            font-size: 0.92rem;
+            color: #475569;
+            text-align: center;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .compare-table td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--pm-dark);
+        }
+
+        .wa-cell {
+            color: var(--pm-indigo);
+            font-weight: 800;
+            font-size: 0.98rem;
+        }
+
+        .check {
+            color: var(--pm-accent);
+            font-size: 1.15rem;
+            margin-right: 4px;
+        }
+
+        .cross {
+            color: #CBD5E1;
+            font-size: 1.15rem;
+            margin-right: 4px;
+        }
+
+        .partial {
+            color: #F59E0B;
+            font-size: 1.15rem;
+            margin-right: 4px;
+        }
+
+        /* HOW IT WORKS */
+        .how-section {
+            padding: 90px 0;
+            background: var(--pm-pale);
+        }
+
+        .process-steps {
+            display: flex;
+            gap: 0;
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: calc(10% + 40px);
+            right: calc(10% + 40px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--pm-indigo), var(--pm-blue));
+            z-index: 0;
+        }
+
+        .step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-num {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border: 3px solid var(--pm-indigo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--pm-indigo);
+            margin-bottom: 1.75rem;
+            box-shadow: 0 5px 22px rgba(79, 70, 229, 0.15);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .step:hover .step-num {
+            background: var(--pm-indigo);
+            color: #fff;
+            transform: scale(1.15);
+            box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+        }
+
+        .step-title {
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: var(--pm-dark);
+            margin-bottom: 0.65rem;
+        }
+
+        .step-desc {
+            font-size: 0.88rem;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        /* SERVICES GRID */
+        .services-section {
+            padding: 90px 0;
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-top: 3.5rem;
+        }
+
+        .svc-card {
+            background: #F8FAFC;
+            border: 1px solid rgba(79, 70, 229, 0.15);
+            border-radius: var(--card-radius);
+            padding: 2.25rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+        }
+
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--card-radius);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(37, 99, 235, 0.02));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .svc-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pm-indigo), var(--pm-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .svc-card:hover {
+            border-color: rgba(79, 70, 229, 0.35);
+            box-shadow: 0 20px 50px rgba(79, 70, 229, 0.12), 0 0 0 1px rgba(79, 70, 229, 0.15);
+            transform: translateY(-10px) scale(1.01);
+        }
+
+        .svc-card:hover::before {
+            opacity: 1;
+        }
+
+        .svc-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .svc-icon {
+            width: 58px;
+            height: 58px;
+            background: rgba(79, 70, 229, 0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--pm-indigo);
+            border: 1px solid rgba(79, 70, 229, 0.12);
+        }
+
+        .svc-num {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-family: var(--font-head);
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: rgba(79, 70, 229, 0.04);
+            line-height: 1;
+        }
+
+        .svc-title {
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--pm-dark);
+            margin-bottom: 0.85rem;
+        }
+
+        .svc-desc {
+            font-size: 0.9rem;
+            color: #64748B;
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .svc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .svc-tag {
+            background: rgba(79, 70, 229, 0.04);
+            color: var(--pm-indigo);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(79, 70, 229, 0.08);
+        }
+
+        /* REVIEWS SECTION */
+        .reviews-section {
+            padding: 90px 0;
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .review-carousel {
+            padding: 25px 0;
+            display: flex;
+            width: 100%;
+        }
+
+        .review-track {
+            display: flex;
+            gap: 2.25rem;
+            animation: reviewScroll 42s linear infinite;
+        }
+
+        .review-track:hover {
+            animation-play-state: paused;
+        }
+
+        .review-card {
+            flex: 0 0 420px;
+            background: #F8FAFC;
+            border-radius: 26px;
+            padding: 2.25rem;
+            border: 1px solid #E2E8F0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: border-color 0.3s;
+        }
+
+        .review-card:hover {
+            border-color: rgba(79, 70, 229, 0.25);
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #334155;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--pm-indigo);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+
+        .author-info h5 {
+            font-family: var(--font-head);
+            font-size: 1.05rem;
+            margin-bottom: 2px;
+            color: var(--pm-dark);
+            font-weight: 800;
+        }
+
+        .author-info p {
+            font-size: 0.82rem;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        .review-metric {
+            margin-top: auto;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--pm-accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            align-self: flex-start;
+        }
+
+        @keyframes reviewScroll {
+            0% {
+                transform: translateX(calc(-420px * 3 - 2.25rem * 3));
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 90px 0;
+            background: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-bubble {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(79, 70, 229, 0.05);
+            border: 1px solid rgba(79, 70, 229, 0.15);
+            border-radius: 50px;
+            padding: 10px 22px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--pm-indigo);
+            margin-bottom: 2.25rem;
+        }
+
+        .cta-title {
+            font-family: var(--font-head);
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--pm-dark);
+            margin-bottom: 1.25rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-sub {
+            color: #64748B;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--pm-dark);
+            color: #fff;
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 16px 34px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--pm-indigo);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(79, 70, 229, 0.05);
+            color: var(--pm-indigo);
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 16px 34px;
+            border-radius: 14px;
+            border: 1.5px solid rgba(79, 70, 229, 0.2);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(79, 70, 229, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+                text-align: left;
+            }
+
+            .hero-sub {
+                margin-left: 0;
+                margin-right: auto;
+            }
+
+            .hero-btns {
+                justify-content: flex-start;
+            }
+
+            .dashboard-wrap {
+                order: -1;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .stats-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-table {
+                font-size: 0.8rem;
+            }
+
+            .compare-table th,
+            .compare-table td {
+                padding: 12px 14px;
+            }
+
+            .calc-inputs-card {
+                padding: 1.75rem;
+            }
+
+            .calc-card-num {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Standard Navigation -->
+    <nav id="main-nav" class="light-page" aria-label="Main Navigation">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="../../index.html" class="nav-logo">
+                    <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNT Logo"></div>
+                    <div class="nav-logo-text">
+                        <span class="nav-logo-name">Digital Next</span>
+                        <span class="nav-logo-sub">Consultancy</span>
+                    </div>
+                </a>
+                <div class="nav-right">
+                    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu"
+                        style="--toggle-color:#000;">
+                        <span style="background:#000;"></span><span style="background:#000;"></span><span
+                            style="background:#000;"></span>
+                    </button>
+                </div>
+                <div class="nav-links">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown-wrap">
+                        <button class="nav-dropdown-btn">Company Registration<svg width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="nav-dropdown-content mega-menu">
+                            <div class="mega-menu-grid">
+                                <div><span class="mega-menu-col-title">For Indian Owners</span>
+                                    <ul>
+                                        <li><a href="../company-registration/proprietorship.html">Proprietorship
+                                                Firm</a></li>
+                                        <li><a href="../company-registration/partnership.html">Partnership Firm</a></li>
+                                        <li><a href="../company-registration/llp.html">Limited Liability Partnership</a>
+                                        </li>
+                                        <li><a href="../company-registration/opc.html">One Person Company</a></li>
+                                        <li><a href="../company-registration/pvt-ltd.html">Private Limited Company</a>
+                                        </li>
+                                        <li><a href="../company-registration/public-ltd.html">Public Limited Company</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Special Entities</span>
+                                    <ul>
+                                        <li><a href="../company-registration/nidhi.html">Nidhi Company</a></li>
+                                        <li><a href="../company-registration/fpo.html">Farmer Producer Organisation
+                                                (FPO)</a></li>
+                                        <li><a href="../company-registration/section-8.html">Section 8 Company</a></li>
+                                        <li><a href="../company-registration/trust.html">Trust</a></li>
+                                        <li><a href="../company-registration/society.html">Society</a></li>
+                                        <li><a href="../company-registration/msme.html">MSME | SSI Registration</a></li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Licenses</span>
+                                    <ul>
+                                        <li><a href="../company-registration/fssai.html">FSSAI License</a></li>
+                                        <li><a href="../company-registration/iec.html">Import Export Code</a></li>
+                                        <li><a href="../company-registration/esi.html">ESI Registration</a></li>
+                                        <li><a href="../company-registration/pf.html">PF Registration</a></li>
+                                        <li><a href="../company-registration/barcode.html">Barcode Registration</a></li>
+                                        <li><a href="../company-registration/rera.html">RERA Registration</a></li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Digital Signature (DSC)</span>
+                                    <ul>
+                                        <li><a href="../company-registration/dsc.html">DSC</a></li>
+                                        <li><a href="../company-registration/class3-dsc.html">Class-3 DSC</a></li>
+                                        <li><a href="../company-registration/dgft-dsc.html">DGFT-DSC</a></li>
+                                        <li><a href="../company-registration/din.html">DIN</a></li>
+                                        <li><a href="../company-registration/apeda.html">APEDA</a></li>
+                                        <li><a href="../company-registration/change-address.html">Change in office
+                                                address</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown-wrap">
+                        <button class="nav-dropdown-btn">ISO<svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="nav-dropdown-content">
+                            <ul>
+                                <li><a href="../iso/iso-9001.html">ISO 9001:2015</a></li>
+                                <li><a href="../iso/halal.html">Halal Certification</a></li>
+                                <li><a href="../iso/who-gmp.html">WHO - GMP Certification</a></li>
+                                <li><a href="../iso/gdp.html">GDP Certification</a></li>
+                                <li><a href="../iso/iso-14001.html">ISO 14001 Certification</a></li>
+                                <li><a href="../iso/iso-45001.html">ISO 45001 Certification</a></li>
+                                <li><a href="../iso/iso-22000.html">ISO 22000 Certification</a></li>
+                                <li><a href="../iso/iso-27001.html">ISO 27001 Certification</a></li>
+                                <li><a href="../iso/ce-mark.html">CE Mark Certification</a></li>
+                                <li><a href="../iso/haccp.html">HACCP Certification</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown-wrap">
+                        <button class="nav-dropdown-btn">IPR<svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="nav-dropdown-content">
+                            <ul>
+                                <li><a href="../ipr/trademark-registration.html">Trademark Registration</a></li>
+                                <li><a href="../ipr/trademark-objection.html">Trademark Objection</a></li>
+                                <li><a href="../ipr/trademark-renewal.html">Trademark Renewal</a></li>
+                                <li><a href="../ipr/copyright-registration.html">Copyright Registration</a></li>
+                                <li><a href="../ipr/patent-registration.html">Patent Registration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown-wrap">
+                        <button class="nav-dropdown-btn">Compliances<svg width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="nav-dropdown-content mega-menu mega-menu-compliances">
+                            <div class="mega-menu-grid">
+                                <div><span class="mega-menu-col-title">GST Compliances</span>
+                                    <ul>
+                                        <li><a href="../compliances/gst-registration.html">GST Registration</a></li>
+                                        <li><a href="../compliances/gst-return-filing.html">GST Return Filing</a></li>
+                                        <li><a href="../compliances/gst-annual-filing.html">GST Annual Filing</a></li>
+                                        <li><a href="../compliances/gst-notice-advisory.html">GST Notice &amp;
+                                                Advisory</a></li>
+                                        <li><a href="../compliances/gst-special-cases.html">GST for Special Cases</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Income Tax</span>
+                                    <ul>
+                                        <li><a href="../itr-filing.html">Income Tax Return Filing</a></li>
+                                        <li><a href="../compliances/advance-tax-filing.html">Advance Tax Filing</a></li>
+                                        <li><a href="../compliances/tax-notices-assessment.html">Tax Notices &amp;
+                                                Assessment</a></li>
+                                        <li><a href="../compliances/tds-filing.html">TDS Filing</a></li>
+                                        <li><a href="../compliances/professional-tax.html">Professional Tax</a></li>
+                                        <li><a href="../compliances/pan-tan-application.html">PAN / TAN Application</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Corporate Filings</span>
+                                    <ul>
+                                        <li><a href="../compliances/company-annual-filing.html">Company Annual
+                                                Filing</a></li>
+                                        <li><a href="../compliances/llp-annual-filing.html">LLP Annual Filing</a></li>
+                                        <li><a href="../compliances/director-kyc.html">Director KYC</a></li>
+                                        <li><a href="../compliances/roc-filings.html">ROC Filings</a></li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Accounting</span>
+                                    <ul>
+                                        <li><a href="../compliances/monthly-bookkeeping.html">Monthly Bookkeeping</a>
+                                        </li>
+                                        <li><a href="../compliances/financial-statements.html">Financial Statements</a>
+                                        </li>
+                                        <li><a href="../compliances/mis-reporting.html">MIS Reporting</a></li>
+                                    </ul>
+                                </div>
+                                <div><span class="mega-menu-col-title">Other Compliances</span>
+                                    <ul>
+                                        <li><a href="../compliances/compliance-advisory.html">Compliance Advisory</a>
+                                        </li>
+                                        <li><a href="../compliances/closing-llp.html">Closing LLP</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown-wrap">
+                        <button class="nav-dropdown-btn">Business Growth<svg width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="nav-dropdown-content">
+                            <ul>
+                                <li><a href="website-development.html">Website Development</a></li>
+                                <li><a href="seo-services.html">SEO Services &amp; Strategy</a></li>
+                                <li><a href="google-ads.html">Google Ads &amp; Paid Advertising</a></li>
+                                <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+                                <li><a href="content-marketing.html">Content Marketing</a></li>
+                                <li><a href="../whatsappMarketing.html">WhatsApp Marketing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown-wrap">
+                        <button class="nav-dropdown-btn">AI Solutions<svg width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="nav-dropdown-content">
+                            <ul>
+                                <li><a href="../AI_Solutions/ai-automation-services.html">AI Automation Services</a>
+                                </li>
+                                <li><a href="../AI_Solutions/ai-integration-workflow.html">AI Integration &amp; Workflow
+                                        Automation</a></li>
+                                <li><a href="../AI_Solutions/process-automation-digital-workflow.html">Process
+                                        Automation &amp; Digital Workflow</a></li>
+                                <li><a href="../AI_Solutions/ai-compliance-dashboard.html">AI Compliance Dashboard</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../contact.html" class="nav-cta-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    Free Consultation
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="../../index.html" class="nav-logo">
+                <div class="nav-logo-icon"><img src="../../assets/logo.svg" alt="DNT Logo"></div>
+                <div class="nav-logo-text">
+                    <span class="nav-logo-name" style="color:var(--text-primary)!important;">Digital Next</span>
+                    <span class="nav-logo-sub" style="color:var(--text-muted)!important;">Consultancy</span>
+                </div>
+            </a>
+            <button class="close-menu" id="mobile-menu-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-links">
+                <a href="../../index.html" class="mobile-nav-link">Home</a>
+                <a href="../../about.html" class="mobile-nav-link">About Us</a>
+                <button class="mobile-dropdown-btn">Company Registration<svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg></button>
+                <div class="mobile-sub-menu">
+                    <a href="../company-registration/proprietorship.html" class="mobile-sub-link">Proprietorship
+                        Firm</a>
+                    <a href="../company-registration/partnership.html" class="mobile-sub-link">Partnership Firm</a>
+                    <a href="../company-registration/llp.html" class="mobile-sub-link">Limited Liability Partnership</a>
+                    <a href="../company-registration/opc.html" class="mobile-sub-link">One Person Company</a>
+                    <a href="../company-registration/pvt-ltd.html" class="mobile-sub-link">Private Limited Company</a>
+                    <a href="../company-registration/public-ltd.html" class="mobile-sub-link">Public Limited Company</a>
+                    <a href="../company-registration/nidhi.html" class="mobile-sub-link">Nidhi Company</a>
+                    <a href="../company-registration/fpo.html" class="mobile-sub-link">Farmer Producer Organisation</a>
+                    <a href="../company-registration/section-8.html" class="mobile-sub-link">Section 8 Company</a>
+                    <a href="../company-registration/trust.html" class="mobile-sub-link">Trust</a>
+                    <a href="../company-registration/society.html" class="mobile-sub-link">Society</a>
+                    <a href="../company-registration/msme.html" class="mobile-sub-link">MSME | SSI Registration</a>
+                    <a href="../company-registration/fssai.html" class="mobile-sub-link">FSSAI License</a>
+                    <a href="../company-registration/iec.html" class="mobile-sub-link">Import Export Code</a>
+                    <a href="../company-registration/esi.html" class="mobile-sub-link">ESI Registration</a>
+                    <a href="../company-registration/pf.html" class="mobile-sub-link">PF Registration</a>
+                    <a href="../company-registration/dsc.html" class="mobile-sub-link">DSC</a>
+                    <a href="../company-registration/din.html" class="mobile-sub-link">DIN</a>
+                </div>
+                <button class="mobile-dropdown-btn">ISO<svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg></button>
+                <div class="mobile-sub-menu">
+                    <a href="../iso/iso-9001.html" class="mobile-sub-link">ISO 9001:2015</a>
+                    <a href="../iso/halal.html" class="mobile-sub-link">Halal Certification</a>
+                    <a href="../iso/who-gmp.html" class="mobile-sub-link">WHO - GMP Certification</a>
+                    <a href="../iso/gdp.html" class="mobile-sub-link">GDP Certification</a>
+                    <a href="../iso/iso-14001.html" class="mobile-sub-link">ISO 14001 Certification</a>
+                    <a href="../iso/iso-45001.html" class="mobile-sub-link">ISO 45001 Certification</a>
+                    <a href="../iso/iso-22000.html" class="mobile-sub-link">ISO 22000 Certification</a>
+                    <a href="../iso/iso-27001.html" class="mobile-sub-link">ISO 27001 Certification</a>
+                    <a href="../iso/ce-mark.html" class="mobile-sub-link">CE Mark Certification</a>
+                    <a href="../iso/haccp.html" class="mobile-sub-link">HACCP Certification</a>
+                </div>
+                <button class="mobile-dropdown-btn">Compliances<svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg></button>
+                <div class="mobile-sub-menu">
+                    <a href="../compliances/gst-registration.html" class="mobile-sub-link">GST Registration</a>
+                    <a href="../compliances/gst-return-filing.html" class="mobile-sub-link">GST Return Filing</a>
+                    <a href="../compliances/gst-annual-filing.html" class="mobile-sub-link">GST Annual Filing</a>
+                    <a href="../itr-filing.html" class="mobile-sub-link">Income Tax Return Filing</a>
+                    <a href="../compliances/tds-filing.html" class="mobile-sub-link">TDS Filing</a>
+                    <a href="../compliances/professional-tax.html" class="mobile-sub-link">Professional Tax</a>
+                    <a href="../compliances/company-annual-filing.html" class="mobile-sub-link">Company Annual
+                        Filing</a>
+                    <a href="../compliances/director-kyc.html" class="mobile-sub-link">Director KYC</a>
+                    <a href="../compliances/roc-filings.html" class="mobile-sub-link">ROC Filings</a>
+                </div>
+                <button class="mobile-dropdown-btn">IPR<svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg></button>
+                <div class="mobile-sub-menu">
+                    <a href="../ipr/trademark-registration.html" class="mobile-sub-link">Trademark Registration</a>
+                    <a href="../ipr/trademark-objection.html" class="mobile-sub-link">Trademark Objection</a>
+                    <a href="../ipr/trademark-renewal.html" class="mobile-sub-link">Trademark Renewal</a>
+                    <a href="../ipr/copyright-registration.html" class="mobile-sub-link">Copyright Registration</a>
+                    <a href="../ipr/patent-registration.html" class="mobile-sub-link">Patent Registration</a>
+                </div>
+                <button class="mobile-dropdown-btn">Business Growth<svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg></button>
+                <div class="mobile-sub-menu">
+                    <a href="website-development.html" class="mobile-sub-link">Website Development</a>
+                    <a href="seo-services.html" class="mobile-sub-link">SEO Services</a>
+                    <a href="google-ads.html" class="mobile-sub-link">Google Ads</a>
+                    <a href="social-media-marketing.html" class="mobile-sub-link">Social Media Marketing</a>
+                    <a href="content-marketing.html" class="mobile-sub-link">Content Marketing</a>
+                    <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
+                </div>
+                <button class="mobile-dropdown-btn">AI Solutions<svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg></button>
+                <div class="mobile-sub-menu">
+                    <a href="../AI_Solutions/ai-automation-services.html" class="mobile-sub-link">AI Automation
+                        Services</a>
+                    <a href="../AI_Solutions/ai-integration-workflow.html" class="mobile-sub-link">AI Integration &amp;
+                        Workflow</a>
+                    <a href="../AI_Solutions/process-automation-digital-workflow.html" class="mobile-sub-link">Process
+                        Automation</a>
+                    <a href="../AI_Solutions/ai-compliance-dashboard.html" class="mobile-sub-link">AI Compliance
+                        Dashboard</a>
+                </div>
+                <a href="../../blog.html" class="mobile-nav-link">Blog</a>
+                <a href="../../contact.html" class="mobile-nav-link">Contact</a>
+            </div>
+            <div class="mobile-menu-footer">
+                <a href="tel:+918802559782" class="btn btn-gold"
+                    style="width:100%;justify-content:center;margin-bottom:1rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="transform:translateY(3px);">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="pm-hero">
+        <div class="ambient-glow glow-1"></div>
+        <div class="hero-inner">
+            <div>
+
+                <h1 class="hero-title">
+                    Dominate with<br>
+                    <span class="accent">Google & Meta Ads.</span>
+                </h1>
+                <p class="hero-sub">Stop wasting budgets on agencies that report clicks. We architect full-funnel Google
+                    Search, Meta Advantage+, and Instagram conversion campaigns that deliver measurable revenue — or you
+                    don't pay.</p>
+                <div class="hero-btns">
+                    <a href="../../contact.html" class="btn-pm">
+                        <i class="fas fa-rocket" style="margin-right: 6px;"></i> Launch My Campaigns
+                    </a>
+                    <a href="#how-it-works" class="btn-ghost">See The Framework ↓</a>
+                </div>
+            </div>
+
+            <!-- Desktop Ads Control Center -->
+            <div class="dashboard-wrap">
+                <!-- Floating Brand Badges -->
+                <div class="floating-badge meta-badge"><svg class="meta-svg-icon" viewBox="0 0 24 24"
+                        style="width: 1.1em; height: 1.1em; fill: currentColor; margin-right: 4px; vertical-align: -0.1em;">
+                        <path
+                            d="M15.468 7.237c-.714 0-1.42.203-2.028.59a3.882 3.882 0 0 0-1.44 1.487 3.882 3.882 0 0 0-1.44-1.488 3.99 3.99 0 0 0-2.028-.59C6.302 7.237 4.5 9.176 4.5 11.55c0 2.373 1.802 4.313 4.032 4.313.714 0 1.42-.203 2.028-.59a3.88 3.88 0 0 0 1.44-1.486 3.882 3.882 0 0 0 1.44 1.487c.608.386 1.314.589 2.028.589 2.23 0 4.032-1.94 4.032-4.313 0-2.374-1.802-4.313-4.032-4.313zm-6.936 6.84c-1.392 0-2.52-1.146-2.52-2.527 0-1.381 1.128-2.527 2.52-2.527.447 0 .888.127 1.267.368a2.428 2.428 0 0 1 .9.93c.18.33.275.698.275 1.07 0 .37-.095.738-.275 1.069a2.43 2.43 0 0 1-.9.93 2.493 2.493 0 0 1-1.267.367zm6.936 0c-.447 0-.888-.127-1.267-.367a2.43 2.43 0 0 1-.9-.93 2.404 2.404 0 0 1-.275-1.07c0-.372.095-.74.275-1.07a2.428 2.428 0 0 1 .9-.93 2.493 2.493 0 0 1 1.267-.368c1.392 0 2.52 1.146 2.52 2.527 0 1.381-1.128 2.527-2.52 2.527z" />
+                    </svg> Meta Ads</div>
+                <div class="floating-badge google-badge"><i class="fab fa-google"></i> Google Ads</div>
+                <div class="floating-badge yt-badge"><i class="fab fa-youtube"></i> YouTube</div>
+
+                <div class="dashboard-deck">
+                    <div class="deck-header">
+                        <span class="deck-logo"><i class="fas fa-bolt"></i> DNT Campaign Engine</span>
+                        <span class="deck-live"><span class="deck-live-dot"></span> LIVE</span>
+                    </div>
+
+                    <!-- Dual Campaign Cards -->
+                    <div class="deck-campaigns">
+                        <div class="camp-card meta">
+                            <div class="camp-label"><svg class="meta-svg-icon" viewBox="0 0 24 24"
+                                    style="width: 1em; height: 1em; fill: currentColor; margin-right: 4px; vertical-align: -0.1em;">
+                                    <path
+                                        d="M15.468 7.237c-.714 0-1.42.203-2.028.59a3.882 3.882 0 0 0-1.44 1.487 3.882 3.882 0 0 0-1.44-1.488 3.99 3.99 0 0 0-2.028-.59C6.302 7.237 4.5 9.176 4.5 11.55c0 2.373 1.802 4.313 4.032 4.313.714 0 1.42-.203 2.028-.59a3.88 3.88 0 0 0 1.44-1.486 3.882 3.882 0 0 0 1.44 1.487c.608.386 1.314.589 2.028.589 2.23 0 4.032-1.94 4.032-4.313 0-2.374-1.802-4.313-4.032-4.313zm-6.936 6.84c-1.392 0-2.52-1.146-2.52-2.527 0-1.381 1.128-2.527 2.52-2.527.447 0 .888.127 1.267.368a2.428 2.428 0 0 1 .9.93c.18.33.275.698.275 1.07 0 .37-.095.738-.275 1.069a2.43 2.43 0 0 1-.9.93 2.493 2.493 0 0 1-1.267.367zm6.936 0c-.447 0-.888-.127-1.267-.367a2.43 2.43 0 0 1-.9-.93 2.404 2.404 0 0 1-.275-1.07c0-.372.095-.74.275-1.07a2.428 2.428 0 0 1 .9-.93 2.493 2.493 0 0 1 1.267-.368c1.392 0 2.52 1.146 2.52 2.527 0 1.381-1.128 2.527-2.52 2.527z" />
+                                </svg> Meta Ads ROAS</div>
+                            <div class="camp-metric" id="metaRoas">6.2x</div>
+                            <div class="camp-sub">Advantage+ Shopping</div>
+                        </div>
+                        <div class="camp-card google">
+                            <div class="camp-label"><i class="fab fa-google"></i> Google Ads Conv.</div>
+                            <div class="camp-metric" id="googleConv">142</div>
+                            <div class="camp-sub">Search + PMax Today</div>
+                        </div>
+                    </div>
+
+                    <!-- Spend Progress -->
+                    <div class="deck-progress">
+                        <div class="progress-header">
+                            <span>Monthly Budget Deployed</span>
+                            <span id="spendPercent">72%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Dual Line Graph -->
+                    <div class="deck-graph">
+                        <svg class="graph-svg" viewBox="0 0 200 60" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="metaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#818CF8" />
+                                    <stop offset="100%" stop-color="#4F46E5" />
+                                </linearGradient>
+                                <linearGradient id="googleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#FBBF24" />
+                                    <stop offset="100%" stop-color="#F59E0B" />
+                                </linearGradient>
+                            </defs>
+                            <path class="line-meta" d="M0,50 Q25,38 50,42 T100,25 T150,15 T200,8" fill="none"
+                                stroke="url(#metaGrad)" stroke-width="2.5" stroke-linecap="round" />
+                            <path class="line-google" d="M0,55 Q25,48 50,50 T100,35 T150,22 T200,12" fill="none"
+                                stroke="url(#googleGrad)" stroke-width="2" stroke-linecap="round"
+                                stroke-dasharray="6 3" />
+                        </svg>
+                        <div class="graph-legend">
+                            <span class="legend-item"><span class="legend-dot" style="background:#818CF8;"></span> Meta
+                                Ads</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#FBBF24;"></span>
+                                Google Ads</span>
+                        </div>
+                    </div>
+
+                    <!-- Live Stream -->
+                    <div class="stream-box">
+                        <span class="stream-title">Live Conversion Feed</span>
+                        <div class="stream-container" id="streamContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker-strip">
+        <div class="ticker-inner">
+            <span class="ticker-item"><span class="ticker-dot"></span> Google Search Ads</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Meta Facebook & Instagram Ads</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> LinkedIn Lead Generation</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Conversion Rate Optimization (CRO)</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Server-Side Conversions API (CAPI)</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> YouTube Video Marketing</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Programmatic Retargeting</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> GA4 & Offline Event Tracking</span>
+            <!-- duplicate for seamless loop -->
+            <span class="ticker-item"><span class="ticker-dot"></span> Google Search Ads</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Meta Facebook & Instagram Ads</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> LinkedIn Lead Generation</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Conversion Rate Optimization (CRO)</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Server-Side Conversions API (CAPI)</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> YouTube Video Marketing</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Programmatic Retargeting</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> GA4 & Offline Event Tracking</span>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats-band">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-num">450%</div>
+                <div class="stat-label">Average ROAS Increase</div>
+                <span class="stat-compare">↑ vs 140% industry avg</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">32%</div>
+                <div class="stat-label">Lower Cost Per Lead</div>
+                <span class="stat-compare">↓ Average CAC reduction</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">6.8%</div>
+                <div class="stat-label">Landing Page Conv. Rate</div>
+                <span class="stat-compare">↑ vs 2.1% standard average</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Attribution Accuracy</div>
+                <span class="stat-compare">Server-side bypass</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS SECTION -->
+    <section class="partners-section reveal-3d s-padding">
+        <div class="ambient-glow glow-2"></div>
+        <div class="container">
+            <div class="section-heading text-center" style="margin-bottom: 3.5rem;">
+                <span class="overline">Official Integrations</span>
+                <h2>Certified <span class="accent">Marketing Partnerships</span></h2>
+                <p style="color: #64748B; max-width: 650px; margin: 0.5rem auto 0; font-size: 1.05rem;">We collaborate
+                    directly with industry-leading platforms to secure priority support, beta access, and advanced
+                    tracking APIs.</p>
+            </div>
+
+            <div class="partners-grid">
+                <!-- Meta Card -->
+                <div class="partner-card meta-partner">
+                    <div class="partner-logo-container">
+                        <svg class="meta-svg-icon" viewBox="0 0 24 24"
+                            style="width: 48px; height: 48px; fill: currentColor;">
+                            <path
+                                d="M15.468 7.237c-.714 0-1.42.203-2.028.59a3.882 3.882 0 0 0-1.44 1.487 3.882 3.882 0 0 0-1.44-1.488 3.99 3.99 0 0 0-2.028-.59C6.302 7.237 4.5 9.176 4.5 11.55c0 2.373 1.802 4.313 4.032 4.313.714 0 1.42-.203 2.028-.59a3.88 3.88 0 0 0 1.44-1.486 3.882 3.882 0 0 0 1.44 1.487c.608.386 1.314.589 2.028.589 2.23 0 4.032-1.94 4.032-4.313 0-2.374-1.802-4.313-4.032-4.313zm-6.936 6.84c-1.392 0-2.52-1.146-2.52-2.527 0-1.381 1.128-2.527 2.52-2.527.447 0 .888.127 1.267.368a2.428 2.428 0 0 1 .9.93c.18.33.275.698.275 1.07 0 .37-.095.738-.275 1.069a2.43 2.43 0 0 1-.9.93 2.493 2.493 0 0 1-1.267.367zm6.936 0c-.447 0-.888-.127-1.267-.367a2.43 2.43 0 0 1-.9-.93 2.404 2.404 0 0 1-.275-1.07c0-.372.095-.74.275-1.07a2.428 2.428 0 0 1 .9-.93 2.493 2.493 0 0 1 1.267-.368c1.392 0 2.52 1.146 2.52 2.527 0 1.381-1.128 2.527-2.52 2.527z" />
+                        </svg>
+                    </div>
+                    <div class="partner-badge">Meta Business Partner</div>
+                    <h3 class="partner-title">Certified Meta Ads Partner</h3>
+                    <p class="partner-desc">Direct access to Meta partner support, beta campaign optimization tools, and
+                        advanced Conversions API (CAPI) infrastructure to scale Facebook & Instagram conversion
+                        campaigns.</p>
+                </div>
+
+                <!-- Google Card -->
+                <div class="partner-card google-partner">
+                    <div class="partner-logo-container">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="partner-badge">Google Partner</div>
+                    <h3 class="partner-title">Certified Google Ads Partner</h3>
+                    <p class="partner-desc">Recognized for managing significant ad spend, meeting strict performance
+                        criteria, and deploying certified campaign architects across Google Search, Display, and
+                        Performance Max.</p>
+                </div>
+
+                <!-- Wati Card -->
+                <div class="partner-card wati-partner">
+                    <div class="partner-logo-container">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="partner-badge">Official Solution Partner</div>
+                    <h3 class="partner-title">Official Wati Partner</h3>
+                    <p class="partner-desc">Integrating official WhatsApp Business API capabilities via Wati to
+                        orchestrate automated notification flows, abandoned cart sequences, and real-time lead updates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="compare-section reveal-3d">
+        <div class="section-inner">
+            <div>
+                <span class="overline">The DNT Difference</span>
+                <h2 class="section-title">Performance Marketing vs Traditional Agencies</h2>
+                <p class="section-sub">Discover why scaling brands choose our revenue-first models over outdated agency
+                    retainers.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left">Metric</th>
+                            <th class="wa-col"> DNT Performance Model</th>
+                            <th> Traditional Agency</th>
+                            <th> Internal Hiring</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Core Focus</td>
+                            <td class="wa-cell">Conversions, Sales & ROAS</td>
+                            <td>Clicks, Traffic & Impressions</td>
+                            <td>Task Completion & Salaries</td>
+                        </tr>
+                        <tr>
+                            <td>Billing Model</td>
+                            <td class="wa-cell">Revenue-Share / Pay-on-Result</td>
+                            <td>Flat Monthly Retainer Fee</td>
+                            <td>Fixed Monthly Salaries & Benefits</td>
+                        </tr>
+                        <tr>
+                            <td>Tracking Setup</td>
+                            <td class="wa-cell"><span class="check">✔</span> Server-side & CAPI (100% accurate)</td>
+                            <td><span class="partial">~</span> Standard browser pixel (lossy)</td>
+                            <td><span class="cross">✖</span> Depends on expertise</td>
+                        </tr>
+                        <tr>
+                            <td>Creative Testing</td>
+                            <td class="wa-cell"><span class="check">✔</span> 100 + creative weekly drops</td>
+                            <td><span class="partial">~</span> Monthly/static templates</td>
+                            <td><span class="partial">~</span> Slow, limited bandwidth</td>
+                        </tr>
+                        <tr>
+                            <td>Dashboard & Reporting</td>
+                            <td class="wa-cell"><span class="check">✔</span> 24/7 Live Real-Time Dashboard</td>
+                            <td><span class="cross">✖</span> End-of-month static PDF</td>
+                            <td><span class="partial">~</span> Manual sheets / slides</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section reveal-3d" id="how-it-works">
+        <div class="section-inner">
+            <div style="text-align: center;">
+                <span class="overline">Proven Framework</span>
+                <h2 class="section-title">The 4-Step Scaling Protocol</h2>
+                <p class="section-sub" style="margin: 0 auto 0;">From data audit to exponential campaign scaling in
+                    under 10 days.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div class="step-title">Deep Account Audit</div>
+                    <div class="step-desc">We comb through past analytics, audience settings, and find budget leakages
+                        immediately.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div class="step-title">Server-Side Tracking Setup</div>
+                    <div class="step-desc">Establish secure Meta Conversions API & GA4 tags to capture 100% of event
+                        data.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div class="step-title">Creative & Offer Engineering</div>
+                    <div class="step-desc">Produce high-converting ad copy, landing pages, and magnetic audience offers.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <div class="step-title">Scaling & Optimization</div>
+                    <div class="step-desc">Dynamically allocate budgets to winning creatives to skyrocket CPL & ROAS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section reveal-3d" id="features">
+        <div class="section-inner">
+            <div>
+                <span class="overline">Full-Funnel Mastery</span>
+                <h2 class="section-title">Core Performance Deliverables</h2>
+                <p class="section-sub">End-to-end tactical paid advertising execution designed to capture high-value
+                    clients.</p>
+            </div>
+            <div class="services-grid">
+                <div class="svc-card">
+                    <div class="svc-num">01</div>
+                    <div class="svc-icon"><i class="fab fa-google"></i></div>
+                    <div class="svc-title">Google Ads Search & PMax Campaigns</div>
+                    <div class="svc-desc">Capturing high-intent buyers the moment they search your keywords. We
+                        structure exact-match ad groups, Performance Max asset clusters, and negative keyword filters
+                        for maximum Quality Score.</div>
+                    <div class="svc-tags">
+                        <span class="svc-tag">Google Search</span>
+                        <span class="svc-tag">Performance Max</span>
+                        <span class="svc-tag">Smart Bidding</span>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-num">02</div>
+                    <div class="svc-icon"><svg viewBox="0 0 24 24"
+                            style="width:1em;height:1em;fill:currentColor;display:inline-block;vertical-align:middle;"
+                            aria-label="Meta">
+                            <path
+                                d="M15.468 7.237c-.714 0-1.42.203-2.028.59a3.882 3.882 0 0 0-1.44 1.487 3.882 3.882 0 0 0-1.44-1.488 3.99 3.99 0 0 0-2.028-.59C6.302 7.237 4.5 9.176 4.5 11.55c0 2.373 1.802 4.313 4.032 4.313.714 0 1.42-.203 2.028-.59a3.88 3.88 0 0 0 1.44-1.486 3.882 3.882 0 0 0 1.44 1.487c.608.386 1.314.589 2.028.589 2.23 0 4.032-1.94 4.032-4.313 0-2.374-1.802-4.313-4.032-4.313zm-6.936 6.84c-1.392 0-2.52-1.146-2.52-2.527 0-1.381 1.128-2.527 2.52-2.527.447 0 .888.127 1.267.368a2.428 2.428 0 0 1 .9.93c.18.33.275.698.275 1.07 0 .37-.095.738-.275 1.069a2.43 2.43 0 0 1-.9.93 2.493 2.493 0 0 1-1.267.367zm6.936 0c-.447 0-.888-.127-1.267-.367a2.43 2.43 0 0 1-.9-.93 2.404 2.404 0 0 1-.275-1.07c0-.372.095-.74.275-1.07a2.428 2.428 0 0 1 .9-.93 2.493 2.493 0 0 1 1.267-.368c1.392 0 2.52 1.146 2.52 2.527 0 1.381-1.128 2.527-2.52 2.527z" />
+                        </svg></div>
+                    <div class="svc-title">Meta Ads Advantage+ & Lookalike Funnels</div>
+                    <div class="svc-desc">Deploying Advantage+ Shopping, Dynamic Product Ads, and custom lookalike
+                        audiences across Facebook & Instagram to scale customer acquisition profitably.</div>
+                    <div class="svc-tags">
+                        <span class="svc-tag">Advantage+</span>
+                        <span class="svc-tag">DPA Catalogs</span>
+                        <span class="svc-tag">Lookalike 1-3%</span>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-num">03</div>
+                    <div class="svc-icon"><i class="fas fa-code"></i></div>
+                    <div class="svc-title">Meta CAPI & Google Enhanced Conversions</div>
+                    <div class="svc-desc">Server-side implementation of Meta Conversions API and Google Enhanced
+                        Conversions to bypass iOS 14.5+ privacy blocks and recover 30-40% of lost attribution data.
+                    </div>
+                    <div class="svc-tags">
+                        <span class="svc-tag">Conversions API</span>
+                        <span class="svc-tag">Enhanced Conv.</span>
+                        <span class="svc-tag">GTM Server</span>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-num">04</div>
+                    <div class="svc-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="svc-title">Dynamic Retargeting & Remarketing</div>
+                    <div class="svc-desc">Building multi-touch sequences on Google Display Network and Meta Custom
+                        Audiences to re-engage cart abandoners, page visitors, and warm leads with personalized
+                        creatives.</div>
+                    <div class="svc-tags">
+                        <span class="svc-tag">GDN Remarketing</span>
+                        <span class="svc-tag">Meta Custom Aud.</span>
+                        <span class="svc-tag">Sequential Ads</span>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-num">05</div>
+                    <div class="svc-icon"><i class="fab fa-youtube"></i></div>
+                    <div class="svc-title">YouTube Ads & Video Action Campaigns</div>
+                    <div class="svc-desc">Driving leads and sales with TrueView In-Stream, Video Action Campaigns, and
+                        YouTube Shorts ads connected to your Google Ads conversion tracking.</div>
+                    <div class="svc-tags">
+                        <span class="svc-tag">TrueView</span>
+                        <span class="svc-tag">Video Action</span>
+                        <span class="svc-tag">Shorts Ads</span>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-num">06</div>
+                    <div class="svc-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="svc-title">Live Reporting & ROAS Dashboards</div>
+                    <div class="svc-desc">Unified Looker Studio dashboards connecting Google Ads, Meta Ads Manager, and
+                        GA4 data into one real-time view of CAC, LTV, blended ROAS, and profit margins.</div>
+                    <div class="svc-tags">
+                        <span class="svc-tag">Looker Studio</span>
+                        <span class="svc-tag">GA4 Integration</span>
+                        <span class="svc-tag">Blended ROAS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews-section reveal-3d">
+        <div class="section-inner">
+            <div>
+                <span class="overline">Verified Success</span>
+                <h2 class="section-title">Case Studies & Scaling Wins</h2>
+                <p class="section-sub">Actual data-driven revenue growth and outcomes from brands we manage.</p>
+            </div>
+        </div>
+
+        <div class="review-carousel">
+            <div class="review-track">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <p class="review-text">"Before DNT, our Google ads were hemorrhaging budget with basic clicks. DNT
+                        set up clean server tracking and landing pages, exploding our CPL efficiency and boosting
+                        conversions by 280%."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h5>Amit M.</h5>
+                            <p>Founder, SaaS Platform</p>
+                        </div>
+                    </div>
+                    <div class="review-metric">280% Conversion Increase</div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <p class="review-text">"Our Meta ROAS was stuck at 1.8x. Under DNT's performance scaling model, we
+                        launched targeted retargeting sequences that drove our average ROAS up to 5.4x in 45 days."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h5>Shalini K.</h5>
+                            <p>Marketing Director, D2C Brand</p>
+                        </div>
+                    </div>
+                    <div class="review-metric">5.4x Account ROAS</div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <p class="review-text">"As a B2B real estate firm, finding clean, high-intent leads was tough. DNT
+                        designed specialized search ad groupings that reduced our overall CAC by 35% in just two
+                        months."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">RN</div>
+                        <div class="author-info">
+                            <h5>Rohan N.</h5>
+                            <p>Managing Director, Real Estate Group</p>
+                        </div>
+                    </div>
+                    <div class="review-metric">-35% CPL reduction</div>
+                </div>
+
+                <!-- Duplicate for infinite loop -->
+                <div class="review-card">
+                    <p class="review-text">"Before DNT, our Google ads were hemorrhaging budget with basic clicks. DNT
+                        set up clean server tracking and landing pages, exploding our CPL efficiency and boosting
+                        conversions by 280%."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h5>Amit M.</h5>
+                            <p>Founder, SaaS Platform</p>
+                        </div>
+                    </div>
+                    <div class="review-metric">280% Conversion Increase</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section reveal-3d" style="border-top: 1px solid rgba(79, 70, 229, 0.1);">
+        <div class="ambient-glow glow-1"></div>
+        <div class="cta-inner">
+            <div class="cta-bubble">
+                <i class="fas fa-rocket"></i> Trusted by 100+ High-Growth Enterprises
+            </div>
+            <h2 class="cta-title">Start Your Scaling Journey Today</h2>
+            <p class="cta-sub">Claim your free 30-minute growth marketing audit. We will dissect your current ad setup
+                and identify 3 immediate scaling channels.</p>
+            <div class="cta-btns">
+                <a href="../../contact.html" class="btn-cta-primary">Claim My Growth Plan →</a>
+                <a href="#features" class="btn-cta-secondary">View Core Pillars</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo-icon" style="margin-bottom: 0.4rem;"><img src="../../assets/logo.svg"
+                            alt="DNT Logo"></div>
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.2rem;color:var(--text-primary)">
+                        Digital Next</div>
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-weight:500;font-size:0.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem">
+                        Consultancy Pvt. Ltd.</div>
+                    <p class="footer-desc">India's leading platform for Company Registration, GST Filing, ITR, ROC
+                        Compliance,
+                        Trademark, MSME, ISO Certification, Virtual CFO Services, AI Automation & Digital Marketing.
+                        Where
+                        Compliance Meets Digital Excellence.</p>
+                    <a href="tel:+918802559782" class="footer-contact-item" style="margin-bottom: 0.5rem;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 8.81 19.79 19.79 0 011.61 2.18 2 2 0 013.6 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.18 6.18l.95-.95a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                        +91 88025 59782
+                    </a>
+                    <a href="mailto:info@digitalnextworld.com" class="footer-contact-item"
+                        style="margin-bottom: 0.5rem;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        info@digitalnextworld.com
+                    </a>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Padma tower-1,Rajendra place New Delhi
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title gold">Compliance Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../services/company-registration/pvt-ltd.html">Private Limited Company
+                                Registration</a></li>
+                        <li><a href="../../services/compliances/gst-registration.html">GST Registration & Filing
+                                Online</a></li>
+                        <li><a href="../../services/itr-filing.html">Income Tax Return Filing</a></li>
+                        <li><a href="../../services/compliances/tds-filing.html">TDS/TCS Returns & Payroll</a></li>
+                        <li><a href="../../services/compliances/company-annual-filing.html">ROC Compliance & MCA
+                                Filings</a></li>
+                        <li><a href="../../services/ipr/trademark-registration.html">Trademark Registration Online</a>
+                        </li>
+                        <li><a href="../../services/iso/iso-9001.html">ISO Certification Services</a></li>
+                        <li><a href="../../services/company-registration/msme.html">MSME Registration</a></li>
+                        <li><a href="../../services/compliances/compliance-advisory.html">Virtual CFO Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title blue">Digital & IT Services</h4>
+                    <ul class="footer-links blue">
+                        <li><a href="../../services/Business_Growth/website-development.html">Website Development</a>
+                        </li>
+                        <li><a href="../../services/Business_Growth/seo-services.html">SEO & Digital Marketing
+                                Strategy</a></li>
+                        <li><a href="../../services/AI_Solutions/ai-integration-workflow.html">AI Workflow
+                                Automation</a></li>
+                        <li><a href="../../services/Business_Growth/google-ads.html">Google/Meta Ads Management</a></li>
+                        <li><a href="../../services/Business_Growth/social-media-marketing.html">Social Media
+                                Marketing</a></li>
+                        <li><a href="../../services/Business_Growth/content-marketing.html">Content Marketing</a></li>
+                        <li><a href="../../services/AI_Solutions/ai-automation-services.html">AI Automation Services</a>
+                        </li>
+                        <li><a href="../../services/AI_Solutions/ai-compliance-dashboard.html">AI Compliance
+                                Dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title green">Company</h4>
+                    <ul class="footer-links green">
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../packages.html">Packages & Company Registration Fees</a></li>
+                        <li><a href="../../blog.html">Blog - Business Tips & Guides</a></li>
+                        <li><a href="../../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 Digital Next Consultancy Pvt. Ltd. All Rights Reserved. | <a
+                        href="../../privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> |
+                    <a href="../../terms.html" style="color:inherit;text-decoration:underline">Terms of Service</a>
+                </p>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn"
+                        aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn"
+                        aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn"
+                        aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn"
+                        aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0D1B3E" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a id="whatsapp-btn"
+        href="https://wa.me/918802559782?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20Performance%20Marketing%20and%20Paid%20Advertising%20Services."
+        target="_blank" rel="noopener" aria-label="Chat on WhatsApp for Performance Marketing">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script src="../../js/lamp.js"></script>
+    <script src="../../js/script.js"></script>
+    <script>
+        // 1. Intersection Observer Scroll Reveal Trigger
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal-3d').forEach(el => revealObserver.observe(el));
+
+        // 2. Interactive Calculator Logic
+        const spendSlider = document.getElementById('spendSlider');
+        const roasSlider = document.getElementById('roasSlider');
+        const spendVal = document.getElementById('spendVal');
+        const roasVal = document.getElementById('roasVal');
+        const outRevenue = document.getElementById('outRevenue');
+        const outProfit = document.getElementById('outProfit');
+        const outSavings = document.getElementById('outSavings');
+
+        function formatCurrency(val) {
+            return '$' + val.toLocaleString('en-US');
+        }
+
+        function updateCalc() {
+            if (!spendSlider || !roasSlider) return;
+            const spend = parseInt(spendSlider.value);
+            const roas = parseFloat(roasSlider.value);
+
+            const revenue = Math.round(spend * roas);
+            const profit = Math.max(0, Math.round(revenue - spend));
+            const savings = Math.round(spend * 0.18); // Simulated average DNT ad spend leakage savings
+
+            spendVal.textContent = formatCurrency(spend);
+            roasVal.textContent = roas.toFixed(1) + 'x';
+
+            animateNumber(outRevenue, revenue);
+            animateNumber(outProfit, profit);
+            animateNumber(outSavings, savings);
+        }
+
+        function animateNumber(element, target) {
+            const current = parseInt(element.textContent.replace(/[^0-9]/g, '')) || 0;
+            const duration = 350; // Transition duration in milliseconds
+            const startTime = performance.now();
+
+            function step(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out quad formula
+                const ease = progress * (2 - progress);
+                const value = Math.round(current + (target - current) * ease);
+                element.textContent = formatCurrency(value);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        if (spendSlider && roasSlider) {
+            spendSlider.addEventListener('input', updateCalc);
+            roasSlider.addEventListener('input', updateCalc);
+            updateCalc();
+        }
+
+        // 3. Live Dashboard Feed & Campaign Metric Micro-Pulsing
+        const streamContainer = document.getElementById('streamContainer');
+        const metaRoas = document.getElementById('metaRoas');
+        const googleConv = document.getElementById('googleConv');
+        const alerts = [
+            { icon: 'fab fa-meta', name: 'Meta Advantage+ purchase', val: '+6.1x ROAS', color: '#1877F2' },
+            { icon: 'fab fa-google', name: 'Google Search conversion', val: 'CPL $3.80', color: '#EA4335' },
+            { icon: 'fab fa-instagram', name: 'IG Reels checkout', val: '+8.2x ROAS', color: '#E1306C' },
+            { icon: 'fab fa-youtube', name: 'YouTube Video Action lead', val: 'CPA $9.40', color: '#FF0000' },
+            { icon: 'fab fa-google', name: 'PMax asset cluster sale', val: '$720 value', color: '#34A853' },
+            { icon: 'fab fa-meta', name: 'DPA catalog purchase', val: '+5.8x ROAS', color: '#1877F2' }
+        ];
+
+        let alertIndex = 0;
+        function addAlert() {
+            if (!streamContainer) return;
+            const a = alerts[alertIndex];
+            const item = document.createElement('div');
+            item.className = 'stream-item';
+            item.innerHTML = `<i class="${a.icon} stream-icon" style="color:${a.color};"></i><div class="stream-details"><div class="stream-name">${a.name}</div></div><span class="stream-val">${a.val}</span>`;
+            streamContainer.prepend(item);
+            while (streamContainer.children.length > 3) streamContainer.removeChild(streamContainer.lastChild);
+
+            // Micro-pulse campaign metrics
+            if (metaRoas) {
+                const r = 6.2 + (Math.random() * 0.4 - 0.2);
+                metaRoas.textContent = r.toFixed(1) + 'x';
+            }
+            if (googleConv) {
+                const c = 142 + Math.floor(Math.random() * 8 - 2);
+                googleConv.textContent = c;
+            }
+            alertIndex = (alertIndex + 1) % alerts.length;
+        }
+
+        setInterval(addAlert, 2800);
+        addAlert();
+    </script>
+</body>
+
+</html>
