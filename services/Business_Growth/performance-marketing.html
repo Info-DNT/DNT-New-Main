@@ -66,6 +66,8 @@
             opacity: 0.12;
             z-index: 0;
             pointer-events: none;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
         }
 
         .glow-1 {
@@ -88,11 +90,11 @@
 
         @keyframes floatBlob {
             0% {
-                transform: translate(0, 0) scale(1) rotate(0deg);
+                transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
             }
 
             100% {
-                transform: translate(60px, 40px) scale(1.1) rotate(45deg);
+                transform: translate3d(60px, 40px, 0) scale(1.1) rotate(45deg);
             }
         }
 
@@ -242,9 +244,11 @@
             font-family: var(--font-head);
             font-weight: 800;
             font-size: 0.82rem;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            background: #FFFFFF;
+            box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
             pointer-events: none;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
         }
 
         .floating-badge i {
@@ -252,8 +256,8 @@
         }
 
         .meta-badge {
-            background: rgba(24, 119, 242, 0.12);
-            border: 1px solid rgba(24, 119, 242, 0.25);
+            background: #FFFFFF;
+            border: 1px solid rgba(24, 119, 242, 0.15);
             color: #1877F2;
             top: 18%;
             right: -28px;
@@ -261,8 +265,8 @@
         }
 
         .google-badge {
-            background: rgba(234, 67, 53, 0.1);
-            border: 1px solid rgba(234, 67, 53, 0.2);
+            background: #FFFFFF;
+            border: 1px solid rgba(234, 67, 53, 0.15);
             color: #EA4335;
             bottom: 22%;
             right: -18px;
@@ -270,7 +274,7 @@
         }
 
         .yt-badge {
-            background: rgba(255, 0, 0, 0.08);
+            background: #FFFFFF;
             border: 1px solid rgba(255, 0, 0, 0.15);
             color: #FF0000;
             top: 8%;
@@ -282,11 +286,11 @@
 
             0%,
             100% {
-                transform: translateY(0) rotate(0deg);
+                transform: translate3d(0, 0, 0) rotate(0deg);
             }
 
             50% {
-                transform: translateY(-18px) rotate(3deg);
+                transform: translate3d(0, -18px, 0) rotate(3deg);
             }
         }
 
@@ -294,11 +298,11 @@
 
             0%,
             100% {
-                transform: translateY(0) rotate(0deg);
+                transform: translate3d(0, 0, 0) rotate(0deg);
             }
 
             50% {
-                transform: translateY(-14px) rotate(-2deg);
+                transform: translate3d(0, -14px, 0) rotate(-2deg);
             }
         }
 
@@ -614,6 +618,7 @@
             display: inline-flex;
             gap: 3.5rem;
             animation: ticker 25s linear infinite;
+            will-change: transform;
         }
 
         .ticker-item,
@@ -639,11 +644,11 @@
 
         @keyframes ticker {
             from {
-                transform: translateX(0);
+                transform: translate3d(0, 0, 0);
             }
 
             to {
-                transform: translateX(-50%);
+                transform: translate3d(-50%, 0, 0);
             }
         }
 
@@ -1436,6 +1441,61 @@
                 font-size: 1.6rem;
             }
         }
+
+        /* --- Premium Lead Form in CTA --- */
+        .cta-container {
+            max-width: 550px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding: 0 24px;
+        }
+
+        .itr-lead-card {
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(79, 70, 229, 0.12);
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .itr-lead-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--pm-indigo), var(--pm-blue));
+        }
+
+        .itr-form-group {
+            margin-bottom: 1.15rem;
+            width: 100%;
+        }
+
+        .itr-form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--pm-light);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            color: var(--pm-dark);
+        }
+
+        .itr-form-input::placeholder {
+            color: #94A3B8;
+        }
+
+        .itr-form-input:focus {
+            outline: none;
+            border-color: var(--pm-indigo);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
     </style>
 </head>
 
@@ -1619,6 +1679,7 @@
                                 <li><a href="website-development.html">Website Development</a></li>
                                 <li><a href="seo-services.html">SEO Services &amp; Strategy</a></li>
                                 <li><a href="google-ads.html">Google Ads &amp; Paid Advertising</a></li>
+                                <li><a href="performance-marketing.html">Performance Marketing</a></li>
                                 <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
                                 <li><a href="content-marketing.html">Content Marketing</a></li>
                                 <li><a href="../whatsappMarketing.html">WhatsApp Marketing</a></li>
@@ -1753,6 +1814,7 @@
                     <a href="website-development.html" class="mobile-sub-link">Website Development</a>
                     <a href="seo-services.html" class="mobile-sub-link">SEO Services</a>
                     <a href="google-ads.html" class="mobile-sub-link">Google Ads</a>
+                    <a href="performance-marketing.html" class="mobile-sub-link">Performance Marketing</a>
                     <a href="social-media-marketing.html" class="mobile-sub-link">Social Media Marketing</a>
                     <a href="content-marketing.html" class="mobile-sub-link">Content Marketing</a>
                     <a href="../whatsappMarketing.html" class="mobile-sub-link">WhatsApp Marketing</a>
@@ -2094,10 +2156,10 @@
     <!-- SERVICES -->
     <section class="services-section reveal-3d" id="features">
         <div class="section-inner">
-            <div>
+            <div style="text-align: center;">
                 <span class="overline">Full-Funnel Mastery</span>
                 <h2 class="section-title">Core Performance Deliverables</h2>
-                <p class="section-sub">End-to-end tactical paid advertising execution designed to capture high-value
+                <p class="section-sub" style="margin: 0 auto 3.5rem;">End-to-end tactical paid advertising execution designed to capture high-value
                     clients.</p>
             </div>
             <div class="services-grid">
@@ -2188,10 +2250,10 @@
     <!-- REVIEWS SECTION -->
     <section class="reviews-section reveal-3d">
         <div class="section-inner">
-            <div>
+            <div style="text-align: center;">
                 <span class="overline">Verified Success</span>
                 <h2 class="section-title">Case Studies & Scaling Wins</h2>
-                <p class="section-sub">Actual data-driven revenue growth and outcomes from brands we manage.</p>
+                <p class="section-sub" style="margin: 0 auto 3.5rem;">Actual data-driven revenue growth and outcomes from brands we manage.</p>
             </div>
         </div>
 
@@ -2262,16 +2324,36 @@
     <!-- FINAL CTA -->
     <section class="cta-section reveal-3d" style="border-top: 1px solid rgba(79, 70, 229, 0.1);">
         <div class="ambient-glow glow-1"></div>
-        <div class="cta-inner">
-            <div class="cta-bubble">
-                <i class="fas fa-rocket"></i> Trusted by 100+ High-Growth Enterprises
-            </div>
-            <h2 class="cta-title">Start Your Scaling Journey Today</h2>
-            <p class="cta-sub">Claim your free 30-minute growth marketing audit. We will dissect your current ad setup
-                and identify 3 immediate scaling channels.</p>
-            <div class="cta-btns">
-                <a href="../../contact.html" class="btn-cta-primary">Claim My Growth Plan →</a>
-                <a href="#features" class="btn-cta-secondary">View Core Pillars</a>
+        <div class="cta-container">
+            <div class="itr-lead-card">
+                <h3 style="font-family: var(--font-head); font-size: 1.35rem; font-weight: 800; color: var(--pm-dark); margin-bottom: 0.5rem; text-align: left;">Request Free Ad Audit</h3>
+                <p style="color: #64748B; font-size: 0.85rem; margin-bottom: 1.5rem; text-align: left;">Our growth experts will analyze your accounts and prepare a custom strategy map.</p>
+                <form id="itrFinalLeadForm">
+                    <div class="itr-form-group">
+                        <input type="text" placeholder="Full Name *" class="itr-form-input" required>
+                    </div>
+                    <div class="itr-form-group">
+                        <input type="tel" placeholder="Mobile Number *" class="itr-form-input" required>
+                    </div>
+                    <div class="itr-form-group">
+                        <input type="email" placeholder="Email Address" class="itr-form-input">
+                    </div>
+                    <div class="itr-form-group" style="margin-bottom: 1.5rem;">
+                        <select class="itr-form-input" required style="color: #64748B;">
+                            <option value="" disabled selected>Primary Marketing Goal</option>
+                            <option value="Leads">Lead Generation</option>
+                            <option value="Sales">E-commerce Sales</option>
+                            <option value="Brand">Brand Awareness / Traffic</option>
+                            <option value="Other">Others</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-cta-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer; height: 54px; font-family: var(--font-head); font-weight: 700;">
+                        GET MY AUDIT NOW →
+                    </button>
+                    <p style="text-align: center; font-size: 0.75rem; color: #64748B; margin-top: 1rem;">
+                        Secure & Confidential Processing
+                    </p>
+                </form>
             </div>
         </div>
     </section>
@@ -2348,6 +2430,7 @@
                         <li><a href="../../services/AI_Solutions/ai-integration-workflow.html">AI Workflow
                                 Automation</a></li>
                         <li><a href="../../services/Business_Growth/google-ads.html">Google/Meta Ads Management</a></li>
+                        <li><a href="../../services/Business_Growth/performance-marketing.html">Performance Marketing</a></li>
                         <li><a href="../../services/Business_Growth/social-media-marketing.html">Social Media
                                 Marketing</a></li>
                         <li><a href="../../services/Business_Growth/content-marketing.html">Content Marketing</a></li>
@@ -2524,6 +2607,38 @@
 
         setInterval(addAlert, 2800);
         addAlert();
+
+        // 4. Lead Form Submission Handler
+        const leadForm = document.getElementById('itrFinalLeadForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const btn = leadForm.querySelector('button[type="submit"]');
+                
+                // Show loading state
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 6px;"></i> Processing...';
+                
+                setTimeout(function () {
+                    // Success state: replace the card content with a gorgeous thank you message
+                    const card = leadForm.closest('.itr-lead-card');
+                    if (card) {
+                        card.innerHTML = `
+                            <div style="text-align: center; padding: 2rem 1rem;">
+                                <div style="width: 60px; height: 60px; background: rgba(16, 185, 129, 0.1); color: var(--pm-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.8rem;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3 style="font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: var(--pm-dark); margin-bottom: 0.75rem; text-align: center;">Audit Request Received!</h3>
+                                <p style="color: #64748B; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; text-align: center;">Thank you for reaching out. A certified DNT marketing architect will analyze your details and contact you within 30 minutes.</p>
+                                <div style="font-size: 0.8rem; color: var(--pm-indigo); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: center;">
+                                    Priority Queue Enabled
+                                </div>
+                            </div>
+                        `;
+                    }
+                }, 1200);
+            });
+        }
     </script>
 </body>
 
