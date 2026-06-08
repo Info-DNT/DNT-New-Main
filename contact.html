@@ -1033,16 +1033,71 @@
                     aria-required="true" aria-describedby="err-service"
                     onchange="this.classList.toggle('has-value', this.value !== '')">
                     <option value=""> </option>
-                    <option value="Company Registration">Company Registration</option>
-                    <option value="GST Registration & Filing">GST Registration &amp; Filing</option>
-                    <option value="ITR Filing">ITR Filing</option>
-                    <option value="Website Development">Website Development</option>
-                    <option value="SEO Services">SEO Services</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="ERP Implementation">ERP Implementation</option>
-                    <option value="CRM Setup">CRM Setup</option>
-                    <option value="Full Compliance Package">Full Compliance Package</option>
-                    <option value="Custom Solution">Custom Solution</option>
+                    
+                    <optgroup label="Company Registration">
+                      <option value="Private Limited Company">Private Limited Company</option>
+                      <option value="One Person Company">One Person Company (OPC)</option>
+                      <option value="Limited Liability Partnership">Limited Liability Partnership (LLP)</option>
+                      <option value="Proprietorship Firm">Proprietorship Firm</option>
+                      <option value="Partnership Firm">Partnership Firm</option>
+                      <option value="Section 8 Company">Section 8 Company</option>
+                      <option value="Nidhi Company">Nidhi Company</option>
+                      <option value="Farmer Producer Organisation">Farmer Producer Organisation (FPO)</option>
+                      <option value="NGO / Trust / Society">NGO / Trust / Society</option>
+                      <option value="MSME SSI Registration">MSME / SSI Registration</option>
+                    </optgroup>
+                    
+                    <optgroup label="Compliances & Taxes">
+                      <option value="GST Registration">GST Registration</option>
+                      <option value="GST Return Filing">GST Return Filing</option>
+                      <option value="GST Annual Filing">GST Annual Filing</option>
+                      <option value="GST Notice & Advisory">GST Notice &amp; Advisory</option>
+                      <option value="Income Tax Return Filing">Income Tax Return (ITR) Filing</option>
+                      <option value="TDS Filing">TDS Filing</option>
+                      <option value="Advance Tax Filing">Advance Tax Filing</option>
+                      <option value="ROC Annual Filing">ROC Annual Filing</option>
+                      <option value="Director KYC">Director KYC</option>
+                      <option value="Monthly Bookkeeping">Monthly Bookkeeping</option>
+                      <option value="Financial Statements & Audit">Financial Statements &amp; Audit</option>
+                    </optgroup>
+                    
+                    <optgroup label="Licenses & DSC">
+                      <option value="FSSAI License">FSSAI License</option>
+                      <option value="Import Export Code">Import Export Code (IEC)</option>
+                      <option value="ESI Registration">ESI Registration</option>
+                      <option value="PF Registration">PF Registration</option>
+                      <option value="Barcode Registration">Barcode Registration</option>
+                      <option value="Digital Signature Class-3">Digital Signature (DSC) Class-3</option>
+                    </optgroup>
+                    
+                    <optgroup label="IPR & Patents">
+                      <option value="Trademark Registration">Trademark Registration</option>
+                      <option value="Trademark Objection">Trademark Objection</option>
+                      <option value="Trademark Renewal">Trademark Renewal</option>
+                      <option value="Copyright Registration">Copyright Registration</option>
+                      <option value="Patent Registration">Patent Registration</option>
+                    </optgroup>
+                    
+                    <optgroup label="Business Growth & Marketing">
+                      <option value="Website Development">Website Development</option>
+                      <option value="SEO Services & Strategy">SEO Services &amp; Strategy</option>
+                      <option value="Google Ads & Paid Advertising">Google Ads &amp; Paid Advertising</option>
+                      <option value="Performance Marketing">Performance Marketing</option>
+                      <option value="Social Media Marketing">Social Media Marketing</option>
+                      <option value="Content Marketing">Content Marketing</option>
+                      <option value="WhatsApp Marketing">WhatsApp Marketing</option>
+                    </optgroup>
+                    
+                    <optgroup label="AI Solutions">
+                      <option value="AI Automation Services">AI Automation Services</option>
+                      <option value="AI Integration & Workflow">AI Integration &amp; Workflow Automation</option>
+                      <option value="AI Compliance Dashboard">AI Compliance Dashboard</option>
+                    </optgroup>
+                    
+                    <optgroup label="Other">
+                      <option value="Full Compliance Package">Full Compliance Package</option>
+                      <option value="Custom Solution">Custom Solution</option>
+                    </optgroup>
                   </select>
                   <label class="dnt-label" for="inp-service">Service Interested In <span
                       style="color:#ef4444">*</span></label>
@@ -1587,18 +1642,24 @@
       dntSetBtnLoading('contactSubmitBtn', true);
       var form = document.getElementById('contactForm');
       if (window.dntSubmitToGoogleSheets && form) {
-        window.dntSubmitToGoogleSheets(form);
-      }
-      setTimeout(function () {
+        window.dntSubmitToGoogleSheets(form)
+          .then(function () {
+            dntSetBtnLoading('contactSubmitBtn', false, 'Get Free Consultation');
+            /* Show success screen, hide form */
+            var successScreen = document.getElementById('contactSuccessScreen');
+            if (form && successScreen) {
+              form.style.display = 'none';
+              successScreen.classList.add('visible');
+              successScreen.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          })
+          .catch(function (err) {
+            dntSetBtnLoading('contactSubmitBtn', false, 'Get Free Consultation');
+            alert("Submission failed: " + err.message + "\n\nPlease check your console for details. Ensure that your Google Apps Script is deployed with Access set to 'Anyone'.");
+          });
+      } else {
         dntSetBtnLoading('contactSubmitBtn', false, 'Get Free Consultation');
-        /* Show success screen, hide form */
-        var successScreen = document.getElementById('contactSuccessScreen');
-        if (form && successScreen) {
-          form.style.display = 'none';
-          successScreen.classList.add('visible');
-          successScreen.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      }, 1800);
+      }
     }
 
     /* === Reset form from success screen === */

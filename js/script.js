@@ -3,7 +3,7 @@
    ============================================= */
 
 // paste your deployed Google Apps Script Web App URL below
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyNuakTFbOOXnPYMDaL42gEX2anVk1ufBrNxM_wheDC1zVs3T3gVC6ceLYBHAZOqT7U/exec'; 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4RUakjhJiU4_kGfOoNHKfnwpidS78WplE29cI7tRPVpwekOK7iBaovMG5ycWwBFaY/exec'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ---- Navbar Scroll Effect ---- */
@@ -689,6 +689,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Clear custom phone validity messages on input event to prevent lock state
+document.addEventListener('input', function (event) {
+  const target = event.target;
+  if (target && target.tagName.toLowerCase() === 'input' && target.getAttribute('type') === 'tel') {
+    target.setCustomValidity('');
+  }
+});
+
 /* ==============================================
    GOOGLE SHEETS INTEGRATION
    ============================================== */
@@ -712,10 +720,21 @@ function dntExtractFormData(form) {
 
   const inputs = form.querySelectorAll('input, select, textarea');
 
+  // Helper helper to get input/select/textarea value
+  function getInputValue(el) {
+    if (el.tagName.toLowerCase() === 'select') {
+      const opt = el.options[el.selectedIndex];
+      // If the selected option is the default placeholder (empty value), return empty
+      if (!opt || opt.value === "") return "";
+      return opt.text.trim();
+    }
+    return el.value ? el.value.trim() : '';
+  }
+
   // 1. Try mapping using "name" attribute first
   inputs.forEach(input => {
     const name = input.getAttribute('name');
-    const val = input.value ? input.value.trim() : '';
+    const val = getInputValue(input);
     if (name) {
       const lowerName = name.toLowerCase();
       if (lowerName === 'name' || lowerName.includes('name')) data.name = val;
@@ -734,7 +753,7 @@ function dntExtractFormData(form) {
     const nameAttr = input.getAttribute('name');
     if (nameAttr) return; // Skip if already mapped via name attribute
 
-    const val = input.value ? input.value.trim() : '';
+    const val = getInputValue(input);
     const type = (input.getAttribute('type') || '').toLowerCase();
     const placeholder = (input.getAttribute('placeholder') || '').toLowerCase();
     const tagName = input.tagName.toLowerCase();
