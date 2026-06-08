@@ -3,7 +3,7 @@
    ============================================= */
 
 // paste your deployed Google Apps Script Web App URL below
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4RUakjhJiU4_kGfOoNHKfnwpidS78WplE29cI7tRPVpwekOK7iBaovMG5ycWwBFaY/exec'; 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyl7v0-T6Jh1pydtZ6o3K2HJG5k_5exa3_XHuhFOx18_QEpR_bmxqVs8i_pCkRItAgI/exec'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ---- Navbar Scroll Effect ---- */
