@@ -1585,10 +1585,13 @@
         return;
       }
       dntSetBtnLoading('contactSubmitBtn', true);
+      var form = document.getElementById('contactForm');
+      if (window.dntSubmitToGoogleSheets && form) {
+        window.dntSubmitToGoogleSheets(form);
+      }
       setTimeout(function () {
         dntSetBtnLoading('contactSubmitBtn', false, 'Get Free Consultation');
         /* Show success screen, hide form */
-        var form = document.getElementById('contactForm');
         var successScreen = document.getElementById('contactSuccessScreen');
         if (form && successScreen) {
           form.style.display = 'none';

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNT Admin Blog Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- 1. LOGIN CONTAINER -->
+    <div class="login-container" id="loginView">
+        <div class="login-card">
+            <div class="logo-wrap">
+                <h1 class="logo-title">Digital Next</h1>
+                <span class="logo-sub">Admin Blog Dashboard (V3 ACTIVE)</span>
+            </div>
+            
+            <div class="error-message" id="loginError">
+                <i class="fas fa-exclamation-circle"></i> Invalid credentials. Please try again.
+            </div>
+
+            <form id="loginForm" action="javascript:void(0)" method="post" onsubmit="handleLogin(event); return false;">
+                <div class="input-group">
+                    <label class="input-label">Username</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="username" class="input-field" placeholder="Enter username" required>
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Password</label>
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" class="input-field" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. DASHBOARD VIEW -->
+    <div class="dashboard-container" id="dashboardView">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../assets/logo.svg" alt="DNT Logo" class="sidebar-logo" onerror="this.src='https://digitalnextworld.com/assets/logo.svg'">
+                <div>
+                    <h2 style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:800;">Digital Next</h2>
+                    <p style="font-size:0.6rem;color:var(--gold);font-weight:700;text-transform:uppercase;">Admin Panel</p>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item active" onclick="switchTab('posts')" id="nav-posts">
+                    <i class="fas fa-file-alt"></i> All Posts
+                </li>
+                <li class="nav-item" onclick="openNewPost()" id="nav-editor">
+                    <i class="fas fa-plus-circle"></i> Create Post
+                </li>
+                <li class="nav-item nav-item-logout" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="workspace">
+            
+            <!-- A. ALL POSTS SECTION -->
+            <div id="section-posts">
+                <div class="workspace-header">
+                    <h2 class="workspace-title">Published Blog Posts</h2>
+                    <button class="btn-submit" style="width:auto;padding:10px 20px" onclick="openNewPost()">
+                        <i class="fas fa-plus"></i> New Post
+                    </button>
+                </div>
+                <div class="posts-grid" id="adminPostsList">
+                    <!-- Dynamic List Populated by JS -->
+                </div>
+            </div>
+
+            <!-- B. EDITOR SECTION -->
+            <div id="section-editor" style="display:none;">
+                <div class="workspace-header">
+                    <h2 class="workspace-title" id="editorTitle">Write New Blog Post</h2>
+                    <div style="display:flex;gap:10px">
+                        <button class="btn-action" style="background:rgba(0,0,0,0.05);" onclick="switchTab('posts')">
+                            Cancel
+                        </button>
+                        <button class="btn-submit" style="width:auto;padding:10px 25px;background:var(--blue);color:white" onclick="saveBlogPost()">
+                            <i class="fas fa-paper-plane"></i> Post / Publish
+                        </button>
+                    </div>
+                </div>
+
+                <div class="editor-form">
+                    <!-- Form Left: Title, excerpt and WYSIWYG editor -->
+                    <div class="editor-main">
+                        <div class="panel-card" style="display:flex;flex-direction:column;gap:1.25rem">
+                            <div class="input-group" style="margin-bottom:0">
+                                <label class="input-label">Blog Title</label>
+                                <input type="text" id="postTitle" class="input-field" placeholder="Enter headline/title..." style="padding-left:1rem;" oninput="updateLivePreview()">
+                            </div>
+                            <div class="input-group" style="margin-bottom:0">
+                                <label class="input-label">URL Slug / Link Path</label>
+                                <input type="text" id="postSlug" class="input-field" placeholder="auto-generated-slug-path" style="padding-left:1rem;" oninput="onSlugManualEdit()">
+                            </div>
+                            <div class="input-group" style="margin-bottom:0">
+                                <label class="input-label">Excerpt / Summary (displayed on the main blog feed list)</label>
+                                <textarea id="postExcerpt" class="textarea-field" placeholder="Enter brief summary of the article..." oninput="updateLivePreview()"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- WYSIWYG content editor -->
+                        <div class="panel-card" style="padding:1.5rem">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                                <span style="font-weight:600;font-size:0.9rem;color:var(--text-muted);">Article Content</span>
+                                <div class="tabs-header">
+                                    <button class="tab-btn active" id="tab-visual" onclick="toggleEditorMode('visual')">Visual Editor</button>
+                                    <button class="tab-btn" id="tab-html" onclick="toggleEditorMode('html')">HTML Code</button>
+                                    <button class="tab-btn" id="tab-preview" onclick="toggleEditorMode('preview')">Live Site Preview</button>
+                                </div>
+                            </div>
+
+                            <div class="editor-container">
+                                <!-- Formatting Toolbar -->
+                                <div class="editor-toolbar" id="wysiwygToolbar">
+                                    <select class="toolbar-select" id="toolbarTextStyle" title="Text Style" onchange="execCmd('formatBlock', this.value); this.value=''">
+                                        <option value="" disabled selected hidden>Normal</option>
+                                        <option value="<p>">Normal (Paragraph)</option>
+                                        <option value="<h1>">Heading 1</option>
+                                        <option value="<h2>">Heading 2</option>
+                                        <option value="<h3>">Heading 3</option>
+                                        <option value="<h4>">Heading 4</option>
+                                        <option value="<h5>">Heading 5</option>
+                                        <option value="<h6>">Heading 6</option>
+                                    </select>
+                                    <select class="toolbar-select" id="toolbarFontFamily" title="Font Family" onchange="execCmd('fontName', this.value); this.value=''">
+                                        <option value="" disabled selected hidden>Sans Serif</option>
+                                        <option value="Inter, sans-serif">Inter (Sans Serif)</option>
+                                        <option value="Outfit, sans-serif">Outfit (Heading)</option>
+                                        <option value="Georgia, serif">Georgia (Serif)</option>
+                                        <option value="Courier New, monospace">Courier (Monospace)</option>
+                                    </select>
+                                    <div style="width:1px;height:20px;background:var(--dark-border);margin:6px 4px"></div>
+                                    <button class="toolbar-btn" title="Bold" onclick="execCmd('bold')"><i class="fas fa-bold"></i></button>
+                                    <button class="toolbar-btn" title="Italic" onclick="execCmd('italic')"><i class="fas fa-italic"></i></button>
+                                    <button class="toolbar-btn" title="Underline" onclick="execCmd('underline')"><i class="fas fa-underline"></i></button>
+                                    <button class="toolbar-btn" title="Strike-through" onclick="execCmd('strikeThrough')"><i class="fas fa-strikethrough"></i></button>
+                                    <div style="width:1px;height:20px;background:var(--dark-border);margin:6px 4px"></div>
+                                    <button class="toolbar-btn" title="Quote Block" onclick="execCmd('formatBlock', '<blockquote>')"><i class="fas fa-quote-left"></i></button>
+                                    <button class="toolbar-btn" title="Bullet List" onclick="execCmd('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
+                                    <button class="toolbar-btn" title="Numbered List" onclick="execCmd('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
+                                    <div style="width:1px;height:20px;background:var(--dark-border);margin:6px 4px"></div>
+                                    <button class="toolbar-btn" title="Insert Link" onclick="insertHyperlink()"><i class="fas fa-link"></i></button>
+                                    <button class="toolbar-btn" title="Insert Image Link" onclick="insertImageLink()"><i class="fas fa-image"></i></button>
+                                    <button class="toolbar-btn" title="Clear Formatting" onclick="execCmd('removeFormat')"><i class="fas fa-eraser"></i></button>
+                                </div>
+
+                                <!-- Text editable board -->
+                                <div class="editor-body" id="postBody" contenteditable="true" oninput="updateLivePreview()">
+                                    <p>Start writing your blog content here...</p>
+                                </div>
+                                
+                                <!-- Code Editor Textarea -->
+                                <textarea class="code-textarea" id="postBodyHTML" oninput="syncVisualFromHTML()"></textarea>
+
+                                <!-- Live Site Preview container -->
+                                <div class="preview-container" id="sitePreview">
+                                    <span class="preview-category" id="prevCategory">Compliance</span>
+                                    <h1 class="preview-title" id="prevTitle">GST Compliance 2026</h1>
+                                    <div class="preview-meta">By <strong id="prevAuthor">DNT Editorial</strong> • <span id="prevDate">Today</span></div>
+                                    <img src="" class="preview-image" id="prevImage" alt="Article Cover">
+                                    <div class="preview-content" id="prevContent"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Right: metadata & image picker -->
+                    <div class="editor-sidebar">
+                        <div class="panel-card" style="display:flex;flex-direction:column;gap:1.25rem">
+                            <span class="panel-title" style="margin-bottom:0">Post Settings</span>
+                            
+                            <div class="input-group" style="margin-bottom:0">
+                                <label class="input-label">Category</label>
+                                <select id="postCategory" class="select-field" onchange="updateLivePreview()">
+                                    <option value="Compliance">Compliance</option>
+                                    <option value="Digital Growth">Digital Growth</option>
+                                    <option value="Technology">Technology</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="input-group" style="margin-bottom:0">
+                                    <label class="input-label">Author Name</label>
+                                    <input type="text" id="postAuthor" class="input-field" value="DNT Editorial" style="padding-left:1rem;" oninput="updateLivePreview()">
+                                </div>
+                                <div class="input-group" style="margin-bottom:0">
+                                    <label class="input-label">Publish Date</label>
+                                    <input type="text" id="postDate" class="input-field" style="padding-left:1rem;" oninput="updateLivePreview()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Uploader Panel -->
+                        <div class="panel-card">
+                            <span class="panel-title" style="margin-bottom:0">Cover Image</span>
+                            
+                            <div class="input-group" style="margin-top:1rem; margin-bottom:0">
+                                <label class="input-label">Image URL</label>
+                                <input type="text" id="postImageUrl" class="input-field" placeholder="Enter image URL..." style="padding-left:1rem;" oninput="updateLivePreview()">
+                            </div>
+
+                            <div class="file-upload-wrap" onclick="triggerFileInput()">
+                                <i class="fas fa-cloud-upload-alt" style="font-size:1.8rem;color:var(--gold);"></i>
+                                <div class="file-upload-text">Upload Local Cover Image</div>
+                                <div class="file-upload-text" style="font-size:0.65rem;">Converts to static Base64 data</div>
+                                <input type="file" id="localFileInput" style="display:none;" accept="image/*" onchange="handleLocalImageUpload(event)">
+                            </div>
+
+                            <div style="margin-top:1.25rem;">
+                                <label class="input-label">Quick Templates</label>
+                                <div class="image-preset-grid">
+                                    <div class="preset-thumb" style="background-image:url('https://images.unsplash.com/photo-1772588627354-ca3617853217?crop=entropy&cs=srgb&fm=jpg&q=85&w=400')" onclick="setPresetImage('https://images.unsplash.com/photo-1772588627354-ca3617853217?crop=entropy&cs=srgb&fm=jpg&q=85&w=800')"></div>
+                                    <div class="preset-thumb" style="background-image:url('https://images.pexels.com/photos/7580750/pexels-photo-7580750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=600')" onclick="setPresetImage('https://images.pexels.com/photos/7580750/pexels-photo-7580750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=600')"></div>
+                                    <div class="preset-thumb" style="background-image:url('https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=srgb&fm=jpg&q=85&w=400')" onclick="setPresetImage('https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=srgb&fm=jpg&q=85&w=400')"></div>
+                                    <div class="preset-thumb" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&q=85&w=400')" onclick="setPresetImage('https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&q=85&w=400')"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEO Settings Panel -->
+                        <div class="panel-card">
+                            <span class="panel-title" style="margin-bottom:0">SEO Metadata</span>
+                            
+                            <div class="input-group" style="margin-top:1rem; margin-bottom:0">
+                                <label class="input-label">SEO Title (Meta Title)</label>
+                                <input type="text" id="postSeoTitle" class="input-field" placeholder="Enter meta title..." style="padding-left:1rem;" oninput="onSeoTitleManualEdit()">
+                            </div>
+
+                            <div class="input-group" style="margin-top:1.25rem; margin-bottom:0">
+                                <label class="input-label">SEO Description (Meta Description)</label>
+                                <textarea id="postSeoDesc" class="textarea-field" placeholder="Enter meta description..." style="height:100px;" oninput="onSeoDescManualEdit()"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Static HTML exporter card -->
+                        <div class="panel-card" style="border-color:var(--gold-glow)">
+                            <span class="panel-title" style="margin-bottom:0;color:var(--gold);">Production Deployment</span>
+                            <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;margin-top:0.75rem;">
+                                Download a fully functional static HTML page matching the website design files. Drag this file directly into the <code>services/Business_Growth/</code> or workspace root directory!
+                            </p>
+                            <button class="btn-action" style="width:100%;margin-top:1.25rem;border-color:var(--gold);color:var(--gold);background:var(--gold-glow);" onclick="downloadStaticHTML()">
+                                <i class="fas fa-download"></i> Download Standalone HTML
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Status toast alert pop -->
+    <div class="status-toast" id="statusToast">
+        <i class="fas fa-check-circle"></i> <span id="toastMessage">Success!</span>
+    </div>
+
+    <!-- Blog Core Script -->
+    <script src="../js/blog-system.js"></script>
+    <script src="js/admin-dashboard.js" defer></script>
+</body>
+</html>

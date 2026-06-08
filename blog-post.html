@@ -249,19 +249,15 @@
 <article class="section" style="padding-top:8rem">
   <div class="container" style="max-width:900px">
     <div class="reveal">
-      <a href="blog.html" style="color:var(--blue);font-weight:600;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.5rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Blog</a>
-      <span class="overline">Compliance</span>
-      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem);margin:1rem 0;line-height:1.2">GST Compliance 2026: Everything Indian SMEs Need to Know</h1>
+      <h1 class="section-title" id="post-title" style="font-size:clamp(2rem,5vw,3.5rem);margin:1rem 0;line-height:1.2">GST Compliance 2026: Everything Indian SMEs Need to Know</h1>
       <div style="display:flex;align-items:center;gap:1.5rem;color:var(--text-muted);font-size:.9rem;margin-bottom:2.5rem">
-        <span>By <strong>DNT Editorial</strong></span>
+        <span id="post-author">By <strong>DNT Editorial</strong></span>
         <span>•</span>
-        <span>Jan 15, 2026</span>
-        <span>•</span>
-        <span>8 min read</span>
+        <span id="post-date">Jan 15, 2026</span>
       </div>
-      <img src="https://images.unsplash.com/photo-1772588627354-ca3617853217?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200" alt="GST Compliance" style="width:100%;border-radius:20px;margin-bottom:3rem;box-shadow:0 20px 50px rgba(0,0,0,.1)" />
+      <img id="post-image" src="https://images.unsplash.com/photo-1772588627354-ca3617853217?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200" alt="GST Compliance" style="width:100%;border-radius:20px;margin-bottom:3rem;box-shadow:0 20px 50px rgba(0,0,0,.1)" />
       
-      <div class="blog-content reveal reveal-delay-1 card-text" style="line-height:1.8;font-size:1.1rem">
+      <div class="blog-content reveal reveal-delay-1 card-text" id="post-content" style="line-height:1.8;font-size:1.1rem">
         <p style="margin-bottom:1.5rem">As we enter the 2026 financial year, the Indian GST landscape continues to evolve with a strong focus on automation, transparency, and real-time reconciliation. For Small and Medium Enterprises (SMEs), staying compliant is no longer just about filing returns—it's about integrating your business processes with the GST ecosystem.</p>
         
         <h2 class="card-title" style="margin:2.5rem 0 1rem;font-size:1.8rem">Key Changes in GSTR-1 and GSTR-3B</h2>
@@ -278,6 +274,32 @@
         <h2 class="card-title" style="margin:2.5rem 0 1rem;font-size:1.8rem">Conclusion</h2>
         <p style="margin-bottom:1.5rem">Compliance in 2026 is digital-first. Business owners who adopt technology and automated reconciliation will not only save time but also protect their business from heavy penalties and interest.</p>
       </div>
+
+      <!-- COMMENTS SECTION -->
+      <div class="comments-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--dark-border);">
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">Comments</h3>
+        
+        <div id="comments-list" style="margin-bottom: 3rem;">
+          <!-- Rendered dynamically -->
+        </div>
+        
+        <div class="comment-form-container" style="background: #F8FAFC; padding: 2rem; border-radius: 16px; border: 1px solid var(--dark-border);">
+          <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Leave a Reply</h4>
+          <form id="comment-form" onsubmit="event.preventDefault(); submitComment();">
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">Your Name *</label>
+              <input type="text" id="comment-author" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--dark-border); border-radius: 10px; background: #FFF; color: var(--text-primary); font-size: 0.95rem; outline: none;" />
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">Comment *</label>
+              <textarea id="comment-text" required rows="4" style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--dark-border); border-radius: 10px; background: #FFF; color: var(--text-primary); font-size: 0.95rem; outline: none; resize: vertical; font-family: inherit;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="padding: 0.8rem 2rem; font-family: 'Outfit', sans-serif; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; background: var(--gold); color: #FFF;">Post Comment</button>
+          </form>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </article>
@@ -415,7 +437,62 @@
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
-<script src="js/script.js"></script>
+  <script src="js/blog-system.js"></script>
+  <script src="js/comments.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Custom dynamic post loader for blog-post.html
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('id');
+
+      if (!postId) return; // Load default static content
+
+      const post = window.blogSystem.getPostById(postId);
+      if (!post) return; // Fallback to static content if post ID is invalid
+
+      // Update elements
+      if (post.seoTitle) {
+        document.title = post.seoTitle;
+      } else {
+        document.title = `${post.title} | DNT Blog`;
+      }
+      
+      if (post.seoDesc) {
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+          metaDesc = document.createElement('meta');
+          metaDesc.name = "description";
+          document.head.appendChild(metaDesc);
+        }
+        metaDesc.content = post.seoDesc;
+      }
+      
+      const titleEl = document.getElementById('post-title');
+      const categoryEl = document.getElementById('post-category');
+      const dateEl = document.getElementById('post-date');
+      const authorEl = document.getElementById('post-author');
+      const imageEl = document.getElementById('post-image');
+      const contentEl = document.getElementById('post-content');
+
+      if (titleEl) titleEl.textContent = post.title;
+      if (categoryEl) categoryEl.textContent = post.category;
+      if (dateEl) dateEl.textContent = post.date;
+      if (authorEl) authorEl.innerHTML = `By <strong>${post.author}</strong>`;
+      
+      if (imageEl) {
+        if (post.image) {
+          imageEl.src = post.image;
+          imageEl.alt = post.title;
+          imageEl.style.display = 'block';
+        } else {
+          imageEl.style.display = 'none';
+        }
+      }
+
+      if (contentEl) contentEl.innerHTML = post.content;
+    });
+  </script>
 </body>
 </html>
 

@@ -2,10 +2,14 @@
    DNT COMPLIANCE — MAIN SCRIPT
    ============================================= */
 
+// paste your deployed Google Apps Script Web App URL below
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyNuakTFbOOXnPYMDaL42gEX2anVk1ufBrNxM_wheDC1zVs3T3gVC6ceLYBHAZOqT7U/exec'; 
+
 document.addEventListener('DOMContentLoaded', () => {
   /* ---- Navbar Scroll Effect ---- */
   const nav = document.getElementById('main-nav');
   const onScroll = () => {
+    if (!nav) return;
     if (window.scrollY > 50 || nav.classList.contains('always-scrolled')) {
       nav.classList.add('scrolled');
     } else {
@@ -683,4 +687,200 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+});
+
+/* ==============================================
+   GOOGLE SHEETS INTEGRATION
+   ============================================== */
+
+/**
+ * Extracts form data dynamically, matching name attributes or using positional fallbacks
+ * if the form inputs do not have name attributes (standard in many DNT service page templates).
+ */
+function dntExtractFormData(form) {
+  const data = {
+    formId: form.id || 'unknown_form',
+    pageUrl: window.location.href,
+    pageTitle: document.title,
+    timestamp: new Date().toISOString(),
+    name: '',
+    phone: '',
+    email: '',
+    service: '',
+    message: ''
+  };
+
+  const inputs = form.querySelectorAll('input, select, textarea');
+
+  // 1. Try mapping using "name" attribute first
+  inputs.forEach(input => {
+    const name = input.getAttribute('name');
+    const val = input.value ? input.value.trim() : '';
+    if (name) {
+      const lowerName = name.toLowerCase();
+      if (lowerName === 'name' || lowerName.includes('name')) data.name = val;
+      else if (lowerName === 'phone' || lowerName === 'tel' || lowerName.includes('phone') || lowerName.includes('mobile') || lowerName.includes('contact')) data.phone = val;
+      else if (lowerName === 'email' || lowerName.includes('email')) data.email = val;
+      else if (lowerName === 'service' || lowerName === 'subject' || lowerName === 'type' || lowerName.includes('service') || lowerName.includes('profession')) data.service = val;
+      else if (lowerName === 'message' || lowerName.includes('message') || lowerName === 'desc') data.message = val;
+      else {
+        data[name] = val; // Store custom fields
+      }
+    }
+  });
+
+  // 2. Fallback: Identify fields by type, placeholder, or tag name if name is missing
+  inputs.forEach(input => {
+    const nameAttr = input.getAttribute('name');
+    if (nameAttr) return; // Skip if already mapped via name attribute
+
+    const val = input.value ? input.value.trim() : '';
+    const type = (input.getAttribute('type') || '').toLowerCase();
+    const placeholder = (input.getAttribute('placeholder') || '').toLowerCase();
+    const tagName = input.tagName.toLowerCase();
+
+    if (tagName === 'textarea') {
+      if (!data.message) data.message = val;
+    } else if (tagName === 'select') {
+      if (!data.service) data.service = val;
+    } else if (type === 'tel' || placeholder.includes('phone') || placeholder.includes('mobile') || placeholder.includes('contact') || placeholder.includes('number')) {
+      if (!data.phone) data.phone = val;
+    } else if (type === 'email' || placeholder.includes('email')) {
+      if (!data.email) data.email = val;
+    } else if (type === 'text' || placeholder.includes('name') || placeholder.includes('brand')) {
+      if (!data.name) data.name = val;
+    }
+  });
+
+  return data;
+}
+
+/**
+ * Sends form data to the Google Apps Script Web App URL in the background.
+ */
+window.dntSubmitToGoogleSheets = function(form) {
+  const url = GOOGLE_SCRIPT_URL;
+  if (!url || !url.startsWith('http')) {
+    console.warn('Google Sheets URL is not configured in js/script.js. Submission skipped.');
+    return Promise.resolve({ simulated: true });
+  }
+
+  const data = dntExtractFormData(form);
+
+  return fetch(url, {
+    method: 'POST',
+    mode: 'no-cors', // Avoids CORS preflight errors with Google Apps Script
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: new URLSearchParams(data)
+  })
+  .then(response => {
+    console.log('Form data submitted to Google Sheets successfully.');
+    return { success: true };
+  })
+  .catch(error => {
+    console.error('Error submitting form to Google Sheets:', error);
+    throw error;
+  });
+};
+
+/**
+ * Global form submission interceptor for all standard lead/contact forms.
+ */
+document.addEventListener('submit', function(event) {
+  const form = event.target;
+
+  // Exclude forms that should not be tracked (e.g., admin login, blog comments)
+  if (form.id === 'loginForm' || form.id === 'comment-form') {
+    return;
+  }
+
+  // Prevent default page reload
+  event.preventDefault();
+
+  // Validate HTML5 constraints
+  if (form.checkValidity && !form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  // Optional: Custom validation for 10-digit Indian phone numbers
+  const phoneInput = form.querySelector('input[type="tel"]');
+  if (phoneInput) {
+    const digits = phoneInput.value.replace(/\D/g, '');
+    if (digits.length > 0 && digits.length < 10) {
+      phoneInput.setCustomValidity('Please enter a valid 10-digit phone number.');
+      phoneInput.reportValidity();
+      return;
+    } else {
+      phoneInput.setCustomValidity('');
+    }
+  }
+
+  // Show loading state in the submit button
+  const submitBtn = form.querySelector('button[type="submit"]');
+  let originalBtnHTML = '';
+  if (submitBtn) {
+    originalBtnHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="dnt-spinner" style="display:inline-block; width:14px; height:14px; border:2px solid #fff; border-radius:50%; border-top-color:transparent; animation:dnt-spin 0.6s linear infinite; margin-right:8px; vertical-align:middle;"></span>Processing...';
+  }
+
+  // Check if form has custom page-specific submit/success logic
+  const isContactPageForm = form.id === 'contactForm';
+  const isCustomPMMarketingForm = form.id === 'itrFinalLeadForm' && window.location.href.includes('performance-marketing');
+
+  // Trigger submission to Google Sheets
+  window.dntSubmitToGoogleSheets(form)
+    .then(() => {
+      // Restore button
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      }
+
+      // If page has its own success screen logic, do not override its UI behavior
+      if (isContactPageForm || isCustomPMMarketingForm) {
+        return;
+      }
+
+      // Otherwise, show our premium central success confirmation card
+      const card = form.closest('.itr-lead-card') || form.parentElement;
+      if (card) {
+        // Inject custom keyframes for the spinner/fade if not already injected
+        if (!document.getElementById('dnt-spin-style')) {
+          const style = document.createElement('style');
+          style.id = 'dnt-spin-style';
+          style.textContent = `
+            @keyframes dnt-spin { to { transform: rotate(360deg); } }
+            @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+          `;
+          document.head.appendChild(style);
+        }
+
+        card.innerHTML = `
+          <div style="text-align: center; padding: 2.5rem 1.5rem; background: #fff; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; animation: fadeIn 0.5s ease-out;">
+            <div style="width: 65px; height: 65px; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.8rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">Request Received!</h3>
+            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">Thank you for reaching out. Our tax and compliance experts will review your request and contact you within 30 minutes.</p>
+            <div style="font-size: 0.8rem; color: #10b981; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-family: 'Outfit', sans-serif;">
+              Priority Support Active
+            </div>
+          </div>
+        `;
+      }
+    })
+    .catch(error => {
+      // Revert loading state
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      }
+      alert('An error occurred while submitting. Please try again.');
+    });
 });
